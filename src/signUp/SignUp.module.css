@@ -1,0 +1,29 @@
+#SignUpDiv{
+    background-image: url(../assets/backgroundImage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+#SignUp_mainDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* #SignUp_passwordInput_Div{
+    display: flex;
+    width: 300px;
+} */
+#SignUp_text{
+    font-weight: bold;
+    font-size: 50px;
+    color: #FFFFFF;
+}
+#SignUpDiv button{
+    width: 300px;
+    height: 46px;
+    color: #FFFFFF;
+    font-size: medium;
+    background-color: #D07119;
+    border: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,34 @@
+#nav{
+    background-image: url(../assets/backgroundImage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+#LandingPage_mainDiv{
+   display: flex;
+   flex-direction: column;
+   row-gap: 41px;
+    text-align: center;
+    align-items: center;
+    padding-top: 220px ;
+}
+#LandingPage_boldText{
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 718px;
+}
+#LandingPage_smallText{
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 718px;
+}
+#LandingPage_mainDiv button{
+    width: 300px;
+    height: 46px;
+    color: #FFFFFF;
+    font-size: medium;
+    background-color: #D07119;
+    border: none;
+    border-radius: 5px;
+}

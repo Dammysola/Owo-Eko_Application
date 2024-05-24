@@ -1,0 +1,24 @@
+#mainDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 110px;
+    padding: 0px 100px;
+    background-color: transparent;
+
+}
+#Nav_TextDiv{
+    display: flex;
+    column-gap: 32px ;
+}
+
+#nav_btn{
+    width: 198px;
+    height: 46px;
+    background-color: #D07119;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: medium;
+}
