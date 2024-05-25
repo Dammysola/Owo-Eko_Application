@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Style from './SignUp.module.css'
+import { Link } from 'react-router-dom'
 import InputField from '../../components/input_Form/InputField'
 import Button from '../../components/button/Button'
 
@@ -29,9 +30,20 @@ const SignUp = () => {
   return (
     <div id={Style.SignUpDiv}>
       <div id={Style.SignUp_mainDiv}>
-        <p id={Style.SignUp_text}>Sign Up</p>
+        <div id={Style.SignUp_text}>Sign Up</div>
         <form onSubmit={handleSubmit}>
           <div>
+          <div id={Style.usernameDiv}>
+            <InputField
+              label={"Username"}
+              placeholder={"Enter Phone Username"}
+              type={"text"}
+              name={"phoneNumber"}
+              value={UserDetails.phoneNumber}
+              OnChange={Details}
+            />
+          </div>
+            <div id={Style.phoneDiv}>
             <InputField
               label={"Phone Number"}
               placeholder={"Enter Phone Number"}
@@ -40,6 +52,7 @@ const SignUp = () => {
               value={UserDetails.phoneNumber}
               OnChange={Details}
             />
+            </div>
 
             <div id={Style.SignUp_passwordInput_Div}>
               <InputField
@@ -49,7 +62,7 @@ const SignUp = () => {
                 name={"createPassword"}
                 value={UserDetails.createPassword}
                 OnChange={Details}
-              />
+              /> 
 
               <InputField
                 label={"Confirm Password"}
@@ -62,10 +75,12 @@ const SignUp = () => {
             </div>
           </div>
           <div id={Style.SignUp_btnDiv}>
-            <Button
+           <Link to={"/verify"}>
+           <Button
               type={"submit"}
               text={"Sign Up"}
-              onChange={handleSubmit} />
+              onChange={handleSubmit}/>
+           </Link>
           </div>
         </form>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import InputField from '../../components/input_Form/InputField'
 import Style from './Verify.module.css'
 import Button from '../../components/button/Button'
+import { Link } from 'react-router-dom'
 
 const Verify = () => {
   const [userCode, setUserCode] = useState('')
@@ -37,10 +38,11 @@ const Verify = () => {
             />
 
             <div id={Style.Input_btnDiv}>
-              <Button
+             <Link to={"/mainpage"}>
+             <Button
                 type={"submit"}
                 text={"Verify"}
-                onChange={handleSubmit} />
+                onChange={handleSubmit} /></Link>
             </div>
           </form>
           <p>Didn’t receive a code? <button>Resend Code</button></p>

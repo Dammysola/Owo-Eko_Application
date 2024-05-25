@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-top: -80px;
 }
 #MainPage_coinDiv{
     width: 407px;
@@ -22,8 +23,14 @@
     font-weight: bold;
     font-size: 50px;
 }
+#btnDiv{
+    display: flex;
+    justify-content: center;
+}
 #Mainpage_button{
     background-color: transparent;
     border: none;
+    margin-top: 80px;
+    box-sizing: border-box;
     
 }
