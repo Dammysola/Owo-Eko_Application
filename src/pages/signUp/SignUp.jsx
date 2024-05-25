@@ -10,18 +10,19 @@ const SignUp = () => {
     confirmPassword: ''
   })
 
-  const Details =(e)=>{
-   const value= e.target.value
-   const name = e.target.name
+  const Details = (e) => {
+    const value = e.target.value
+    const name = e.target.name
 
-    setUserDetails (
-      (prev)=>({
+    setUserDetails(
+      (prev) => ({
         ...prev,
-        [name]:value
+        [name]: value
       })
     )
   }
-  const handleSubmit =(e)=>{
+  
+  const handleSubmit = (e) => {
     e.preventDefault(e)
     console.log(UserDetails.confirmPassword, UserDetails.createPassword, UserDetails.phoneNumber);
   }
@@ -36,8 +37,8 @@ const SignUp = () => {
               placeholder={"Enter Phone Number"}
               type={"tel"}
               name={"phoneNumber"}
-            value={UserDetails.phoneNumber}
-            OnChange={Details}
+              value={UserDetails.phoneNumber}
+              OnChange={Details}
             />
 
             <div id={Style.SignUp_passwordInput_Div}>
@@ -46,8 +47,8 @@ const SignUp = () => {
                 placeholder={"Create Password"}
                 type={"text"}
                 name={"createPassword"}
-              value={UserDetails.createPassword}
-              OnChange={Details}
+                value={UserDetails.createPassword}
+                OnChange={Details}
               />
 
               <InputField
@@ -55,16 +56,16 @@ const SignUp = () => {
                 placeholder={"Confirm Password"}
                 type={"text"}
                 name={"confirmPassword"}
-              value={UserDetails.confirmPassword}
-              OnChange={Details}
+                value={UserDetails.confirmPassword}
+                OnChange={Details}
               />
             </div>
           </div>
           <div id={Style.SignUp_btnDiv}>
-           <Button
-           type={"submit"}
-           children={"Sign Up"}
-           onChange={handleSubmit}/>
+            <Button
+              type={"submit"}
+              children={"Sign Up"}
+              onChange={handleSubmit} />
           </div>
         </form>
       </div>

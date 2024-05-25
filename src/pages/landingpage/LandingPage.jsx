@@ -14,7 +14,7 @@ const LandingPage = () => {
         <div>
            <Link to={'/signup'}>
            <Button
-           children={"Play Now"}/>
+           text={"Play Now"}/>
            </Link>
            </div>
         </div>
