@@ -1,19 +1,17 @@
-import LandingPage from "./landingpage/LandingPage"
-import MainPage from "./mainPage/MainPage"
-import NavBar from "./navBar/Navbar"
-import SignUp from "./signUp/SignUp"
-import Verify from "./verification/Verify"
+// import LandingPage from "./pages/landingpage/LandingPage"
+// import MainPage from "./pages/mainPage/MainPage"
+// import NavBar from "./components/navBar/Navbar"
+// import SignUp from "./pages/signUp/SignUp"
+// import Verify from "./pages/verification/Verify"
+import { RouterProvider } from "react-router-dom"
+import router from "./router"
 
 
 function App() {
   
   return (
     <>
-      {/* <NavBar/> */}
-      {/* <LandingPage/>
-      <SignUp/>
-      <Verify/> */}
-      <MainPage/>
+      <RouterProvider router={router}/>
 
     </>
   )

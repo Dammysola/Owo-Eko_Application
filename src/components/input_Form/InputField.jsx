@@ -1,5 +1,5 @@
 import React from 'react'
-import Style from '../input_Form/InputField.module.css'
+import Style from './InputField.module.css'
 
 const InputField = (props) => {
     const { label, placeholder, type, value, name, OnChange, } = props

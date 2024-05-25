@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import InputField from '../input_Form/InputField'
-import NavBar from '../navBar/Navbar'
-import Style from '../verification/Verify.module.css'
-import Button from '../button/Button'
+import InputField from '../../components/input_Form/InputField'
+import Style from './Verify.module.css'
+import Button from '../../components/button/Button'
 
 const Verify = () => {
   const [userCode, setUserCode] = useState('')
@@ -24,7 +23,6 @@ const Verify = () => {
   }
   return (
     <div id={Style.VerificationDiv} >
-      {/* <NavBar/> */}
       <div id={Style.Verification_mainDiv}>
         <div id={Style.Verification_textDiv}>
           <div id={Style.Verification_boldText}>Complete sign up be verifying your email address</div>

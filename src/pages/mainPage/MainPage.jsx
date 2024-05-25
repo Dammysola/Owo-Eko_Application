@@ -1,7 +1,7 @@
 import React from 'react'
 import Style from '../mainPage/MainPage.module.css'
-import bus from '../assets/svg/bus.svg'
-import dummyCoin from '../assets/svg/dummyCoin.svg'
+import bus from '../../assets/svg/bus.svg'
+import dummyCoin from '../../assets/svg/dummyCoin.svg'
 
 const MainPage = () => {
   return (

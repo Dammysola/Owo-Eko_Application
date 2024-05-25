@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import Style from '../signUp/SignUp.module.css'
-import InputField from '../input_Form/InputField'
-import NavBar from '../navBar/Navbar'
-import Button from '../button/Button'
+import Style from './SignUp.module.css'
+import InputField from '../../components/input_Form/InputField'
+import Button from '../../components/button/Button'
 
 const SignUp = () => {
   const [UserDetails, setUserDetails] = useState({
@@ -28,7 +27,6 @@ const SignUp = () => {
   }
   return (
     <div id={Style.SignUpDiv}>
-      {/* <NavBar/> */}
       <div id={Style.SignUp_mainDiv}>
         <p id={Style.SignUp_text}>Sign Up</p>
         <form onSubmit={handleSubmit}>
