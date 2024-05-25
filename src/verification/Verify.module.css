@@ -1,57 +1,55 @@
-#VerificationDiv{
-    background-image: url(../assets//svg/backgroundImage.svg);
-    background-repeat: no-repeat;
+#VerificationDiv {
+    background: url(../assets//svg/backgroundImage.svg) no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
-    
 }
-#Verification_mainDiv{
-    /* display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    color: #FFFFFF; */
-}
-#Verification_textDiv{
-    text-align: center;
-    height: 163px;
-}
-#Verification_boldText{
-    font-weight: bold;
-    font-size: 35px;
-    color: #FFFFFF;
-    width: 588px;
-}
-#InputDiv{
+
+#Verification_textDiv {
     display: flex;
     flex-direction: column;
-    row-gap: 8px;
+    text-align: center;
+    row-gap: 24px;
+    margin-bottom: 40px;
 }
-#Input{
-    width: 600px;
-    height: 51px;
+
+#Verification_textDiv #Verification_header {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+#Verification_textDiv #Verification_subtext {
+    font-size: 16px;
+}
+
+#Verification_formDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Verification_formDiv form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Verification_formDiv form #Input_btnDiv{
+    margin-top: 40px;
+}
+
+#Verification_formDiv p {
+    text-align: center;
+    margin: 0;
+    margin-top: 16px;
+}
+
+#Verification_formDiv p button {
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
-    padding: 16px;
-    box-sizing: border-box;
-    font-size: 13px;
-    font-size: 500;
-    outline: none;
-}
-#Input ::placeholder{
-    color: #CBC4C4;
-    font-size: 20px;
-}
-#Input_btnDiv{
-    text-align: center;
-}
-#Verification_mainDiv p{
-    text-align: center;
-}
-span{
     color: #D07119;
+    cursor: pointer;
 }

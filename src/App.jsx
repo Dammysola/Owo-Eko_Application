@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       {/* <NavBar/> */}
-      {/* <LandingPage/>
+      <LandingPage/>
       <SignUp/>
-      <Verify/> */}
+      <Verify/>
       <MainPage/>
 
     </>
