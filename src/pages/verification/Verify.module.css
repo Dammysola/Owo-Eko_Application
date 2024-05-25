@@ -1,5 +1,6 @@
-#VerificationDiv {
-    background: url(../assets//svg/backgroundImage.svg) no-repeat;
+#VerificationDiv{
+    background-image: url(../../assets/svg/backgroundImage.svg);
+    background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
     display: flex;

@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from "../navBar/NavBar.module.css"
-import EyoImage from '../assets/svg/eyo_image.svg'
+import EyoImage from '../../assets/svg/eyo_image.svg'
 
 const NavBar = () => {
     return (
