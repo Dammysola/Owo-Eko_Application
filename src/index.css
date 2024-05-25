@@ -1,5 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: "outline"; */
   width: 100vw;
   min-height: 100vh;
 }

@@ -3,22 +3,37 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 #SignUp_mainDiv{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; 
+     flex-grow: 1;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    padding-top: 100px; */
+    width: 600px;
 }
-/* #SignUp_passwordInput_Div{
+#SignUp_passwordInput_Div{
     display: flex;
-    width: 300px;
-} */
+    width: 600px;
+}
+
+
 #SignUp_text{
+    text-align: center;
     font-weight: bold;
     font-size: 50px;
     color: #FFFFFF;
 }
-#SignUpDiv button{
+#SignUp_btnDiv{
+    text-align: center;
+}
+/* #SignUpDiv button{
     width: 300px;
     height: 46px;
     color: #FFFFFF;
@@ -26,4 +41,4 @@
     background-color: #D07119;
     border: none;
     border-radius: 5px;
-}
+} */

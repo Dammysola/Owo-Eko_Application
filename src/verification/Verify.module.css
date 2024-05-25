@@ -1,0 +1,57 @@
+#VerificationDiv{
+    background-image: url(../assets//svg/backgroundImage.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    
+}
+#Verification_mainDiv{
+    /* display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    color: #FFFFFF; */
+}
+#Verification_textDiv{
+    text-align: center;
+    height: 163px;
+}
+#Verification_boldText{
+    font-weight: bold;
+    font-size: 35px;
+    color: #FFFFFF;
+    width: 588px;
+}
+#InputDiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+#Input{
+    width: 600px;
+    height: 51px;
+    border: none;
+    border-radius: 5px;
+    padding: 16px;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-size: 500;
+    outline: none;
+}
+#Input ::placeholder{
+    color: #CBC4C4;
+    font-size: 20px;
+}
+#Input_btnDiv{
+    text-align: center;
+}
+#Verification_mainDiv p{
+    text-align: center;
+}
+span{
+    color: #D07119;
+}

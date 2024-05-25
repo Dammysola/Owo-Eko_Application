@@ -1,5 +1,5 @@
 #nav{
-    background-image: url(../assets/backgroundImage.png);
+    background-image: url(../assets/svg/backgroundImage.svg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -23,7 +23,7 @@
     color: #FFFFFF;
     width: 718px;
 }
-#LandingPage_mainDiv button{
+/* #LandingPage_mainDiv button{
     width: 300px;
     height: 46px;
     color: #FFFFFF;
@@ -31,4 +31,4 @@
     background-color: #D07119;
     border: none;
     border-radius: 5px;
-}
+} */
