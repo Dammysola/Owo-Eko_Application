@@ -19,8 +19,7 @@ const Verify = () => {
     console.log(userCode);
   }
   return (
-    <div id={Style.VerificationDiv} >
-      <div id={Style.Verification_mainDiv}>
+    <div id={Style.VerificationDiv}>
         <div id={Style.Verification_textDiv}>
           <div id={Style.Verification_header}>Complete sign up be verifying your <br />email address</div>
           <div id={Style.Verification_subtext}>We sent a code to johndoe@gmail.com, enter code to continue</div>

@@ -21,6 +21,10 @@ const router = createBrowserRouter([
                 element: <SignUp/>
             },
             {
+                path: "/verify",
+                element: <Verify/>
+            },
+            {
                 path: "*",
                 element:"Page not found"
             }
