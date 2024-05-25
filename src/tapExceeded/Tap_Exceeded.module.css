@@ -1,0 +1,63 @@
+#Tap_Exceeded_mainDiv{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/svg/backgroundImage.svg);
+}
+#TapExceeded_wrapper{
+    width: 648px;
+    height: 340px;
+    border-radius: 36px;
+    padding-top: 32px;
+    box-sizing: border-box;
+    background-color: rgba(87, 85, 85, 0.5);
+    border: 2px solid #161616;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 46px;
+}
+#Tap_Exceeded_nameDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+#Tap_Exceeded_name_textWrapper{
+    width: 510px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 15px;
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 32px;
+    text-align: center;
+    font-size: 24px;
+}
+#Tap_Exceeded_text{
+    width: 478px;
+    color: #FFFFFF;
+    text-align: center;
+}
+#TapExceeded_wrapper button{
+    width: 209px;
+    height: 46px;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+#Tap_Exceeded_btn{
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+#Tap_Exceeded_btnTwo{
+    background-color: #161616;
+    border: none;
+
+}

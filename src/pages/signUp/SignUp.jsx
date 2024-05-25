@@ -64,7 +64,7 @@ const SignUp = () => {
           <div id={Style.SignUp_btnDiv}>
             <Button
               type={"submit"}
-              children={"Sign Up"}
+              text={"Sign Up"}
               onChange={handleSubmit} />
           </div>
         </form>
