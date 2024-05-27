@@ -3,29 +3,40 @@ import Style from './SignUp.module.css'
 import { Link } from 'react-router-dom'
 import InputField from '../../components/input_Form/InputField'
 import Button from '../../components/button/Button'
+import { userContextHook } from '../../UserContext'
+import axios from 'axios'
 
-const SignUp = () => {
-  const [UserDetails, setUserDetails] = useState({
+const SignUp = async () => {
+  const [signUp, setSignUp] = useState({
     phoneNumber: '',
     createPassword: '',
     confirmPassword: ''
   })
 
+   const [signUpError, setSignUpError]= useState()
   const Details = (e) => {
     const value = e.target.value
     const name = e.target.name
 
-    setUserDetails(
+    setSignUp(
       (prev) => ({
         ...prev,
         [name]: value
       })
     )
   }
+
+  const response = await axios.post(api, signUp)
+  console.log('signup successful', response.data);
+
+  if (response.status == 200) {
+    
+    
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault(e)
-    console.log(UserDetails.confirmPassword, UserDetails.createPassword, UserDetails.phoneNumber);
+    console.log(signUp.Username, signUp.phoneNumber, signUp.confirmPassword, signUp.createPassword);
   }
   return (
     <div id={Style.SignUpDiv}>
@@ -34,14 +45,6 @@ const SignUp = () => {
         <form onSubmit={handleSubmit}>
           <div>
           <div id={Style.usernameDiv}>
-            <InputField
-              label={"Username"}
-              placeholder={"Enter Phone Username"}
-              type={"text"}
-              name={"phoneNumber"}
-              value={UserDetails.phoneNumber}
-              OnChange={Details}
-            />
           </div>
             <div id={Style.phoneDiv}>
             <InputField
@@ -49,7 +52,7 @@ const SignUp = () => {
               placeholder={"Enter Phone Number"}
               type={"tel"}
               name={"phoneNumber"}
-              value={UserDetails.phoneNumber}
+              value={signUp.phoneNumber}
               OnChange={Details}
             />
             </div>
@@ -60,7 +63,7 @@ const SignUp = () => {
                 placeholder={"Create Password"}
                 type={"text"}
                 name={"createPassword"}
-                value={UserDetails.createPassword}
+                value={signUp.createPassword}
                 OnChange={Details}
               /> 
 
@@ -69,7 +72,7 @@ const SignUp = () => {
                 placeholder={"Confirm Password"}
                 type={"text"}
                 name={"confirmPassword"}
-                value={UserDetails.confirmPassword}
+                value={signUp.confirmPassword}
                 OnChange={Details}
               />
             </div>
