@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Style from './SignUp.module.css'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import InputField from '../../components/input_Form/InputField'
 import Button from '../../components/button/Button'
 import { userContextHook } from '../../UserContext'
 import axios from 'axios'
 
-const SignUp = async () => {
+const SignUp = () => {
+  const navigate = useNavigate()
   const [signUp, setSignUp] = useState({
     phoneNumber: '',
     createPassword: '',
@@ -25,14 +26,23 @@ const SignUp = async () => {
       })
     )
   }
-
-  const response = await axios.post(api, signUp)
-  console.log('signup successful', response.data);
-
-  if (response.status == 200) {
+  const FormSubmit = async()=>{
+    try {
+      const response = await axios.post(api, signUp)
+      console.log('signup successful', response.data);
     
-    
+      if (response.status == 200) {
+        updateDetails(...signUp)
+        navigate('/')
+      }
+    } catch (err) {
+      let userError = err.response.data.message
+      setSignUpError(userError)
+      console.log("SignUp Failed: ",userError)
+      
+    }
   }
+
   
   const handleSubmit = (e) => {
     e.preventDefault(e)
