@@ -1,0 +1,27 @@
+#Login_MainDiv{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+}
+#Login_Div{
+    width: 600px;
+}
+#Login_Div form{
+    width: 100%;
+}
+#Login_MainDiv p{
+    font-weight: bold;
+    font-size: 50px;
+    height: 34px;
+    text-align: center;
+}
+#inputDiv{
+    margin: 24px 0px;
+}
+#Login_MainDiv #btnDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}

@@ -5,6 +5,8 @@ import LandingPage from './pages/landingpage/LandingPage'
 import SignUp from './pages/signUp/SignUp'
 import Verify from './pages/verification/Verify'
 import MainPage from './pages/mainPage/MainPage'
+import Login from './pages/login/Login'
+import Waitlist from './pages/waitlist/Waitlist'
 
 
 const router = createBrowserRouter([
@@ -17,8 +19,16 @@ const router = createBrowserRouter([
                 element: <LandingPage/>
             },
             {
+                path: "/waitlist",
+                element: <Waitlist/>
+            },
+            {
                 path: "/signup",
                 element: <SignUp/>
+            },
+            {
+                path: "/login",
+                element: <Login/>
             },
             {
                 path: "/verify",

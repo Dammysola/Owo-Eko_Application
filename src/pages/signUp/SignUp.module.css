@@ -6,26 +6,23 @@
     align-items: center;
 }
 #SignUp_mainDiv{
-    /* display: flex;
-    flex-direction: column; 
-     flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding-top: 100px; */
     width: 600px;
+}
+#SignUp_mainDiv form{
+    width: 100%;
 }
 #phoneDiv{
     margin-top: 24px;
 }
 #SignUp_passwordInput_Div {
+    width: 100%;
     display: flex;
     column-gap: 10px;
     margin-top: 24px;
 }
-#SignUp_passwordInput_Div input{
+/* #SignUp_passwordInput_Div input{
     width: 295px;
-}
+} */
 #SignUp_text{
     text-align: center;
     font-weight: bold;
@@ -41,12 +38,26 @@
 #usernameDiv{
     margin-top:40px ;
 }
-/* #SignUpDiv button{
-    width: 300px;
-    height: 46px;
-    color: #FFFFFF;
-    font-size: medium;
-    background-color: #D07119;
-    border: none;
-    border-radius: 5px;
-} */
+@media screen and (max-width: 500px){
+    #SignUp_text{
+        font-size: 24px;
+        /* height: 16px; */
+        padding-top: 60px;
+    }
+    #SignUp_mainDiv{
+        width: 90%;
+    }
+    #phoneDiv{
+        margin-top: 10px;
+    }
+    #SignUp_passwordInput_Div{
+        margin-top: 10px
+    }
+    #SignUp_btnDiv{
+        margin-top: 15px;
+    }
+    #SignUp_passwordInput_Div input{
+        
+    }
+   
+}

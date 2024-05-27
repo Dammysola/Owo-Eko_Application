@@ -9,12 +9,20 @@ const UserContext = ({children}) => {
     Username: '',
     phoneNumber: '',
   })
+
+  const [logged, setLogged] = useState(false);
+
   const updateDetails = (data)=>{
     setUserDetails(data)
   }
 
+  const updateSetLogged = (data)=>{
+    setLogged(data)
+  }
+
+  
   return (
-    <myContext.Provider value={{userDetails, updateDetails}}>
+    <myContext.Provider value={{userDetails, updateDetails, logged, updateSetLogged}}>
       {children}
     </myContext.Provider>
   )

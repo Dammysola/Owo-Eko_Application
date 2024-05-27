@@ -8,13 +8,17 @@ import axios from 'axios'
 
 const SignUp = () => {
   const navigate = useNavigate()
+
+  const {updateDetails} = userContextHook()
   const [signUp, setSignUp] = useState({
+    email: '',
     phoneNumber: '',
     createPassword: '',
     confirmPassword: ''
   })
 
-   const [signUpError, setSignUpError]= useState()
+  const [signUpError, setSignUpError] = useState()
+
   const Details = (e) => {
     const value = e.target.value
     const name = e.target.name
@@ -26,11 +30,11 @@ const SignUp = () => {
       })
     )
   }
-  const FormSubmit = async()=>{
+  const FormSubmit = async () => {
     try {
       const response = await axios.post(api, signUp)
       console.log('signup successful', response.data);
-    
+
       if (response.status == 200) {
         updateDetails(...signUp)
         navigate('/')
@@ -38,13 +42,12 @@ const SignUp = () => {
     } catch (err) {
       let userError = err.response.data.message
       setSignUpError(userError)
-      console.log("SignUp Failed: ",userError)
-      
+      console.log("SignUp Failed: ", userError)
     }
   }
 
-  
   const handleSubmit = (e) => {
+    FormSubmit()
     e.preventDefault(e)
     console.log(signUp.Username, signUp.phoneNumber, signUp.confirmPassword, signUp.createPassword);
   }
@@ -53,18 +56,26 @@ const SignUp = () => {
       <div id={Style.SignUp_mainDiv}>
         <div id={Style.SignUp_text}>Sign Up</div>
         <form onSubmit={handleSubmit}>
-          <div>
-          <div id={Style.usernameDiv}>
-          </div>
+          
+            <div>
+              <InputField
+                label={"Email Address"}
+                placeholder={"Enter Email Address"}
+                type={"email"}
+                name={"email"}
+                value={signUp.email}
+                OnChange={Details}
+              />
+            </div>
             <div id={Style.phoneDiv}>
-            <InputField
-              label={"Phone Number"}
-              placeholder={"Enter Phone Number"}
-              type={"tel"}
-              name={"phoneNumber"}
-              value={signUp.phoneNumber}
-              OnChange={Details}
-            />
+              <InputField
+                label={"Phone Number"}
+                placeholder={"Enter Phone Number"}
+                type={"tel"}
+                name={"phoneNumber"}
+                value={signUp.phoneNumber}
+                OnChange={Details}
+              />
             </div>
 
             <div id={Style.SignUp_passwordInput_Div}>
@@ -75,7 +86,7 @@ const SignUp = () => {
                 name={"createPassword"}
                 value={signUp.createPassword}
                 OnChange={Details}
-              /> 
+              />
 
               <InputField
                 label={"Confirm Password"}
@@ -85,15 +96,15 @@ const SignUp = () => {
                 value={signUp.confirmPassword}
                 OnChange={Details}
               />
-            </div>
+            
           </div>
           <div id={Style.SignUp_btnDiv}>
-           <Link to={"/verify"}>
-           <Button
-              type={"submit"}
-              text={"Sign Up"}
-              onChange={handleSubmit}/>
-           </Link>
+            <Link to={"/login"}>
+              <Button
+                type={"submit"}
+                text={"Sign Up"}
+                onChange={handleSubmit} />
+            </Link>
           </div>
         </form>
       </div>
