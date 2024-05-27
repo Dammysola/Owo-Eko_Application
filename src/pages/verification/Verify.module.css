@@ -52,5 +52,15 @@
     cursor: pointer;
 }
 @media screen and (max-width: 500px){
+    #Verification_formDiv{
+        padding: 0px 10px;
+        box-sizing: border-box;
+        width: 90%;
+    }
+    #Verification_textDiv #Verification_header{
+        width: 366px;
+        font-size: 22px;
 
+
+    }
 }
