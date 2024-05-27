@@ -39,8 +39,10 @@ const SignUp = () => {
         },
       )
 
+      console.log(response.status)
 
-      if (response.status == 201) {
+
+      if (response.status == 200) {
 
         console.log('signup successful', response.data);
         // updateDetails(...signUp)
