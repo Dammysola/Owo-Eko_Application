@@ -36,6 +36,8 @@ const SignUp = () => {
       console.log('signup successful', response.data);
 
       if (response.status == 200) {
+        
+      const response = await axios.post(api, signUp)
         updateDetails(...signUp)
         navigate('/')
       }
