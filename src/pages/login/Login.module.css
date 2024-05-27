@@ -3,13 +3,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -100px;
 }
 #Login_Div{
     width: 600px;
+    margin-top: -112px;
 }
 #Login_Div form{
     width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
 }
 #Login_MainDiv p{
     font-weight: bold;

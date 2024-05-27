@@ -37,6 +37,7 @@ const SignUp = () => {
 
       if (response.status == 200) {
         const response = await axios.post("https://owo-eko-api.onrender.com/user/send-otp", signUp)
+
         updateDetails(...signUp)
         navigate('/')
       }
