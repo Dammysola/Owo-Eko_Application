@@ -1,4 +1,5 @@
 #Confirmation_mainDiv {
+    background-color: #8f8989;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,5 +64,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+@media screen and (max-width: 500px){
+    #Confirmation_Wrapper{
+        width: 366px;
+        height: 501px;
+    }
 }

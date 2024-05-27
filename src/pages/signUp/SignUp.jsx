@@ -103,14 +103,15 @@ const SignUp = () => {
               OnChange={Details}
             />
 
-            <InputField
-              label={"Confirm Password"}
-              placeholder={"Confirm Password"}
-              type={"text"}
-              name={"confirmPassword"}
-              value={signUp.confirmPassword}
-              OnChange={Details}
-            />
+//             <InputField
+//               label={"Confirm Password"}
+//               placeholder={"Confirm Password"}
+//               type={"text"}
+//               name={"confirmPassword"}
+//               value={signUp.confirmPassword}
+//               OnChange={Details}
+//             />
+
 
           </div>
           <div id={Style.SignUp_btnDiv}>
