@@ -1,0 +1,58 @@
+#Confirmation_mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#Confirmation_Wrapper {
+    width: 500px;
+    height: 530px;
+    background-color: aqua;
+    border-radius: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+#Confirmation_Wrapper b {
+    font-weight: bold;
+    font-size: 50px;
+    color: white;
+}
+
+#Confirmation_Wrapper span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table {
+    border-spacing: 180px 33px;
+    margin-top: -20px;
+}
+
+td {
+    
+}
+#Confirmation_Wrapper button{
+    width: 350px;
+}
+#Confirmation_Wrapper #button {
+    height: 46px;
+    color: #FFFFFF;
+    font-size: medium;
+    background-color: transparent;
+    border: 1px solid #D07119;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -27,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: "*",
                 element:"Page not found"
+            },
+            {
+                path: "/mainpage",
+                element: <MainPage/>
             }
         ]
     },

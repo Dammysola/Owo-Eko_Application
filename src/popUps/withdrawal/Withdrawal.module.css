@@ -1,0 +1,15 @@
+#Withdrawal_mainDiv{
+    height: 100vh;
+    background-image: url(../assets/svg/backgroundImage.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Withdrawal_formWrapper{
+    width: 630px;
+    height: 630px;
+    background-color: rgba(87, 85, 85, 0.9);
+    border-radius: 36px;
+}
