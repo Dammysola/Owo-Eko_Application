@@ -6,7 +6,9 @@
     height: 110px;
     padding: 0px 100px;
     background-color: transparent;
-
+}
+#mobileNav{
+display: none;
 }
 #Nav_TextDiv{
     display: flex;
@@ -27,4 +29,16 @@
     border-radius: 5px;
     color: #FFFFFF;
     font-size: medium;
+}
+
+@media screen and (max-width: 700px){
+    #mainDiv{
+        display: none;
+    }
+    #mobileNav{
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+
+    }
 }

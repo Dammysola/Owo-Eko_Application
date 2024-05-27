@@ -1,5 +1,4 @@
-#nav{
- 
+#nav{ 
     height: 100vh;
 }
 #LandingPage_mainDiv{
@@ -17,16 +16,26 @@
     width: 718px;
 }
 #LandingPage_smallText{
-    font-size: 16px;
-    color: #FFFFFF;
     width: 718px;
-}
-/* #LandingPage_mainDiv button{
-    width: 300px;
-    height: 46px;
+    font-size: 18px;
     color: #FFFFFF;
-    font-size: medium;
-    background-color: #D07119;
-    border: none;
-    border-radius: 5px;
-} */
+}
+
+
+@media screen and (max-width: 500px){
+    #LandingPage_mainDiv{
+        padding-top: 80px;
+        row-gap: 20px;
+    }
+    #LandingPage_boldText{
+        font-size: 24px;
+        font-weight: bold;
+        width: 366px;
+    }
+    #LandingPage_smallText{
+        font-size: 13px;
+        width: 340px;
+        padding: 0px 5px;
+        box-sizing: border-box;
+    }
+}
