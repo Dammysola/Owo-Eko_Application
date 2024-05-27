@@ -7,7 +7,6 @@
     align-items: center;
     color: #FFFFFF;
 }
-
 #Verification_textDiv {
     display: flex;
     flex-direction: column;
@@ -15,12 +14,10 @@
     row-gap: 24px;
     margin-bottom: 40px;
 }
-
 #Verification_textDiv #Verification_header {
     font-weight: bold;
     font-size: 32px;
 }
-
 #Verification_textDiv #Verification_subtext {
     font-size: 16px;
 }
@@ -29,11 +26,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 600px;
 }
 #Verification_formDiv form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 #Verification_formDiv form #Input_btnDiv{
@@ -53,5 +52,5 @@
     cursor: pointer;
 }
 @media screen and (max-width: 500px){
-    
+
 }
