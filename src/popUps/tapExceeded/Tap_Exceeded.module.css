@@ -1,63 +1,88 @@
-#Tap_Exceeded_mainDiv{
+#Tap_Exceeded_mainDiv {
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../assets/svg/backgroundImage.svg);
 }
-#TapExceeded_wrapper{
+
+#TapExceeded_wrapper {
     width: 648px;
-    height: 340px;
+    height: 342px;
     border-radius: 36px;
-    padding-top: 32px;
+    padding: 32px 69px;
     box-sizing: border-box;
     background-color: rgba(87, 85, 85, 0.5);
-    border: 2px solid #161616;
+    box-shadow: 0px 2px 4px 5px rgba(255, 255, 255, 0.16);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     row-gap: 46px;
+    margin-top: -110px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
-#Tap_Exceeded_nameDiv{
+
+#TapExceeded_wrapper #Tap_Exceeded_name_textWrapper {
+    width: 100%;
+    height: 160px;
+    padding: 24px 16px;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 16px;
+    display: inline-flex;
+    text-align: center;
+}
+
+#TapExceeded_wrapper #Tap_Exceeded_name_textWrapper #Tap_Exceeded_nameDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     color: #FFFFFF;
+    font-size: 32px;
 }
-#Tap_Exceeded_name_textWrapper{
-    width: 510px;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 15px;
-    background-color: rgb(255, 255, 255, 0.1);
-    border-radius: 32px;
-    text-align: center;
-    font-size: 24px;
-}
-#Tap_Exceeded_text{
-    width: 478px;
+
+#TapExceeded_wrapper #Tap_Exceeded_name_textWrapper #Tap_Exceeded_text {
     color: #FFFFFF;
+    font-size: 18px;
     text-align: center;
 }
-#TapExceeded_wrapper button{
+
+#TapExceeded_wrapper #button_div {
+    display: flex;
+    column-gap: 15px;
+}
+
+#TapExceeded_wrapper #button_div button {
     width: 209px;
     height: 46px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 20px;
     color: #FFFFFF;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
 }
-#Tap_Exceeded_btn{
+#TapExceeded_wrapper #button_div button:hover{
+    opacity: .8;
+}
+
+#TapExceeded_wrapper #button_div #Tap_Exceeded_btn {
     background-color: transparent;
     border: 1px solid #FFFFFF;
-    margin-left: 15px;
-    box-sizing: border-box;
 }
-#Tap_Exceeded_btnTwo{
+
+#TapExceeded_wrapper #button_div #Tap_Exceeded_btnTwo {
     background-color: #161616;
     border: none;
-
 }

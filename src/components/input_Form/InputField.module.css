@@ -25,15 +25,11 @@
     &:focus{
         border: 1px solid #CBC4C4;
     }
+    &::placeholder{
+        font-size: 16px;
+        color:#CBC4C4;
+    }
 }
-
-.input ::placeholder{
-    font-size: 16px;
-    color: white;
-}
-
-.input :focus{
-    background-color: red;}
 
 @media screen and (max-width: 500px){
     /* .input{
@@ -42,4 +38,4 @@
     .InputDiv{
         row-gap: 3px;
     }
-    }
+}
