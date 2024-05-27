@@ -4,7 +4,7 @@ import style from "Error.module.css"
 const Error = () => {
   return (
     <div>
-
+      
     </div>
   )
 }

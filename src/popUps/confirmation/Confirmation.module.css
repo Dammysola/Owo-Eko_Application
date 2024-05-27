@@ -1,4 +1,5 @@
 #Confirmation_mainDiv {
+    background-color: #8f8989;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,8 +46,6 @@
     font-size: 20px;
 }
 
-td {}
-
 #Confirmation_Wrapper button {
     width: 350px;
 }
@@ -65,5 +64,11 @@ td {}
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+@media screen and (max-width: 500px){
+    #Confirmation_Wrapper{
+        width: 366px;
+        height: 501px;
+    }
 }
