@@ -6,9 +6,9 @@
 }
 
 #Confirmation_Wrapper {
-    width: 500px;
-    height: 530px;
-    background-color: aqua;
+    width: 648px;
+    height: 604px;
+    background-color: rgba(255, 255, 255, .12);
     border-radius: 34px;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,11 @@
     justify-content: center;
     color: #FFFFFF;
     font-size: 18px;
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: -110px;
 }
 
 #Confirmation_Wrapper b {
@@ -24,22 +29,28 @@
     color: white;
 }
 
-#Confirmation_Wrapper span {
+
+#Confirmation_Wrapper table {
+    border-spacing: 180px 33px;
+    margin-top: 40px;
+    width: 100%;
+}
+#Confirmation_Wrapper table .fadded  {
+    font-size: 18px;
+    color: #CEC7C7;
+
+}
+#Confirmation_Wrapper thead span {
     font-weight: bold;
     font-size: 20px;
 }
 
-table {
-    border-spacing: 180px 33px;
-    margin-top: -20px;
-}
+td {}
 
-td {
-    
-}
-#Confirmation_Wrapper button{
+#Confirmation_Wrapper button {
     width: 350px;
 }
+
 #Confirmation_Wrapper #button {
     height: 46px;
     color: #FFFFFF;
