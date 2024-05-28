@@ -7,8 +7,8 @@ function App() {
   
   return (
     <>
-      {/* <RouterProvider router={router}/> */}
-      <Error/>
+      <RouterProvider router={router}/>
+      {/* <Error/> */}
     </>
   )
 }
