@@ -23,7 +23,7 @@ const MainLayout = () => {
           <div id={Style.wrapper}>
             <NavBar />
             {loadingPopup && <Loading />}
-            <Error />
+            {errorPopup && <Error />}
             <div><Outlet /></div>
           </div>
         </UserContext>
