@@ -8,7 +8,7 @@ const Error = ({text}) => {
       <div id={style.wrapper}>
         <img src={errorImg} />
         <div>{text}</div>
-        <iframe src="https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9" frameborder="0"></iframe>
+        <iframe src="http://www.google.com" frameborder="0" target="_parent"></iframe>
       </div>
     </div>
   )
