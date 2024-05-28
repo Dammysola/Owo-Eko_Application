@@ -27,6 +27,26 @@ const MainPage = () => {
     }
 
   }
+  const testingLink = () => {
+    // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
+
+    let url = 'https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9'
+    let win = window.open(`${url}`, "_blank", "popup, width=10,height=10").then((ev) => {
+        onload= (ev)=>{
+            console.log("message")
+        }
+    });
+
+    // win.document.write(`<iframe src=${url} sandbox="allow-top-navigation" width="100%" height="100%"></iframe>`)
+
+    // win.onload = (ev) => {
+    //     console.log("message")
+    //     setCount(count++)
+    //     setTimeout(() => {
+    //         win.close();
+    //     }, 2500)
+    // };
+}
   return (
     <div id={Style.MainPage_Div}>
       <div id={Style.MainPage_firstDiv}>
@@ -36,7 +56,7 @@ const MainPage = () => {
             <p>{count}</p>
           </div>
           <div id={Style.btnDiv}>
-            <button id={Style.Mainpage_button} onClick={increaseCount}><img src={bus} alt="" /></button>
+            <button id={Style.Mainpage_button} onClick={testingLink}><img src={bus} alt="" /></button>
           </div>
         </div>
       </div>
