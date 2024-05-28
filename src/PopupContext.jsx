@@ -7,30 +7,33 @@ export const popupContextHook = () => useContext(myContext)
 const PopupContext = ({ children }) => {
     const [confirmationPopup, setConfirmationPopup] = useState(false);
     const [errorPopup, setErrorPopup] = useState(false);
+    const [errorText, setErrorText] = useState("");
     const [tapExceededPopup, setTapExceededPopup] = useState(false);
     const [withdrawalSuccessPopup, setWithdrawalSuccessPopup] = useState(false);
     const [withdrawalPopup, setWithdrawalPopup] = useState(false);
+    const [loadingPopup, setLoadingPopup] = useState(false);
 
     const updateConfirmationPopup = (data) => {
         setConfirmationPopup(data)
     }
-
     const updateErrorPopup = (data) => {
         setErrorPopup(data)
     }
-
+    const updateErrorText = (data) => {
+        setErrorText(data)
+    }
     const updateTapExceededPopup = (data) => {
         setTapExceededPopup(data)
     }
-
     const updateWithdrawalSuccessPopup = (data) => {
         setWithdrawalSuccessPopup(data)
     }
     const updateWithdrawalPopup = (data) => {
         setWithdrawalPopup(data)
     }
-
-
+    const updateLoadingPopup = (data) => {
+        setLoadingPopup(data)
+    }
 
     return (
         <myContext.Provider value={{ 
@@ -43,7 +46,11 @@ const PopupContext = ({ children }) => {
             withdrawalSuccessPopup,
             updateWithdrawalSuccessPopup,
             withdrawalPopup,
-            updateWithdrawalPopup}}>
+            updateWithdrawalPopup,
+            loadingPopup,
+            updateLoadingPopup,
+            errorText,
+            updateErrorText}}>
             {children}
         </myContext.Provider>
     )

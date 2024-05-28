@@ -5,9 +5,13 @@ import InputField from '../../components/input_Form/InputField'
 import Button from '../../components/button/Button'
 import { userContextHook } from '../../UserContext'
 import axios from 'axios'
+import { popupContextHook } from '../../PopupContext'
 
 const SignUp = () => {
   const navigate = useNavigate()
+
+  const { updateDetails } = userContextHook()
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
   const [signUp, setSignUp] = useState({
     email: '',
@@ -29,7 +33,9 @@ const SignUp = () => {
     )
   }
   const FormSubmit = async () => {
+    
     try {
+      updateLoadingPopup(true);
       const response = await axios.post("https://owo-eko-api.onrender.com/user/send-otp",
         {
           "email": signUp.email,
@@ -40,6 +46,8 @@ const SignUp = () => {
 
       console.log(response.status)
 
+      updateLoadingPopup(false);
+
       if (response.status == 200) {
 
         console.log('signup successful', response.data);
@@ -47,13 +55,29 @@ const SignUp = () => {
 
         let sendData = JSON.stringify(signUp);
         navigate(`/verify/${sendData}`)
-        // navigate('/verify:')
       } else {
+        updateErrorText(response.data)
+
+        updateErrorPopup(true)
+        setTimeout(() => {
+          updateErrorPopup(false)
+        }, 1000)
 
         console.log('signup failed', response.data);
       }
     } catch (err) {
+
+      updateLoadingPopup(false);
       let userError = err.response.data.message
+
+      updateErrorText(userError)
+
+      updateErrorPopup(true)
+      setTimeout(() => {
+        updateErrorPopup(false)
+      }, 1000)
+
+      updateErrorPopup(true)
       setSignUpError(userError)
       console.log("SignUp Failed: ", signUpError)
     }
@@ -101,7 +125,7 @@ const SignUp = () => {
               OnChange={Details}
             />
 
-             {/* <InputField
+            {/* <InputField
               label={"Confirm Password"}
               placeholder={"Confirm Password"}
               type={"text"}
