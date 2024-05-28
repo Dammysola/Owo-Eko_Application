@@ -12,6 +12,7 @@ const SignUp = () => {
 
   const { updateDetails } = userContextHook()
   const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
+
   const [signUp, setSignUp] = useState({
     email: '',
     phoneNumber: '',

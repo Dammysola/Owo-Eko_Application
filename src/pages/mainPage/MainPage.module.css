@@ -35,10 +35,11 @@
     box-sizing: border-box;   
 }
 #MainPageText{
-    width: 80%;
+    height: 250px;
+    /* width: 80%; */
     display: flex;
     justify-content: center;
-    justify-content: space-between;
+    column-gap: 750px;
     align-items: center;
 }
 #MainPageText button{
@@ -47,6 +48,7 @@
     border-radius: 16px;
     border: none;
     column-gap: 16px;
+    background-color: rgba(255, 255, 255, .6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,5 +56,42 @@
     font-weight: bold;
 }
 #MainPageText div{
+    width: 218px;
+    height: 82px;
+    border-radius: 16px;
+    border: none;
+    background-color: rgba(255, 255, 255, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 24px;
+    font-weight: bold
+}
 
+
+@media screen and (max-width: 700px){
+    #MainPage_firstDiv{
+       margin-top: 20px; 
+    }
+    #MainPage_coinDiv{
+        width: 300px;
+        height: 90px;
+    }
+    #MainPageText{
+        height: 160px;
+        column-gap: 30px;
+    }
+    #MainPageText button{
+        width: 170px;
+        height: 48px;
+        border-radius: 16px;
+        font-size: 18px;
+        column-gap: 5px;
+    }
+    #MainPageText div{
+        width: 160px;
+        height: 48px;
+        font-size: 18px;
+    }
 }
