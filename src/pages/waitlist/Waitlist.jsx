@@ -2,16 +2,21 @@ import React, { useState } from 'react'
 import Style from '../waitlist/Waitlist.module.css'
 import Button from '../../components/button/Button'
 import InputField from '../../components/input_Form/InputField'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Waitlist = () => {
+
+    const navigate = useNavigate()
+
+    const [signUpError, setSignUpError] = useState()
 
     const [waitlist, setWaitlist] = useState({
         firstName: '',
         lastName: '',
         email: '',
         phoneNumber: '',
-        creatPassword: '',
-        confirmPassword: ''
+        password: '',
     })
 
     const waitlistDetails = (e) => {
@@ -26,9 +31,43 @@ const Waitlist = () => {
         )
     }
 
+    const waitlistSubmit = async () => {
+        try {
+            const response = await axios.post(api,
+                {
+                    "firstName": waitlist.firstName,
+                    "lastName": waitlist.lastName,
+                    "email": waitlist.email,
+                    "phone": waitlist.phoneNumber,
+                    "password": waitlist.password
+                }
+            )
+
+
+            if (response.data == 200) {
+                console.log('Signup successful:', response.data);
+                // navigate('/');
+
+                let sendData = JSON.stringify(waitlist);
+                // navigate(`/verify/${sendData}`)
+            }else {
+
+                console.log('signup failed', response.data);
+              }
+
+        }
+        catch (error) {
+            let userError = error.response.data.message
+      setSignUpError(userError)
+      console.log("SignUp Failed: ", signUpError)
+        }
+    }
+
     const handleWaitlistSubmit = (e) => {
+        waitlistSubmit()
         e.preventDefault(e)
     }
+
     return (
         <div id={Style.waitlist_mainDiv}>
             <div id={Style.waitlist_Div}>
@@ -65,14 +104,14 @@ const Waitlist = () => {
                         />
 
                         <div id={Style.phoneDiv}>
-                        <InputField
-                            label={"Phone Number"}
-                            placeholder={"Enter Phone Number"}
-                            type={"tel"}
-                            name={"phoneNumber"}
-                            value={waitlist.phoneNumber}
-                            OnChange={waitlistDetails}
-                        />
+                            <InputField
+                                label={"Phone Number"}
+                                placeholder={"Enter Phone Number"}
+                                type={"tel"}
+                                name={"phoneNumber"}
+                                value={waitlist.phoneNumber}
+                                OnChange={waitlistDetails}
+                            />
 
                         </div>
                         <div className={Style.inputDiv}>
@@ -80,24 +119,24 @@ const Waitlist = () => {
                                 label={"Create Password"}
                                 placeholder={"Create Password"}
                                 type={"text"}
-                                name={"createPassword"}
+                                name={"password"}
                                 value={waitlist.creatPassword}
                                 OnChange={waitlistDetails}
                             />
 
-                            <InputField
+                            {/* <InputField
                                 label={"Confirm Password"}
                                 placeholder={"Confirm Password"}
                                 type={"text"}
                                 name={"confirmPassword"}
                                 value={waitlist.confirmPassword}
                                 OnChange={waitlistDetails}
-                            />
+                            /> */}
                         </div>
 
                         <div id={Style.btnDiv}>
                             <Button
-                            text='Join Waitlist'
+                                text='Join Waitlist'
                                 type='submit'
                                 onSubmit={handleWaitlistSubmit}
                             />

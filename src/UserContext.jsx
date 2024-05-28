@@ -6,7 +6,9 @@ export const userContextHook =()=> useContext(myContext)
 
 const UserContext = ({children}) => {
   const [userDetails, setUserDetails] = useState({
-    Username: '',
+    firstName: '',
+    lastName: '',
+    email: '',
     phoneNumber: '',
   })
 

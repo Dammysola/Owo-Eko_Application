@@ -41,7 +41,6 @@ const SignUp = () => {
 
       console.log(response.status)
 
-
       if (response.status == 200) {
 
         console.log('signup successful', response.data);
@@ -97,11 +96,23 @@ const SignUp = () => {
             <InputField
               label={"Create Password"}
               placeholder={"Create Password"}
-              type={"text"}
+              type={"password"}
               name={"password"}
               value={signUp.password}
               OnChange={Details}
             />
+
+             {/* <InputField
+              label={"Confirm Password"}
+              placeholder={"Confirm Password"}
+              type={"text"}
+              name={"confirmPassword"}
+              value={signUp.confirmPassword}
+              OnChange={Details}
+            /> */}
+
+
+
           </div>
           <div id={Style.SignUp_btnDiv}>
             <Button
