@@ -1,9 +1,10 @@
+#MainPage_Div{
+    height: 100vh;
+}
 #MainPage_firstDiv{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin-top: -80px;
 }
 #MainPage_coinDiv{
     width: 407px;
@@ -31,6 +32,27 @@
     background-color: transparent;
     border: none;
     margin-top: 80px;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;   
+}
+#MainPageText{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+#MainPageText button{
+    width: 218px;
+    height: 82px;
+    border-radius: 16px;
+    border: none;
+    column-gap: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+#MainPageText div{
+
 }
