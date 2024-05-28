@@ -24,8 +24,10 @@ const Profile = () => {
     const testingLink =() => {
         // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
         
+let url = 'https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9'
+        let win = window.open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', null, "popup" , 'noopener, noreferrer');
 
-        let win = window.open("https://www.google.com", null, "popup");
+        // win.document.write(`<iframe src="https://www.google.com" sandbox="allow-top-navigation" width="100%" height="100%"></iframe>`)
 
         win.onload = (ev) => {
             setTimeout(() => {
