@@ -28,7 +28,7 @@ const MainPage = () => {
       </div>
       <div id={Style.MainPageText}>
           <button><img src={singleCoin} alt="" />John Doe</button>
-          <div>Eko la wa</div>
+          <div> <img src={} alt="" />Eko la wa</div>
         </div>
     </div>
   )

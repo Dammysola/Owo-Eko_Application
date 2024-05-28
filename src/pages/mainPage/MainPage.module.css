@@ -54,5 +54,10 @@
     font-weight: bold;
 }
 #MainPageText div{
+    width: 218px;
+    height: 82px;
+    border-radius: 16px;
+    border: none;
+    background-color: #FFFFFF;
 
 }
