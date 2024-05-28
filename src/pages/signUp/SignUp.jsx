@@ -9,7 +9,6 @@ import axios from 'axios'
 const SignUp = () => {
   const navigate = useNavigate()
 
-  const { updateDetails } = userContextHook()
   const [signUp, setSignUp] = useState({
     email: '',
     phoneNumber: '',
