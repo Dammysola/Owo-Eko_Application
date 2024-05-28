@@ -33,7 +33,7 @@ const SignUp = () => {
     )
   }
   const FormSubmit = async () => {
-    
+
     try {
       updateLoadingPopup(true);
       const response = await axios.post("https://owo-eko-api.onrender.com/user/send-otp",
@@ -89,62 +89,54 @@ const SignUp = () => {
     console.log(signUp.email, signUp.phoneNumber, signUp.password);
   }
   return (
-    <div id={Style.SignUpDiv}>
-      <div id={Style.SignUp_mainDiv}>
-        <div id={Style.SignUp_text}>Sign Up</div>
-        <form onSubmit={handleSubmit}>
+    <div id={Style.SignDiv}>
+      <div id={Style.SignUpDiv}>
+        <div id={Style.SignUp_mainDiv}>
+          <div id={Style.SignUp_text}>Sign Up</div>
+          <form onSubmit={handleSubmit}>
 
-          <div>
-            <InputField
-              label={"Email Address"}
-              placeholder={"Enter Email Address"}
-              type={"email"}
-              name={"email"}
-              value={signUp.email}
-              OnChange={Details}
-            />
-          </div>
-          <div id={Style.phoneDiv}>
-            <InputField
-              label={"Phone Number"}
-              placeholder={"Enter Phone Number"}
-              type={"tel"}
-              name={"phoneNumber"}
-              value={signUp.phoneNumber}
-              OnChange={Details}
-            />
-          </div>
+            <div>
+              <InputField
+                label={"Email Address"}
+                placeholder={"Enter Email Address"}
+                type={"email"}
+                name={"email"}
+                value={signUp.email}
+                OnChange={Details}
+              />
+            </div>
+            <div id={Style.phoneDiv}>
+              <InputField
+                label={"Phone Number"}
+                placeholder={"Enter Phone Number"}
+                type={"tel"}
+                name={"phoneNumber"}
+                value={signUp.phoneNumber}
+                OnChange={Details}
+              />
+            </div>
 
-          <div id={Style.SignUp_passwordInput_Div}>
-            <InputField
-              label={"Create Password"}
-              placeholder={"Create Password"}
-              type={"password"}
-              name={"password"}
-              value={signUp.password}
-              OnChange={Details}
-            />
+            <div id={Style.SignUp_passwordInput_Div}>
+              <InputField
+                label={"Create Password"}
+                placeholder={"Create Password"}
+                type={"password"}
+                name={"password"}
+                value={signUp.password}
+                OnChange={Details}
+              />
 
-            {/* <InputField
-              label={"Confirm Password"}
-              placeholder={"Confirm Password"}
-              type={"text"}
-              name={"confirmPassword"}
-              value={signUp.confirmPassword}
-              OnChange={Details}
-            /> */}
-
-
-
-          </div>
-          <div id={Style.SignUp_btnDiv}>
-            <Button
-              type={"submit"}
-              text={"Sign Up"}
-              onChange={handleSubmit} />
-          </div>
-        </form>
+            </div>
+            <div id={Style.SignUp_btnDiv}>
+              <Button
+                type={"submit"}
+                text={"Sign Up"}
+                onChange={handleSubmit} />
+            </div>
+          </form>
+        </div>
       </div>
+        <p id={Style.SignUp_login}>Already have an account <Link to={'/login'}>Log In</Link></p>
     </div>
   )
 }
