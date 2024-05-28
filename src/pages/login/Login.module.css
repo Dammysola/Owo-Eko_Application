@@ -51,4 +51,7 @@
         font-size: 40px;
         height: 5px;
     }
+    #Login_Div{
+        margin-top: -200px;
+    }
 }

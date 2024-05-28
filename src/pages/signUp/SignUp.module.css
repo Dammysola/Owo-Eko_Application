@@ -1,6 +1,7 @@
-#SignUpDiv{
-    margin-top:-90px ;
+#SignDiv{
     min-height: 100vh;
+}
+#SignUpDiv{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,9 +21,6 @@
     column-gap: 10px; */
     margin-top: 24px;
 }
-/* #SignUp_passwordInput_Div input{
-    width: 295px;
-} */
 #SignUp_text{
     text-align: center;
     font-weight: bold;
@@ -38,13 +36,19 @@
 #usernameDiv{
     margin-top:40px ;
 }
+#SignUp_login{
+    text-align: center;
+}
+#SignUp_login span{
+    color: #D07119;
+}
+
 @media screen and (max-width: 500px){
-    #SignUpDiv{
-        margin-top:- 0px;
+    #SignDiv{
+        margin-top: 50px;
     }
     #SignUp_text{
         font-size: 27px;
-        /* padding-top: 10px; */
     }
     #SignUp_mainDiv{
         width: 90%;
@@ -56,10 +60,13 @@
         margin-top: 15px
     }
     #SignUp_btnDiv{
-        margin-top: 20px;
+        margin-top: 30px;
     }
 }
 @media screen and (max-width: 320px){
+    #SignDiv{
+        padding-top: -50px;
+    }
     #SignUp_text{
         margin-top: 65px;
         font-size: 24px;
