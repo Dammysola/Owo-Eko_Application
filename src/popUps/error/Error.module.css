@@ -28,6 +28,10 @@
     text-align: center;
     row-gap: 16px;
 }
+#wrapper iframe{
+    width: 200px;
+    height: 200px;
+}
 
 #wrapper img{
     width: 40px;

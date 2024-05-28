@@ -22,8 +22,16 @@ const Profile = () => {
     }
 
     const testingLink =() => {
-        window.open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
+        // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
+        
 
+        let win = window.open("https://www.google.com", null, "popup");
+
+        win.onload = (ev) => {
+            setTimeout(() => {
+                win.close();
+            }, 2500)
+        };
     }
 
     return (

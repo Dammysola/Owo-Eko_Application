@@ -8,12 +8,13 @@ import MainPage from './pages/mainPage/MainPage'
 import Login from './pages/login/Login'
 import Waitlist from './pages/waitlist/Waitlist'
 import Profile from './pages/profile/Profile'
+import PopupContext from './PopupContext'
 
 
 const router = createBrowserRouter([
     {
         path:"/",
-        element: <MainLayout/>,
+        element: <PopupContext><MainLayout/></PopupContext>,
         children:[
             {
                 index: true,
