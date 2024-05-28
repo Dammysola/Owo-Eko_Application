@@ -40,7 +40,7 @@ const SignUp = () => {
       )
 
 
-      if (response.status == 201) {
+      if (response.status == 200) {
 
         console.log('signup successful', response.data);
         // updateDetails(...signUp)
@@ -95,7 +95,7 @@ const SignUp = () => {
             <InputField
               label={"Create Password"}
               placeholder={"Create Password"}
-              type={"text"}
+              type={"password"}
               name={"password"}
               value={signUp.password}
               OnChange={Details}

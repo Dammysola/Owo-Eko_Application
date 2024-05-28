@@ -3,10 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -112px;
 }
 #Login_Div{
     width: 600px;
-    margin-top: -112px;
 }
 #Login_Div form{
     width: 100%;
@@ -26,4 +26,29 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
+}
+
+@media screen and (max-width: 320px){
+    #Login_MainDiv{
+        margin-top: -40px;
+    }
+    #inputDiv{
+        margin: 5px 0px;
+    }
+    #Login_MainDiv #btnDiv{
+        margin-top: 40px;
+    }
+    #Login_MainDiv p{
+        font-size: 24px;
+        height: 10px;
+    }
+    #Login_MainDiv #btnDiv{
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 500px){
+    #Login_MainDiv p{
+        font-size: 40px;
+        height: 5px;
+    }
 }

@@ -39,25 +39,32 @@
     margin-top:40px ;
 }
 @media screen and (max-width: 500px){
+    #SignUpDiv{
+        margin-top:- 0px;
+    }
     #SignUp_text{
-        font-size: 24px;
-        /* height: 16px; */
-        padding-top: 60px;
+        font-size: 27px;
+        /* padding-top: 10px; */
     }
     #SignUp_mainDiv{
         width: 90%;
     }
     #phoneDiv{
-        margin-top: 10px;
-    }
-    #SignUp_passwordInput_Div{
-        margin-top: 10px
-    }
-    #SignUp_btnDiv{
         margin-top: 15px;
     }
-    #SignUp_passwordInput_Div input{
-        
+    #SignUp_passwordInput_Div{
+        margin-top: 15px
     }
-   
+    #SignUp_btnDiv{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 320px){
+    #SignUp_text{
+        margin-top: 65px;
+        font-size: 24px;
+    }
+    #SignUp_mainDiv input{
+        height: 35px;
+    }
 }

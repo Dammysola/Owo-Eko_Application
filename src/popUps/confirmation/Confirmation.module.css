@@ -23,14 +23,11 @@
     box-sizing: border-box;
     margin-top: -110px;
 }
-
 #Confirmation_Wrapper b {
     font-weight: bold;
     font-size: 50px;
     color: white;
 }
-
-
 #Confirmation_Wrapper table {
     border-spacing: 180px 33px;
     margin-top: 40px;
@@ -45,11 +42,9 @@
     font-weight: bold;
     font-size: 20px;
 }
-
 #Confirmation_Wrapper button {
     width: 350px;
 }
-
 #Confirmation_Wrapper #button {
     height: 46px;
     color: #FFFFFF;
@@ -68,7 +63,18 @@
 
 @media screen and (max-width: 500px){
     #Confirmation_Wrapper{
-        width: 366px;
-        height: 501px;
+        width: 330px;
+        height: 450px;
+    }
+    #Confirmation_Wrapper table {
+        border-spacing: 100px 20px;
+        margin-top: 5px;
+        width: 100%;
+    }
+    #Confirmation_Wrapper button {
+        width: 270px;
+    }
+    #Confirmation_Wrapper b {
+        font-size: 40px;
     }
 }
