@@ -7,8 +7,7 @@ function App() {
   
   return (
     <>
-      {/* <RouterProvider router={router}/> */}
-      <Confirmation/>
+      <RouterProvider router={router}/>
     </>
   )
 }

@@ -1,9 +1,13 @@
 #Withdrawal_Success_mainDiv {
-    height: 100vh;
     width: 100%;
+    height: 100%;
+    max-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    z-index: 99;
 }
 
 #Withdrawal_Success_Wrapper {
@@ -16,8 +20,8 @@
     justify-content: center;
     row-gap: 48px;
     border-radius: 36px;
-    backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(60px);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
     padding: 0px 30px;
     box-sizing: border-box;
     margin-top: -110px;

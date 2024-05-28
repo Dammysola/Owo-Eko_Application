@@ -7,7 +7,7 @@ import UserContext from '../UserContext'
 import Withdrawal from '../popUps/withdrawal/Withdrawal'
 import Withdrawal_Success from '../popUps/withdraw_Success/Withdrawal_Success'
 import Tap_Exceeded from '../popUps/tapExceeded/Tap_Exceeded'
-import Profile from '../popUps/profile/Profile'
+import Error from '../popUps/error/Error'
 
 
 const MainLayout = () => {

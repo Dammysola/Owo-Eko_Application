@@ -7,6 +7,7 @@ import Verify from './pages/verification/Verify'
 import MainPage from './pages/mainPage/MainPage'
 import Login from './pages/login/Login'
 import Waitlist from './pages/waitlist/Waitlist'
+import Profile from './pages/profile/Profile'
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: "/verify/:userData",
                 element: <Verify/>
+            },
+            {
+                path: "/profile",
+                element: <Profile/>
             },
             {
                 path: "*",
