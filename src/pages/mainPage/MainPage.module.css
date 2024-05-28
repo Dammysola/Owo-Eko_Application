@@ -67,5 +67,31 @@
     color: black;
     font-size: 24px;
     font-weight: bold
+}
 
+
+@media screen and (max-width: 700px){
+    #MainPage_firstDiv{
+       margin-top: 20px; 
+    }
+    #MainPage_coinDiv{
+        width: 300px;
+        height: 90px;
+    }
+    #MainPageText{
+        height: 160px;
+        column-gap: 30px;
+    }
+    #MainPageText button{
+        width: 170px;
+        height: 48px;
+        border-radius: 16px;
+        font-size: 18px;
+        column-gap: 5px;
+    }
+    #MainPageText div{
+        width: 160px;
+        height: 48px;
+        font-size: 18px;
+    }
 }

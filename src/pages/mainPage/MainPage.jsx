@@ -26,18 +26,6 @@ const MainPage = () => {
       // console.error('Failed to trigger backend endpoint:', error);
     }
 
-
-    
-    
-
-    
-
-    // try {
-    //   const response = await axios.post
-    // } catch (error) {
-      
-    // }
-
   }
   return (
     <div id={Style.MainPage_Div}>
