@@ -8,32 +8,39 @@ import { popupContextHook } from '../../PopupContext';
 
 const Profile = () => {
     let [tabIndex, setTabIndex] = useState(0);
+    let [count, setCount] = useState(0);
 
-    
-//   const { updateDetails } = popupContextHook();
-    
+
+    //   const { updateDetails } = popupContextHook();
+
 
     const tabClick = (index) => {
-        
-        console.log("previous",tabIndex);
+
+        console.log("previous", tabIndex);
         setTabIndex(index)
         console.log(tabIndex);
 
     }
 
-    const testingLink =() => {
+    const testingLink = () => {
         // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
-        
-let url = 'https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9'
-        let win = window.open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', null, "popup" , 'noopener, noreferrer');
 
-        // win.document.write(`<iframe src="https://www.google.com" sandbox="allow-top-navigation" width="100%" height="100%"></iframe>`)
+        let url = 'https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9'
+        let win = window.open(`${url}`, "_blank", "popup, width=10,height=10").then((ev) => {
+            onload= (ev)=>{
+                console.log("message")
+            }
+        });
 
-        win.onload = (ev) => {
-            setTimeout(() => {
-                win.close();
-            }, 2500)
-        };
+        // win.document.write(`<iframe src=${url} sandbox="allow-top-navigation" width="100%" height="100%"></iframe>`)
+
+        // win.onload = (ev) => {
+        //     console.log("message")
+        //     setCount(count++)
+        //     setTimeout(() => {
+        //         win.close();
+        //     }, 2500)
+        // };
     }
 
     return (
@@ -46,18 +53,19 @@ let url = 'https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8
                     </div>
                     <div id={Style.balance}>
                         <div id={Style.available}>
-                        <img src={dummyCoin} alt="" />Available Coin</div>
-                        <p>15000</p>
+                            <img src={dummyCoin} alt="" />Available Coin</div>
+
+                        <p>{count}:15000</p>
                     </div>
                     <button onClick={testingLink} id={Style.withdraw_btn}>Withdrawal</button>
                 </div>
                 <div id={Style.tab_cont}>
 
-                    <button onClick={()=>tabClick(0)} style={{backgroundColor: tabIndex == 0 ? "#2A2A2A" : "transparent"}} class={Style.tab_btn}>Total Coins</button>
-                    <button onClick={()=>tabClick(1)} style={{backgroundColor: tabIndex == 1 ? "#2A2A2A" : "transparent"}}  class={Style.tab_btn}>Withdrawal History</button>
+                    <button onClick={() => tabClick(0)} style={{ backgroundColor: tabIndex == 0 ? "#2A2A2A" : "transparent" }} class={Style.tab_btn}>Total Coins</button>
+                    <button onClick={() => tabClick(1)} style={{ backgroundColor: tabIndex == 1 ? "#2A2A2A" : "transparent" }} class={Style.tab_btn}>Withdrawal History</button>
                 </div>
                 <div id={Style.tab_content}>
-                    {tabIndex == 0  ? <TotalCoins/> : <WithdrawalHistory/>}
+                    {tabIndex == 0 ? <TotalCoins /> : <WithdrawalHistory />}
                 </div>
 
             </div>
