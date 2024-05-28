@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import InputField from '../../components/input_Form/InputField'
 import Style from './Verify.module.css'
 import Button from '../../components/button/Button'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const Verify = () => {
   
+  let navigate = useNavigate()
   let { userData } = useParams()
   const [userCode, setUserCode] = useState('')
   const [verifyError, setVerifyError] = useState('')
@@ -35,7 +36,9 @@ const Verify = () => {
         }
       )
 
-      if (response.status == 201) {
+      console.log(response.status)
+
+      if (response.status == 200) {
         console.log('Verification successful', response.data);
 
         navigate('/mainpage')

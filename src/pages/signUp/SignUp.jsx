@@ -39,6 +39,7 @@ const SignUp = () => {
         },
       )
 
+      console.log(response.status)
 
       if (response.status == 200) {
 
@@ -109,6 +110,7 @@ const SignUp = () => {
               value={signUp.confirmPassword}
               OnChange={Details}
             /> */}
+
 
 
           </div>
