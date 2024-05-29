@@ -65,8 +65,6 @@ const MainPage = () => {
       console.log('Request successful:', response.data);
 
     } catch (error) {
-      // let userError = error.response.data.message
-      // console.error('Failed to trigger backend endpoint:', error);
     }
 
   }
@@ -79,54 +77,22 @@ const MainPage = () => {
     }
     setCount(count+1)
     setToggleImg(!toggleImg)
-    // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
+ 
     console.log("Link No",links[indexs].text)
     let url = links[indexs].link
     let win = window.open(`${url}`, "_blank", "popup, width=10,height=10")
-    // let win = window.location.href = `${url}`;
-    
-    // window.close();
 
-    // win.onload(()=>{
-    //   console.log("message");
-    // })
 
     win.addEventListener('load', function() {
       console.log('All assets are loaded')
   })
-
-    // win.addEventListener('loadstart', ()=>{
-    //   console.log("message")
-    //   setCount(count + 1)
-    // });
-
-    // win.document.write(`<iframe src=${url} sandbox="allow-top-navigation" width="100%" height="100%"></iframe>`)
-
-    // win.onload = (ev) => {
-    //   console.log(setCount(count + 1))
-    //   console.log("message")
-    //   // 
-    //   // setTimeout(() => {
-    //   //     win.close();
-    //   // }, 2500)
-    // };
   }
 
 
-  function openAndCloseLink() {
-    // const googleWindow = window.open("https://www.google.com", '_blank');
+  // function openAndCloseLink() {
+  //   window.open("https://www.google.com", '_blank');
+  // }
 
-    // googleWindow.onload = () => {
-    //   console.log("message")
-    // }
-    // setTimeout(function () {
-    //   googleWindow.close();
-    // }, 3000); // 3 seconds in milliseconds
-    window.open("https://www.google.com", '_blank');
-    // newTab.opener = null;
-
-    // window.location = "profile"
-  }
   return (
     <div id={Style.MainPage_Div}>
       <div id={Style.MainPage_firstDiv}>
