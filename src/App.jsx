@@ -1,5 +1,6 @@
 import { RouterProvider } from "react-router-dom"
 import router from "./router"
+import No_Mobile from "./popUps/noMobile/No_Mobile"
 
 
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <RouterProvider router={router}/>
       {/* <Error/> */}
+      {/* <No_Mobile/> */}
     </>
   )
 }

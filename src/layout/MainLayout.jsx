@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Style from '../layout/MainLayout.module.css'
 import NavBar from '../components/navBar/Navbar'
@@ -11,12 +11,35 @@ import Error from '../popUps/error/Error'
 import Confirmation from '../popUps/confirmation/Confirmation'
 import Loading from '../popUps/loading/Loading'
 import PopupContext, { popupContextHook } from '../PopupContext'
+import No_Mobile from '../popUps/noMobile/No_Mobile'
+
 
 
 const MainLayout = () => {
 
   const { loadingPopup, errorPopup } = popupContextHook();
+  const [isMobile, setIsMobile] = useState(false);
+  const [error, setError] = useState('');
 
+  useEffect(() => {
+    const checkUserAgent = () => {
+      if (navigator.userAgent.match (/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)) {
+        setIsMobile(true)
+      }else{
+        setIsMobile(false)
+      }
+    }
+    checkUserAgent()
+    // handleResize()
+    // window.addEventListener('resize', handleResize)
+    // return () => window.removeEventListener('resize', handleResize)
+})
   return (
     <>
         <UserContext>
@@ -24,7 +47,7 @@ const MainLayout = () => {
             <NavBar />
             {loadingPopup && <Loading />}
             {errorPopup && <Error />}
-            <div><Outlet /></div>
+            {isMobile? <No_Mobile/> : <div><Outlet /></div>}
           </div>
         </UserContext>
     </>
