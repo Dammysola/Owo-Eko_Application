@@ -6,6 +6,7 @@ import { userContextHook } from '../../UserContext'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
+import SignUp from '../signUp/SignUp'
 
 
 const Login = () => {
@@ -38,7 +39,10 @@ const Login = () => {
         try {
 
             updateLoadingPopup(true);
-            const response = await axios.post("https://owo-eko-api.onrender.com/user/login", logIn)
+            const response = await axios.post("https://owo-eko-api.onrender.com/user/login", {
+                "email": logIn.phoneNumber,
+                "password": logIn.password
+              })
 
 
             console.log(response.status)
@@ -49,7 +53,7 @@ const Login = () => {
                 console.log('login successful', response.data);
                 // updateDetails(...signUp)
 
-                let sendData = JSON.stringify(signUp);
+                let sendData = JSON.stringify(logIn);
                 navigate(`/mainpage`)
             } else {
                 updateErrorText(response.data)
@@ -80,7 +84,7 @@ const Login = () => {
             //     }
             // }
 
-        } catch (error) {
+        } catch (err) {
             updateLoadingPopup(false);
             let userError = err.response.data.message
 
@@ -96,6 +100,7 @@ const Login = () => {
     }
 
     const handleLoginSubmit = (e) => {
+        LoginSubmit()
         e.preventDefault(e)
     }
     return (
