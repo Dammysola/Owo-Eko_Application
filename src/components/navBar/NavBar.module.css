@@ -10,7 +10,7 @@
 #mobileNav{
 display: none;
 }
-#nav_btn{
+/* #nav_btn{
     width: 198px;
     height: 46px;
     background-color: #D07119;
@@ -18,7 +18,7 @@ display: none;
     border-radius: 5px;
     color: #FFFFFF;
     font-size: medium;
-}
+} */
 
 @media screen and (max-width: 500px){
     #mainDiv{

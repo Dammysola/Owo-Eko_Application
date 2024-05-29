@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import Style from '../mainPage/MainPage.module.css'
 import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
-import singleCoin from '../../assets/svg/singleCoin.png'
+import eyoImg from '../../assets/svg/eyo_image.svg'
 import avatar from '../../assets/svg/avatar.svg'
 import busLight from '../../assets/svg/busLight.svg'
+import danfo from '../../assets/svg/danfoDark.svg'
 import axios from 'axios'
 
 
@@ -97,6 +98,9 @@ const MainPage = () => {
     <div id={Style.MainPage_Div}>
       <div id={Style.MainPage_firstDiv}>
         <div id={Style.MainPageDiv}>
+          <div id={Style.milestoneDiv}>
+            <div><img src={danfo} alt="" /></div>
+          </div>
           <div id={Style.MainPage_coinDiv}>
             <img src={dummyCoin} alt="" />
             <p>{count}</p>
@@ -114,7 +118,7 @@ const MainPage = () => {
       </div>
       <div id={Style.MainPageText}>
         <button><img src={avatar} alt="" />John Doe</button>
-        <div> <img src={singleCoin} alt="" />Eko la wa</div>
+        <div> <img src='' alt="" />Eko la wa</div>
       </div>
     </div>
   )

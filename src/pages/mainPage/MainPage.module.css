@@ -1,11 +1,11 @@
 #MainPage_Div{
     height: 100vh;
 }
-#MainPage_firstDiv{
+/* #MainPage_firstDiv{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 #MainPage_coinDiv{
     width: 407px;
     height: 117px;
@@ -29,7 +29,7 @@
     justify-content: center;
 }
 #Mainpage_button{
-    background-color: transparent;
+     background-color: transparent;
     border: none;
     margin-top: 80px;
     box-sizing: border-box;   
@@ -74,7 +74,7 @@
 }
 
 
-@media screen and (max-width: 700px){
+/* @media screen and (max-width: 700px){
     #MainPage_firstDiv{
        margin-top: 20px; 
     }
@@ -98,4 +98,4 @@
         height: 48px;
         font-size: 18px;
     }
-}
+} */
