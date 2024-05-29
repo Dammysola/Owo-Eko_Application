@@ -98,9 +98,9 @@ const MainPage = () => {
     <div id={Style.MainPage_Div}>
       <div id={Style.MainPage_firstDiv}>
         <div id={Style.MainPageDiv}>
-          <div id={Style.milestoneDiv}>
+          {/* <div id={Style.milestoneDiv}>
             <div><img src={danfo} alt="" /></div>
-          </div>
+          </div> */}
           <div id={Style.MainPage_coinDiv}>
             <img src={dummyCoin} alt="" />
             <p>{count}</p>

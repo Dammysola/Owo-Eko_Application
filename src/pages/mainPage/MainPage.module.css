@@ -1,11 +1,20 @@
 #MainPage_Div{
     height: 100vh;
 }
-/* #MainPage_firstDiv{
+#MainPage_firstDiv{
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+}
+#milestoneDiv{
+    width: 502px;
+    height: 24px;
+    background-color: #DADADA;
+}
+#milestoneDiv img{
+    width:20.24px;
+    height: 17px;
+}
 #MainPage_coinDiv{
     width: 407px;
     height: 117px;
