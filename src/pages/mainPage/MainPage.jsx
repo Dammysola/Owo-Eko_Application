@@ -86,10 +86,18 @@ const MainPage = () => {
     
     // window.close();
 
-    win.addEventListener('loadstart', ()=>{
-      console.log("message")
-      setCount(count + 1)
-    });
+    // win.onload(()=>{
+    //   console.log("message");
+    // })
+
+    win.addEventListener('load', function() {
+      console.log('All assets are loaded')
+  })
+
+    // win.addEventListener('loadstart', ()=>{
+    //   console.log("message")
+    //   setCount(count + 1)
+    // });
 
     // win.document.write(`<iframe src=${url} sandbox="allow-top-navigation" width="100%" height="100%"></iframe>`)
 
