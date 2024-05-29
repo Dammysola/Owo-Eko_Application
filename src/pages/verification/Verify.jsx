@@ -4,6 +4,7 @@ import Style from './Verify.module.css'
 import Button from '../../components/button/Button'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
+import { popupContextHook } from '../../PopupContext'
 
 const Verify = () => {
   
@@ -11,6 +12,7 @@ const Verify = () => {
   let { userData } = useParams()
   const [userCode, setUserCode] = useState('')
   const [verifyError, setVerifyError] = useState('')
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
   let data = JSON.parse(userData)
 
