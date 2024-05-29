@@ -4,10 +4,13 @@ import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
 import singleCoin from '../../assets/svg/singleCoin.png'
 import avatar from '../../assets/svg/avatar.svg'
+import busLight from '../../assets/svg/busLight.svg'
 import axios from 'axios'
 
 
 const MainPage = () => {
+  const [toggleImg, setToggleImg] = useState(false)
+
   let [count, setCount] = useState(0)
   let [index, setIndex] = useState(0)
 
@@ -56,10 +59,7 @@ const MainPage = () => {
   const increaseCount = async () => {
     // const newCount = count + 1;
     // setCount(newCount)
-
-    try {
-      setCount(prevCount => prevCount + 1);
-
+    try{
       const response = await axios.post()
 
       console.log('Request successful:', response.data);
@@ -77,6 +77,7 @@ const MainPage = () => {
     else{
       setIndex(0)
     }
+    setToggleImg(!toggleImg)
     // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
     console.log("Link No",links[indexs].text)
     let url = links[indexs].link
@@ -126,7 +127,13 @@ const MainPage = () => {
             <p>{count}</p>
           </div>
           <div id={Style.btnDiv}>
-            <button id={Style.Mainpage_button} onClick={()=>testingLink(index)}><img src={bus} alt="" /></button>
+            <button id={Style.Mainpage_button} onClick={testingLink}>
+              {toggleImg ? (
+                <img src={busLight} alt="" />
+              ) : (
+                <img src={bus} alt="" />
+              )}
+            </button>
           </div>
         </div>
       </div>

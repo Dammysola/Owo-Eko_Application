@@ -1,14 +1,13 @@
 import React from 'react'
 import Style from "../navBar/NavBar.module.css"
-import EyoImage from '../../assets/svg/eyo_image.svg'
+import EyoImage from '../../assets/svg/logo.svg'
 
 const NavBar = () => {
     return (
         <>
             <div id={Style.mainDiv}>
-                <div id={Style.Nav_imgDiv}>
+                <div>
                     <img src={EyoImage} alt="" />
-                    <p>OWO EKO</p>
                 </div>
                 <div>
                     <button id={Style.nav_btn}>Play Now</button>
@@ -16,7 +15,6 @@ const NavBar = () => {
             </div>
             <div id={Style.mobileNav}>
                 <img src={EyoImage} alt="" />
-                <p>OWO EKO</p>
             </div>
         </>
     )

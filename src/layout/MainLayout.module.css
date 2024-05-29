@@ -12,3 +12,9 @@
     position: relative;
     overflow: hidden;
 }
+@media screen and (max-width: 500px) {
+    #wrapper{
+        background: url(../assets/svg/mobileBG.svg) no-repeat center;
+    }
+}
+
