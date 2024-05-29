@@ -93,7 +93,7 @@ const Login = () => {
                         <div id={Style.btnDiv}>
                             <Button
                                 type={"submit"}
-                                text={"Sign Up"}
+                                text={"log In"}
                                 onChange={handleLoginSubmit} />
                         </div>
 

@@ -14,8 +14,8 @@ const No_Mobile = () => {
             <div id={Style.Tap_Exceeded_mainDiv}>
                 <div id={Style.TapExceeded_wrapper}>
                     <div id={Style.Tap_Exceeded_name_textWrapper}>
-                        <div>Sorry, Owo Eko is only available on desktop for now
-                            Fingers crossed for our mobile launch! </div>
+                        <div>Sorry, Owo Eko is only available on desktop for now</div>
+                        <div>Fingers crossed for our mobile launch!</div>
                     </div>
                     <div>
                         <img src={logo} alt="" />
