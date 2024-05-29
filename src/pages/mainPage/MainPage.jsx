@@ -77,6 +77,7 @@ const MainPage = () => {
     else{
       setIndex(0)
     }
+    setCount(count+1)
     setToggleImg(!toggleImg)
     // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
     console.log("Link No",links[indexs].text)

@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin-top: -114px;
 }
 #Login_Div{
     width: 600px;
@@ -26,6 +28,14 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
+}
+
+#Login_signUp{
+    font-size: 12px;
+    text-align: center;
+}
+#Login_signUp span{
+    color: #D07119;
 }
 
 @media screen and (max-width: 320px){

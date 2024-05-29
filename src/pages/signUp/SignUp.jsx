@@ -75,9 +75,8 @@ const SignUp = () => {
       updateErrorPopup(true)
       setTimeout(() => {
         updateErrorPopup(false)
-      }, 1000)
+      }, 2000)
 
-      updateErrorPopup(true)
       setSignUpError(userError)
       console.log("SignUp Failed: ", signUpError)
     }
@@ -136,7 +135,7 @@ const SignUp = () => {
           </form>
         </div>
       </div>
-        <p id={Style.SignUp_login}>Already have an account <Link to={'/login'}>Log In</Link></p>
+      <p id={Style.SignUp_login}>Already have an account <Link to={'/login'}>Log In</Link></p>
     </div>
   )
 }
