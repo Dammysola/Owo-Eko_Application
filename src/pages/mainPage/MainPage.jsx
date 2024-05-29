@@ -81,10 +81,10 @@ const MainPage = () => {
     // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
     console.log("Link No",links[indexs].text)
     let url = links[indexs].link
-    // let win = window.open(`${url}`, "_blank", "popup, width=10,height=10")
-    let win = window.location.href = `${url}`;
+    let win = window.open(`${url}`, "_blank", "popup, width=10,height=10")
+    // let win = window.location.href = `${url}`;
     
-    window.close();
+    // window.close();
 
     win.addEventListener('loadstart', ()=>{
       console.log("message")
@@ -127,7 +127,7 @@ const MainPage = () => {
             <p>{count}</p>
           </div>
           <div id={Style.btnDiv}>
-            <button id={Style.Mainpage_button} onClick={testingLink}>
+            <button id={Style.Mainpage_button} onClick={()=>testingLink(index)}>
               {toggleImg ? (
                 <img src={busLight} alt="" />
               ) : (
