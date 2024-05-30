@@ -36,7 +36,7 @@ const Login = () => {
     }
 
     const LoginSubmit = async () => {
-        
+        console.log("cc")
         try {
 
             updateLoadingPopup(true);
@@ -46,31 +46,39 @@ const Login = () => {
               })
 
 
-            console.log(response.status)
+            console.log("Login Status",response.status)
+            console.log("Login Data", response.data)
 
-            if (response.status == 200) {
-                const response2 = await axios.get(`https://owo-eko-api.onrender.com/user/details/${phoneNumber}`)
+            updateLoadingPopup(false);
+                if (response.status == 200) {
 
+                    console.log('login successful', response.data);
 
-                console.log("getUserDeatils", response2.status)
-
-                updateLoadingPopup(false);
-                if (response2.status == 200) {
-
-                    console.log('login successful', response2.data);
-
-                    sessionStorage.setItem("phone_number", phoneNumber)
+                    // sessionStorage.setItem("phone_number", phoneNumber)
                     navigate(`/mainpage`)
-                } else {
-                    updateErrorText(response2.data)
+            // if (response.status == 200) {
+            //     const response2 = await axios.get(`https://owo-eko-api.onrender.com/user/details/${phoneNumber}`)
 
-                    updateErrorPopup(true)
-                    setTimeout(() => {
-                        updateErrorPopup(false)
-                    }, 2000)
 
-                    console.log('login failed', response2.data);
-                }
+            //     console.log("getUserDeatils", response2.status)
+
+            //     updateLoadingPopup(false);
+            //     if (response2.status == 200) {
+
+            //         console.log('login successful', response2.data);
+
+            //         sessionStorage.setItem("phone_number", phoneNumber)
+            //         navigate(`/mainpage`)
+            //     } else {
+            //         updateErrorText(response2.data)
+
+            //         updateErrorPopup(true)
+            //         setTimeout(() => {
+            //             updateErrorPopup(false)
+            //         }, 2000)
+
+            //         console.log('login failed', response2.data);
+            //     }
             } else {
 
                 updateLoadingPopup(false);
