@@ -57,10 +57,23 @@
         box-sizing: border-box;
         width: 90%;
     }
+    #Verification_textDiv {
+        width: 355px;
+    }
     #Verification_textDiv #Verification_header{
-        width: 366px;
+        width: 350px;
         font-size: 22px;
-
-
+    }
+}
+@media screen and (max-width: 500px){
+    #Verification_textDiv{
+        row-gap: 10px;
+    }
+    #Verification_textDiv #Verification_header{
+        width: 350px;
+        font-size: 21px;
+    }
+    #Verification_formDiv{
+        width: 300px;
     }
 }

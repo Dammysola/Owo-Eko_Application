@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react'
 import Style from '../mainPage/MainPage.module.css'
 import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
-import singleCoin from '../../assets/svg/singleCoin.png'
+import eyoImg from '../../assets/svg/eyo_image.svg'
+import singleCoin from '../../assets/svg/singleCoin.svg'
 import avatar from '../../assets/svg/avatar.svg'
 import busLight from '../../assets/svg/busLight.svg'
+import danfo from '../../assets/svg/danfoDark.svg'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
 
 
 const MainPage = () => {
   const [toggleImg, setToggleImg] = useState(false)
+
 
   let [count, setCount] = useState(0)
   let [index, setIndex] = useState(0)
@@ -75,6 +78,8 @@ const MainPage = () => {
 
       updateLoadingPopup(false);
       if (response.status == 200) {
+        
+      updateLoadingPopup(false);
 
         console.log('Details successful', response.data);
 
@@ -91,6 +96,7 @@ const MainPage = () => {
         console.log('login failed');
       }
     } catch (error) {
+      
       updateLoadingPopup(false);
       let userError = err.response.data.message
 
@@ -158,6 +164,7 @@ const MainPage = () => {
   // function openAndCloseLink() {
   //   window.open("https://www.google.com", '_blank');
   // }
+
   useEffect(() => {
     
     updateLoadingPopup(true);
@@ -170,22 +177,39 @@ const MainPage = () => {
     <div id={Style.MainPage_Div}>
       <div id={Style.MainPage_firstDiv}>
         <div id={Style.MainPageDiv}>
-          <div id={Style.MainPage_coinDiv}>
-            <img src={dummyCoin} alt="" />
-            <p>{count}</p>
-          </div>
+          <div id={Style.MainPage_screenTextDiv}>
 
-          <div id={Style.progress}>
-            <div id={Style.progress_done} style={{ width: progressWidth }}></div>
-          </div>
+            <div id={Style.MainPage_coinDiv}>
+              <div>Your BINI COIN Balance</div>
+              <div id={Style.MainPage_dummyCoinText_Div}>
+                <img src={dummyCoin} alt="" />
+              <p>{count}</p>
+              </div>
+            </div>
+
+            <div id={Style.milestoneDiv}>
+              <div id={Style.Progressfill}><img src={danfo} alt="" /></div>
+            </div>
+
+            <div id={Style.MainPage_text}>Tap tap tap, can't slow down, Rhythm flows, in this town. Energy high, fingers pop, Tap tap tap, feel the shine.</div>
+            <div id={Style.MainPage_TapsLeft}>250 taps left</div></div>
+
+            <div id={Style.progress}>
+              <div id={Style.progress_done} style={{width: progressWidth}}></div>
+            </div>
+
           <div id={Style.btnDiv}>
-            <a href='#' id={Style.Mainpage_button} onClick={() => testingLink(index)}>
+            <button id={Style.Mainpage_button} onClick={() => testingLink(index)}>
               {toggleImg ? (
                 <img src={busLight} alt="" />
               ) : (
                 <img src={bus} alt="" />
               )}
-            </a>
+            </button>
+          </div>
+          <div id={Style.MainPage_claimDiv}>
+            <div><img src={singleCoin} alt="" />150</div>
+            <button>Claim</button>
           </div>
         </div>
       </div>

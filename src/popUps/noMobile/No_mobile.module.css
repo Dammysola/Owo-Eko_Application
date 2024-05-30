@@ -9,7 +9,7 @@
     margin-top: -80px;
 }
 #TapExceeded_wrapper {
-    width: 350px;
+    width: 340px;
     height: 295px;
     border-radius: 36px;
     padding: 32px 69px;
@@ -41,6 +41,6 @@
     color: #FFFFFF;
 }
 #Tap_Exceeded_mainDiv img{
-    margin-top: -15px;
+    margin-top: -35px;
     box-sizing: border-box;
 }

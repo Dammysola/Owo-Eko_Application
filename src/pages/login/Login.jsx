@@ -6,6 +6,7 @@ import { userContextHook } from '../../UserContext'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
+import SignUp from '../signUp/SignUp'
 
 
 const Login = () => {
@@ -18,7 +19,7 @@ const Login = () => {
 
 
     const [logIn, setLogIn] = useState({
-        phoneNumber: '',
+        email: '',
         password: ''
     })
 
@@ -36,11 +37,13 @@ const Login = () => {
 
     const LoginSubmit = async () => {
         
-    e.preventDefault()
         try {
 
             updateLoadingPopup(true);
-            const response = await axios.post("https://owo-eko-api.onrender.com/user/login", logIn)
+            const response = await axios.post("https://owo-eko-api.onrender.com/user/login", {
+                "email": logIn.email,
+                "password": logIn.password
+              })
 
 
             console.log(response.status)
@@ -80,26 +83,8 @@ const Login = () => {
 
                 console.log('login failed', response.data);
             }
-            // if (response.status == 200) {
-            //     const getUserResponse = await axios.get(``)
 
-
-            //     if (getUserResponse == 200) {
-            //         let userData = getUserRes.data
-            //         console.log('Gotten successful:', userData);
-
-            //         updateDetails((prev) => ({
-            //             ...prev,
-            //             fullName: userData.fullName,
-            //             email: userData.email
-            //         }))
-
-            //         updateSetLogged(true)
-            //         navigate('/home');
-            //     }
-            // }
-
-        } catch (error) {
+        } catch (err) {
             updateLoadingPopup(false);
             let userError = err.response.data.message
 
@@ -115,8 +100,8 @@ const Login = () => {
     }
 
     const handleLoginSubmit = (e) => {
-        e.preventDefault();
         LoginSubmit()
+        e.preventDefault(e)
     }
 
     return (
@@ -128,10 +113,10 @@ const Login = () => {
                         <div id={Style.inputDiv}>
                             <InputField
                                 label={"Phone Number"}
-                                placeholder={"Enter Phone Number"}
-                                type={"tel"}
-                                name={"phoneNumber"}
-                                value={logIn.phoneNumber}
+                                placeholder={"Enter Email Address"}
+                                type={"email"}
+                                name={"email"}
+                                value={logIn.email}
                                 OnChange={loginDetails}
                             />
                         </div>
