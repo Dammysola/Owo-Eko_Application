@@ -1,40 +1,47 @@
-#MainPage_Div{
+#MainPage_Div {
     height: 100vh;
 }
-#MainPage_firstDiv{
+
+#MainPage_firstDiv {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#MainPage_coinDiv{
+
+#MainPage_coinDiv {
     width: 407px;
     height: 117px;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap:24px;
-    color:#DADADA ;
+    column-gap: 24px;
+    color: #DADADA;
 }
-#MainPage_coinDiv img{
+
+#MainPage_coinDiv img {
     width: 100px;
     height: 89px;
 }
-#MainPage_coinDiv p{
+
+#MainPage_coinDiv p {
     font-weight: bold;
     font-size: 50px;
 }
-#btnDiv{
+
+#btnDiv {
     display: flex;
     justify-content: center;
 }
-#Mainpage_button{
+
+#Mainpage_button {
     background-color: transparent;
     border: none;
     margin-top: 80px;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
-#MainPageText{
+
+#MainPageText {
     height: 250px;
     /* width: 80%; */
     display: flex;
@@ -42,7 +49,8 @@
     column-gap: 750px;
     align-items: center;
 }
-#MainPageText button{
+
+#MainPageText button {
     width: 218px;
     height: 82px;
     border-radius: 16px;
@@ -55,7 +63,8 @@
     font-size: 24px;
     font-weight: bold;
 }
-#MainPageText div{
+
+#MainPageText div {
     width: 218px;
     height: 82px;
     border-radius: 16px;
@@ -68,34 +77,59 @@
     font-size: 24px;
     font-weight: bold
 }
-#Mainpage_button img{
+
+#Mainpage_button img {
     width: 240px;
     height: 240px;
 }
 
 
-@media screen and (max-width: 700px){
-    #MainPage_firstDiv{
-       margin-top: 20px; 
+@media screen and (max-width: 700px) {
+    #MainPage_firstDiv {
+        margin-top: 20px;
     }
-    #MainPage_coinDiv{
+
+    #MainPage_coinDiv {
         width: 300px;
         height: 90px;
     }
-    #MainPageText{
+
+    #MainPageText {
         height: 160px;
         column-gap: 30px;
     }
-    #MainPageText button{
+
+    #MainPageText button {
         width: 170px;
         height: 48px;
         border-radius: 16px;
         font-size: 18px;
         column-gap: 5px;
     }
-    #MainPageText div{
+
+    #MainPageText div {
         width: 160px;
         height: 48px;
         font-size: 18px;
     }
+}
+
+#progress {
+    background-color: grey;
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+
+}
+
+#progress_done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D07119;
+    border-radius: 20px;
+    color: #fff;
+    height: 100%;
+    width: 0;
+    transition: 1s ease 0.3s;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Style from '../mainPage/MainPage.module.css'
 import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
@@ -6,6 +6,7 @@ import singleCoin from '../../assets/svg/singleCoin.png'
 import avatar from '../../assets/svg/avatar.svg'
 import busLight from '../../assets/svg/busLight.svg'
 import axios from 'axios'
+import { popupContextHook } from '../../PopupContext'
 
 
 const MainPage = () => {
@@ -13,6 +14,10 @@ const MainPage = () => {
 
   let [count, setCount] = useState(0)
   let [index, setIndex] = useState(0)
+  const [progressWidth, setProgressWidth] = useState("");
+  
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
+
 
   const links = [{
     text: "1",
@@ -56,10 +61,53 @@ const MainPage = () => {
 
   ]
 
+  const getUserDetails = async () => {
+
+
+    let phone_number = sessionStorage.getItem("phone_number")
+
+    try {
+
+      const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${phone_number}`)
+
+
+      console.log("getUserDeatils", response.status)
+
+      updateLoadingPopup(false);
+      if (response.status == 200) {
+
+        console.log('Details successful', response.data);
+
+        // sessionStorage.setItem("phone_number", phoneNumber)
+        // navigate(`/mainpage`)
+      } else {
+        updateErrorText(response.data)
+
+        updateErrorPopup(true)
+        setTimeout(() => {
+          updateErrorPopup(false)
+        }, 2000)
+
+        console.log('login failed');
+      }
+    } catch (error) {
+      updateLoadingPopup(false);
+      let userError = err.response.data.message
+
+      updateErrorText(userError)
+
+      updateErrorPopup(true)
+      setTimeout(() => {
+        updateErrorPopup(false)
+      }, 2000)
+    }
+
+  }
+
   const increaseCount = async () => {
     // const newCount = count + 1;
     // setCount(newCount)
-    try{
+    try {
       const response = await axios.post()
 
       console.log('Request successful:', response.data);
@@ -69,29 +117,54 @@ const MainPage = () => {
 
   }
   const testingLink = (indexs) => {
-    if (indexs < 11) {
-      setIndex(indexs + 1)
-    }
-    else{
-      setIndex(0)
-    }
-    setCount(count+1)
-    setToggleImg(!toggleImg)
- 
-    console.log("Link No",links[indexs].text)
-    let url = links[indexs].link
-    let win = window.open(`${url}`, "_blank", "popup, width=10,height=10")
 
+    // e.preventDefault();
+    let connection = window.navigator.onLine;
+    if (connection) {
+      if (indexs < 11) {
+        setIndex(indexs + 1)
+      }
+      else {
+        setIndex(0)
+      }
+      setCount(count + 1)
+      setToggleImg(!toggleImg)
+      setProgressWidth(`${(count / 100) * 100}%`)
 
-    win.addEventListener('load', function() {
-      console.log('All assets are loaded')
-  })
+      console.log("Link No", links[indexs].text)
+      // let url = links[indexs].link
+      // let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
+
+      // win.addEventListener('load', function () {
+      //   console.log('All assets are loaded')
+      // })
+
+      // const request = new XMLHttpRequest();
+      // const url = links[indexs].link;
+      // request.open("GET", url);
+      // request.send();
+    } else {
+
+      updateErrorText("No Internet Connection")
+
+      updateErrorPopup(true)
+      setTimeout(() => {
+        updateErrorPopup(false)
+      }, 2000);
+    }
   }
 
 
   // function openAndCloseLink() {
   //   window.open("https://www.google.com", '_blank');
   // }
+  useEffect(() => {
+    
+    updateLoadingPopup(true);
+    setTimeout(() => {
+      getUserDetails()
+    }, 5000)
+  });
 
   return (
     <div id={Style.MainPage_Div}>
@@ -101,14 +174,18 @@ const MainPage = () => {
             <img src={dummyCoin} alt="" />
             <p>{count}</p>
           </div>
+
+          <div id={Style.progress}>
+            <div id={Style.progress_done} style={{ width: progressWidth }}></div>
+          </div>
           <div id={Style.btnDiv}>
-            <button id={Style.Mainpage_button} onClick={()=>testingLink(index)}>
+            <a href='#' id={Style.Mainpage_button} onClick={() => testingLink(index)}>
               {toggleImg ? (
                 <img src={busLight} alt="" />
               ) : (
                 <img src={bus} alt="" />
               )}
-            </button>
+            </a>
           </div>
         </div>
       </div>
