@@ -92,7 +92,7 @@ const Login = () => {
                     <div>
                         <div id={Style.inputDiv}>
                             <InputField
-                                label={"Phone Number"}
+                                label={"Email Address"}
                                 placeholder={"Enter Email Address"}
                                 type={"email"}
                                 name={"email"}
