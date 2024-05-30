@@ -12,12 +12,13 @@ import Confirmation from '../popUps/confirmation/Confirmation'
 import Loading from '../popUps/loading/Loading'
 import PopupContext, { popupContextHook } from '../PopupContext'
 import No_Mobile from '../popUps/noMobile/No_Mobile'
+import Claim from '../popUps/claim/Claim'
 
 
 
 const MainLayout = () => {
 
-  const { loadingPopup, errorPopup } = popupContextHook();
+  const { loadingPopup, errorPopup, claimPopup} = popupContextHook();
   const [isMobile, setIsMobile] = useState(false);
 //   const [error, setError] = useState('');
 
@@ -47,6 +48,7 @@ const MainLayout = () => {
             <NavBar />
             {loadingPopup && <Loading />}
             {errorPopup && <Error />}
+            {claimPopup && <Claim/>}
             {isMobile? <No_Mobile/> : <div><Outlet /></div>}
           </div>
         </UserContext>
