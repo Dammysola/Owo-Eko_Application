@@ -141,14 +141,30 @@ const MainPage = () => {
       let url = links[indexs].link
       let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
 
-      // win.addEventListener('load', function () {
-      //   console.log('All assets are loaded')
-      // })
+      win.addEventListener('load', function () {
+        console.log('All assets are loaded')
+      })
 
       // const request = new XMLHttpRequest();
       // const url = links[indexs].link;
       // request.open("GET", url);
       // request.send();
+
+    //   // Creating Our XMLHttpRequest object 
+    // let xhr = new XMLHttpRequest();
+
+    // // Making our connection  
+    // let url = links[indexs].link;
+    // xhr.open("GET", url, true);
+
+    //// function execute after request is successful 
+    // xhr.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //         console.log(this.responseText);
+    //     }
+    // }
+    //// Sending our request 
+    // xhr.send();
     } else {
 
       updateErrorText("No Internet Connection")
