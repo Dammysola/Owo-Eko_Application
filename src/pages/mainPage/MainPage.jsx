@@ -18,8 +18,8 @@ const MainPage = () => {
   let [count, setCount] = useState(0)
   let [index, setIndex] = useState(0)
   const [progressWidth, setProgressWidth] = useState("");
-
-  const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
+  
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup } = popupContextHook()
 
 
   const links = [
@@ -110,6 +110,12 @@ const MainPage = () => {
       link: "https://shasogna.com/4/7549779",
     },
   ]
+// useEffect(()=>{
+     
+//   if (count == 10) {
+//     updateClaimPopup(true)
+//   }
+// },[count])
 
   const getUserDetails = async () => {
 
@@ -184,10 +190,16 @@ const MainPage = () => {
       else {
         setIndex(0)
       }
-      setCount(count + 1)
-      setToggleImg(!toggleImg)
-      setProgressWidth(`${(count / 100) * 100}%`)
 
+     setCount(count + 1)
+   
+      // if (count === 10) {
+      //   updateClaimPopup(true)
+      // }
+      setToggleImg(!toggleImg)
+
+      setProgressWidth(`${(count / 100) * 100}%`)
+  
       console.log("Link No", links[index].text)
       let url = links[index].link
       // let win = window.open(`${url}`, "_blank");
@@ -197,26 +209,6 @@ const MainPage = () => {
         console.log('All assets are loaded')
       })
 
-      // const request = new XMLHttpRequest();
-      // const url = links[indexs].link;
-      // request.open("GET", url);
-      // request.send();
-
-      //// Creating Our XMLHttpRequest object 
-      // let xhr = new XMLHttpRequest();
-
-      // // Making our connection  
-      // let url = links[indexs].link;
-      // xhr.open("GET", url, true);
-
-      //// function execute after request is successful 
-      // xhr.onreadystatechange = function () {
-      //     if (this.readyState == 4 && this.status == 200) {
-      //         console.log(this.responseText);
-      //     }
-      // }
-      //// Sending our request 
-      // xhr.send();
     } else {
 
       updateErrorText("No Internet Connection")
@@ -275,10 +267,6 @@ const MainPage = () => {
               )}
             </button>
           </div>
-          {/* <div id={Style.MainPage_claimDiv}>
-            <div><img src={singleCoin} alt="" />150</div>
-            <button>Claim</button>
-          </div> */}
         </div>
       </div>
       <div id={Style.MainPageText}>
