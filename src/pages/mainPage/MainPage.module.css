@@ -1,4 +1,4 @@
-#MainPage_Div{
+#MainPage_Div {
     height: 100vh;
     flex-direction: column;
     display: flex;
@@ -6,7 +6,8 @@
     align-items: center;
     margin-top: -10px;
 }
-#MainPage_firstDiv{
+
+#MainPage_firstDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +74,8 @@
    justify-content: center;
     align-items: center;
 }
-#btnDiv{
+
+#btnDiv {
     display: flex;
     justify-content: center;
 }
@@ -113,7 +115,8 @@
     column-gap: 750px;
     align-items: center;
 }
-#MainPageText button{
+
+#MainPageText button {
     width: 218px;
     height: 60px;
     border-radius: 16px;
@@ -127,7 +130,8 @@
     font-weight: bold;
     color: #FFFFFF;
 }
-#MainPageText div{
+
+#MainPageText div {
     width: 218px;
     height: 60px;
     display: flex;
@@ -150,24 +154,48 @@
     #MainPage_firstDiv{
        margin-top: 20px; 
     }
-    #MainPage_coinDiv{
+
+    #MainPage_coinDiv {
         width: 300px;
         height: 90px;
     }
-    #MainPageText{
+
+    #MainPageText {
         height: 160px;
         column-gap: 30px;
     }
-    #MainPageText button{
+
+    #MainPageText button {
         width: 170px;
         height: 48px;
         border-radius: 16px;
         font-size: 18px;
         column-gap: 5px;
     }
-    #MainPageText div{
+
+    #MainPageText div {
         width: 160px;
         height: 48px;
         font-size: 18px;
     }
 } */
+
+#progress {
+    background-color: grey;
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+
+}
+
+#progress_done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D07119;
+    border-radius: 20px;
+    color: #fff;
+    height: 100%;
+    width: 0;
+    transition: 1s ease 0.3s;
+}

@@ -36,6 +36,7 @@ const Login = () => {
     }
 
     const LoginSubmit = async () => {
+        console.log("cc")
         try {
 
             updateLoadingPopup(true);
@@ -45,22 +46,48 @@ const Login = () => {
               })
 
 
-            console.log(response.status)
+            console.log("Login Status",response.status)
+            console.log("Login Data", response.data)
 
             updateLoadingPopup(false);
-            if (response.status == 200) {
+                if (response.status == 200) {
 
-                console.log('login successful', response.data);
+                    console.log('login successful', response.data);
 
-                let sendData = JSON.stringify(logIn);
-                navigate(`/mainpage`)
+                    // sessionStorage.setItem("phone_number", phoneNumber)
+                    navigate(`/mainpage`)
+            // if (response.status == 200) {
+            //     const response2 = await axios.get(`https://owo-eko-api.onrender.com/user/details/${phoneNumber}`)
+
+
+            //     console.log("getUserDeatils", response2.status)
+
+            //     updateLoadingPopup(false);
+            //     if (response2.status == 200) {
+
+            //         console.log('login successful', response2.data);
+
+            //         sessionStorage.setItem("phone_number", phoneNumber)
+            //         navigate(`/mainpage`)
+            //     } else {
+            //         updateErrorText(response2.data)
+
+            //         updateErrorPopup(true)
+            //         setTimeout(() => {
+            //             updateErrorPopup(false)
+            //         }, 2000)
+
+            //         console.log('login failed', response2.data);
+            //     }
             } else {
+
+                updateLoadingPopup(false);
                 updateErrorText(response.data)
 
                 updateErrorPopup(true)
                 setTimeout(() => {
                     updateErrorPopup(false)
-                }, 1000)
+                }, 2000)
 
                 console.log('login failed', response.data);
             }
@@ -84,6 +111,7 @@ const Login = () => {
         LoginSubmit()
         e.preventDefault(e)
     }
+
     return (
         <div id={Style.Login_MainDiv}>
             <div id={Style.Login_Div}>
@@ -112,7 +140,8 @@ const Login = () => {
                             <Button
                                 type={"submit"}
                                 text={"log In"}
-                                onChange={handleLoginSubmit} />
+                                onChange={handleLoginSubmit}
+                            />
                         </div>
 
                     </div>
