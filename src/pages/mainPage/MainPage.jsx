@@ -165,13 +165,13 @@ const MainPage = () => {
   //   window.open("https://www.google.com", '_blank');
   // }
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    updateLoadingPopup(true);
-    setTimeout(() => {
-      getUserDetails()
-    }, 5000)
-  });
+  //   updateLoadingPopup(true);
+  //   setTimeout(() => {
+  //     getUserDetails()
+  //   }, 5000)
+  // });
 
   return (
     <div id={Style.MainPage_Div}>
