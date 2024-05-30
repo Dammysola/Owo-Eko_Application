@@ -47,22 +47,22 @@
 
 @media screen and (max-width: 500px){
     #SignDiv{
-        margin-top: 50px;
+        margin-top:-70px;
     }
     #SignUp_text{
         font-size: 27px;
     }
     #SignUp_mainDiv{
-        width: 90%;
+        width: 100%;
     }
     #phoneDiv{
-        margin-top: 15px;
+        margin-top: 10px;
     }
     #SignUp_passwordInput_Div{
-        margin-top: 15px
+        margin-top: 10px
     }
     #SignUp_btnDiv{
-        margin-top: 30px;
+        margin-top: 25px;
     }
 }
 @media screen and (max-width: 320px){

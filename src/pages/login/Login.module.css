@@ -47,7 +47,7 @@
     #Login_MainDiv #btnDiv{
         margin-top: 40px;
     }
-    #Login_MainDiv p{
+    #Login_Div p{
         font-size: 24px;
         height: 10px;
     }
@@ -56,11 +56,17 @@
     }
 }
 @media screen and (max-width: 500px){
-    #Login_MainDiv p{
+    #Login_Div{
+        width: 100%;
+    }
+    #Login_Div p{
         font-size: 40px;
         height: 5px;
     }
     #Login_Div{
-        margin-top: -200px;
+        margin-top: -30px;
+    }
+    #Login_signUp{
+        margin-top: -10px;
     }
 }

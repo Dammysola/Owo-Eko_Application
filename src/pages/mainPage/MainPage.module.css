@@ -1,37 +1,71 @@
 #MainPage_Div{
     height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #MainPage_firstDiv{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+#MainPage_screenTextDiv{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 30px;
+}
+#MainPage_screenTextDiv #MainPage_text{
+    text-align: center;
+    width: 489px;
+}
 #milestoneDiv{
     width: 502px;
     height: 24px;
     background-color: #DADADA;
-}
-#milestoneDiv img{
-    width:20.24px;
-    height: 17px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 #MainPage_coinDiv{
-    width: 407px;
-    height: 117px;
+    width: 400px;
+    height: 110px;
     background-color: black;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* column-gap:24px; */
+    color:#DADADA ;
+}
+#MainPage_coinDiv #MainPage_dummyCoinText_Div{
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap:24px;
-    color:#DADADA ;
+    column-gap: 10px;
 }
 #MainPage_coinDiv img{
-    width: 100px;
-    height: 89px;
+    width: 60px;
+    height: 56px;
 }
 #MainPage_coinDiv p{
     font-weight: bold;
-    font-size: 50px;
+    font-size: 24px;
+}
+#MainPage_TapsLeft{
+    width: 407px;
+    height: 44px;
+    border-radius: 16px;
+    background-color: black;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: flex;
+   justify-content: center;
+    align-items: center;
 }
 #btnDiv{
     display: flex;
@@ -40,12 +74,34 @@
 #Mainpage_button{
      background-color: transparent;
     border: none;
-    margin-top: 80px;
+    margin-top: 20px;
     box-sizing: border-box;   
 }
+#MainPage_claimDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    column-gap: 200px;
+}
+#MainPage_claimDiv div{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+#MainPage_claimDiv button{
+    width: 100px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 16px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
 #MainPageText{
-    height: 250px;
-    /* width: 80%; */
+    height: 200px;
     display: flex;
     justify-content: center;
     column-gap: 750px;
@@ -57,30 +113,34 @@
     border-radius: 16px;
     border: none;
     column-gap: 16px;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .2);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+    color: #FFFFFF;
 }
 #MainPageText div{
     width: 218px;
     height: 82px;
-    border-radius: 16px;
+    /* border-radius: 16px;
     border: none;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .6); */
     display: flex;
     justify-content: center;
+    column-gap: 10px;
     align-items: center;
     color: black;
     font-size: 24px;
-    font-weight: bold
+    font-weight: bold;
+    color: #FFFFFF;
 }
 #Mainpage_button img{
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
 }
+
 
 
 /* @media screen and (max-width: 700px){

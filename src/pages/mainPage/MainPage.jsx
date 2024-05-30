@@ -3,6 +3,7 @@ import Style from '../mainPage/MainPage.module.css'
 import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
 import eyoImg from '../../assets/svg/eyo_image.svg'
+import singleCoin from '../../assets/svg/singleCoin.svg'
 import avatar from '../../assets/svg/avatar.svg'
 import busLight from '../../assets/svg/busLight.svg'
 import danfo from '../../assets/svg/danfoDark.svg'
@@ -11,6 +12,7 @@ import axios from 'axios'
 
 const MainPage = () => {
   const [toggleImg, setToggleImg] = useState(false)
+
 
   let [count, setCount] = useState(0)
   let [index, setIndex] = useState(0)
@@ -60,7 +62,7 @@ const MainPage = () => {
   const increaseCount = async () => {
     // const newCount = count + 1;
     // setCount(newCount)
-    try{
+    try {
       const response = await axios.post()
 
       console.log('Request successful:', response.data);
@@ -73,20 +75,20 @@ const MainPage = () => {
     if (indexs < 11) {
       setIndex(indexs + 1)
     }
-    else{
+    else {
       setIndex(0)
     }
-    setCount(count+1)
+    setCount(count + 1)
     setToggleImg(!toggleImg)
- 
-    console.log("Link No",links[indexs].text)
+
+    console.log("Link No", links[indexs].text)
     let url = links[indexs].link
     let win = window.open(`${url}`, "_blank", "popup, width=10,height=10")
 
 
-    win.addEventListener('load', function() {
+    win.addEventListener('load', function () {
       console.log('All assets are loaded')
-  })
+    })
   }
 
 
@@ -98,15 +100,25 @@ const MainPage = () => {
     <div id={Style.MainPage_Div}>
       <div id={Style.MainPage_firstDiv}>
         <div id={Style.MainPageDiv}>
-          {/* <div id={Style.milestoneDiv}>
-            <div><img src={danfo} alt="" /></div>
-          </div> */}
-          <div id={Style.MainPage_coinDiv}>
-            <img src={dummyCoin} alt="" />
-            <p>{count}</p>
-          </div>
+          <div id={Style.MainPage_screenTextDiv}>
+
+            <div id={Style.MainPage_coinDiv}>
+              <div>Your BINI COIN Balance</div>
+              <div id={Style.MainPage_dummyCoinText_Div}>
+                <img src={dummyCoin} alt="" />
+              <p>{count}</p>
+              </div>
+            </div>
+
+            <div id={Style.milestoneDiv}>
+              <div id={Style.Progressfill}><img src={danfo} alt="" /></div>
+            </div>
+
+            <div id={Style.MainPage_text}>Tap tap tap, can't slow down, Rhythm flows, in this town. Energy high, fingers pop, Tap tap tap, feel the shine.</div>
+            <div id={Style.MainPage_TapsLeft}>250 taps left</div></div>
+
           <div id={Style.btnDiv}>
-            <button id={Style.Mainpage_button} onClick={()=>testingLink(index)}>
+            <button id={Style.Mainpage_button} onClick={() => testingLink(index)}>
               {toggleImg ? (
                 <img src={busLight} alt="" />
               ) : (
@@ -114,11 +126,15 @@ const MainPage = () => {
               )}
             </button>
           </div>
+          <div id={Style.MainPage_claimDiv}>
+            <div><img src={singleCoin} alt="" />150</div>
+            <button>Claim</button>
+          </div>
         </div>
       </div>
       <div id={Style.MainPageText}>
         <button><img src={avatar} alt="" />John Doe</button>
-        <div> <img src='' alt="" />Eko la wa</div>
+        <div> <img src={singleCoin} alt="" />Eko la wa</div>
       </div>
     </div>
   )
