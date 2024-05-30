@@ -180,10 +180,10 @@ const MainPage = () => {
           <div id={Style.MainPage_screenTextDiv}>
 
             <div id={Style.MainPage_coinDiv}>
-              <div>Your BINI COIN Balance</div>
+              <div id={Style.MainPage_biniCoin}>Your BINI COIN Balance</div>
               <div id={Style.MainPage_dummyCoinText_Div}>
                 <img src={dummyCoin} alt="" />
-              <p>{count}</p>
+                <div>{count}</div>
               </div>
             </div>
 
