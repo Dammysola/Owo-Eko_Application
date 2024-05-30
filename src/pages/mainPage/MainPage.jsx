@@ -138,8 +138,8 @@ const MainPage = () => {
       setProgressWidth(`${(count / 100) * 100}%`)
 
       console.log("Link No", links[indexs].text)
-      // let url = links[indexs].link
-      // let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
+      let url = links[indexs].link
+      let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
 
       // win.addEventListener('load', function () {
       //   console.log('All assets are loaded')
