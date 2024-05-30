@@ -254,7 +254,7 @@ const MainPage = () => {
             </div>
 
             <div id={Style.milestoneDiv}>
-              <div id={Style.Progressfill}><img src={danfo} alt="" /></div>
+              <div id={Style.Progressfill}  style={{width: progressWidth}}><img src={danfo} alt="" /></div>
             </div>
 
             <div id={Style.MainPage_text}>Tap tap tap, can't slow down, Rhythm flows, in this town. Energy high, fingers pop, Tap tap tap, feel the shine.</div>
@@ -273,10 +273,10 @@ const MainPage = () => {
               )}
             </button>
           </div>
-          <div id={Style.MainPage_claimDiv}>
+          {/* <div id={Style.MainPage_claimDiv}>
             <div><img src={singleCoin} alt="" />150</div>
             <button>Claim</button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div id={Style.MainPageText}>
