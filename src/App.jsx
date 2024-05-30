@@ -9,10 +9,10 @@ function App() {
   
   return (
     <>
-      {/* <RouterProvider router={router}/> */}
+      <RouterProvider router={router}/>
       {/* <Error/> */}
       {/* <No_Mobile/> */}
-      <Claim/>
+      {/* <Claim/> */}
     </>
   )
 }
