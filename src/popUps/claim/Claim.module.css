@@ -31,7 +31,7 @@
     display: inline-flex;
     justify-content: center;
     row-gap: 32px;
-    z-index: 99;
+    z-index: 60;
 }
 #Claim_TextWrapper{
     width: 80%;

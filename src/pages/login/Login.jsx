@@ -66,7 +66,7 @@ const Login = () => {
                 if (response2.status == 200) {
 
                     let details = response2.data["details"]
-                    console.log('login successful', details["balance"]);
+                    console.log('login successful', details["username"]);
 
                     updateDetails((prev) => ({
                         ...prev,
@@ -77,7 +77,16 @@ const Login = () => {
                         status: details["status"],
                         username: details["username"]
                     }))
-                    sessionStorage.setItem("user_details", JSON.stringify(userDetails))
+                    console.log("userDeteials", userDetails)
+                    localStorage.setItem("user_details", JSON.stringify({
+                        ...userDetails,
+                        balance: details["balance"],
+                        email: details["email"],
+                        id: details["id"],
+                        phone: details["phone"],
+                        status: details["status"],
+                        username: details["username"]
+                    }))
 
 
                     navigate(`/mainpage`)

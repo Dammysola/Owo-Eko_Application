@@ -21,7 +21,7 @@ const MainPage = () => {
   const [toggleImg, setToggleImg] = useState(false)
   const [progressImg, setProgressImg] = useState(true)
   const [progressWidth, setProgressWidth] = useState("");
-  const [userDetails, setUserDetails] = useState({});
+  let [userDetails, setUserDetails] = useState({});
 
 
   const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup } = popupContextHook()
@@ -248,10 +248,10 @@ const MainPage = () => {
 
   const getUserDetails = async () => {
 
-    let phone_number = sessionStorage.getItem("phone_number")
-
     try {
-      const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${phone_number}`)
+      
+      let details = JSON.parse(localStorage.getItem("user_details"));
+      const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${details.email}`)
 
       console.log("getUserDeatils", response.status)
 
@@ -323,7 +323,7 @@ const MainPage = () => {
 
       if (count === 0) {
         setCount(50)
-        //   updateClaimPopup(true)
+          updateClaimPopup(true)
         //   // setProgressImg(!progressImg)
       }
 
@@ -332,11 +332,11 @@ const MainPage = () => {
       console.log("Link No", links[index].text)
       let url = links[index].link
       // let win = window.open(`${url}`, "_blank");
-      let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
+      // let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
 
-      win.addEventListener('load', function () {
-        console.log('All assets are loaded')
-      })
+      // win.addEventListener('load', function () {
+      //   console.log('All assets are loaded')
+      // })
 
     } else {
 
@@ -350,12 +350,11 @@ const MainPage = () => {
   }
 
   useEffect(() => {
-
-    let details = sessionStorage.getItem("user_details");
+    let details = JSON.parse(localStorage.getItem("user_details"));
     
-    console.log(JSON.parse(details))
+    setUserDetails(details)
     
-  });
+  }, []);
 
 
   return (
