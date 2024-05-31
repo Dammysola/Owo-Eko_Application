@@ -23,6 +23,10 @@
 #inputDiv{
     margin: 24px 0px;
 }
+#forgot{
+    margin: 10px  0px;
+    text-align: end;
+}
 #Login_MainDiv #btnDiv{
     display: flex;
     justify-content: center;

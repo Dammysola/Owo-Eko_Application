@@ -4,6 +4,7 @@ import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
 import eyoImg from '../../assets/svg/eyo_image.svg'
 import singleCoin from '../../assets/svg/singleCoin.svg'
+import busConductor from '../../assets/image/bus_conductor.png'
 import avatar from '../../assets/svg/avatar.svg'
 import busLight from '../../assets/svg/busLight.svg'
 import danfo from '../../assets/svg/danfoDark.svg'
@@ -18,7 +19,7 @@ const MainPage = () => {
   let [count, setCount] = useState(0)
   let [index, setIndex] = useState(0)
   const [progressWidth, setProgressWidth] = useState("");
-  
+
   const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup } = popupContextHook()
 
 
@@ -109,13 +110,81 @@ const MainPage = () => {
       text: "21",
       link: "https://shasogna.com/4/7549779",
     },
+
+    //Adsterra Gamer
+    {
+      text: "22",
+      link: "https://www.highcpmgate.com/cfwz4zka?key=15e4796ca3c0cde02221ef4226684e34",
+    },
+    {
+      text: "23",
+      link: "https://www.highcpmgate.com/c9rarvzh5?key=42b162bd11f747a51fa51a964d4d86a6",
+    },
+    {
+      text: "24",
+      link: "https://www.highcpmgate.com/kqff7ke7?key=962c969075f2247812821961589e0400",
+    },
+    {
+      text: "25",
+      link: "https://www.highcpmgate.com/jkqedxz0r?key=99587ee47cb6e97f1ea31bf0bbdd5c91",
+    },
+    {
+      text: "26",
+      link: "https://www.highcpmgate.com/fj5878ge?key=90c95f41a246a762d22e8e1c217b440a",
+    },
+    {
+      text: "27",
+      link: "https://www.highcpmgate.com/me02hvrig?key=f1157b70797165df316f20c8fec84f51",
+    },
+    {
+      text: "28",
+      link: "https://www.highcpmgate.com/p8k4zkptn?key=3fecb3051ebe9c36247c45c029f705e3",
+    },
+    {
+      text: "29",
+      link: "https://www.highcpmgate.com/f3mb4amav?key=decd3e887e3f800960e7d6b62785a398",
+    },
+    {
+      text: "30",
+      link : "https://www.highcpmgate.com/ptppavw2pe?key=81034d6b489066e17d22418c2d705e23"
+    },
+    {
+      text: "31",
+      link : "https://www.highcpmgate.com/t7k2f3m194?key=98c92bd9b4ae932e16bd6f6dfa25d3a7"
+    },
+    {
+      text: "32",
+      link : "https://curvedheldideal.com/x5mu4ubb53?key=909b40894b733aab10f5904b0547c6e5"
+    },
+
+    //Adsterra Barnney
+    {
+      text: "33",
+      link : "https://www.highcpmgate.com/eh07g9563i?key=b730c667ed11095d5e1beb9a8d9d5db3"
+    },
+    {
+      text: "34",
+      link : "https://barelydonkeysteed.com/dgta4wqgz?key=e917ef02f1a460d6d242ec2475b13aee"
+    },
+    {
+      text: "35",
+      link : "https://barelydonkeysteed.com/fvij3tnh7d?key=98b2d1b5f52e437fbfb347e841ab8889"
+    },
+    {
+      text: "36",
+      link : "https://barelydonkeysteed.com/r2g5mi9c?key=cb220c6a3ed2414269768cb278c0655f"
+    },
+    {
+      text: "37",
+      link : "https://barelydonkeysteed.com/up344ha6?key=57c3546b3ad2e285d18cde968f3ba85e"
+    }
   ]
-// useEffect(()=>{
-     
-//   if (count == 10) {
-//     updateClaimPopup(true)
-//   }
-// },[count])
+  // useEffect(()=>{
+
+  //   if (count == 10) {
+  //     updateClaimPopup(true)
+  //   }
+  // },[count])
 
   const getUserDetails = async () => {
 
@@ -184,22 +253,22 @@ const MainPage = () => {
     event.preventDefault();
     let connection = window.navigator.onLine;
     if (connection) {
-      if (index < 11) {
+      if (index < (links.length - 1)) {
         setIndex(index + 1)
       }
       else {
         setIndex(0)
       }
 
-     setCount(count + 1)
-   
+      setCount(count + 1)
+
       // if (count === 10) {
       //   updateClaimPopup(true)
       // }
       setToggleImg(!toggleImg)
 
       setProgressWidth(`${(count / 100) * 100}%`)
-  
+
       console.log("Link No", links[index].text)
       let url = links[index].link
       // let win = window.open(`${url}`, "_blank");
@@ -248,7 +317,7 @@ const MainPage = () => {
             </div>
 
             <div id={Style.milestoneDiv}>
-              <div id={Style.Progressfill}  style={{width: progressWidth}}><img src={danfo} alt="" /></div>
+              <div id={Style.Progressfill} style={{ width: progressWidth }}><img src={danfo} alt="" /></div>
             </div>
 
             <div id={Style.MainPage_text}>Tap tap tap, can't slow down, Rhythm flows, in this town. Energy high, fingers pop, Tap tap tap, feel the shine.</div>
@@ -271,7 +340,7 @@ const MainPage = () => {
       </div>
       <div id={Style.MainPageText}>
         <button><img src={avatar} alt="" />John Doe</button>
-        <div> <img src={singleCoin} alt="" />Eko la wa</div>
+        <div> <img src={busConductor} alt="" />Eko la wa</div>
       </div>
     </div>
   )
