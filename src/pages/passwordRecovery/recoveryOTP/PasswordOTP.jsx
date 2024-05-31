@@ -11,7 +11,7 @@ const passwordOTP = () => {
     let navigate = useNavigate()
     let {userData} = useParams()
 
-    let data = 
+    
 
 
     const [enterOTP, setEnterOTP] = useState('')
