@@ -13,7 +13,7 @@ const Login = () => {
 
     const navigate = useNavigate()
 
-    const { updateDetails, updateSetLogged } = userContextHook()
+    const { userDetails,updateDetails, updateSetLogged } = userContextHook()
 
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
@@ -43,42 +43,54 @@ const Login = () => {
             const response = await axios.post("https://owo-eko-api.onrender.com/user/login", {
                 "email": logIn.email,
                 "password": logIn.password
-              })
+            })
 
-
-            console.log("Login Status",response.status)
+            console.log(logIn.email)
+            console.log("Login Status", response.status)
             console.log("Login Data", response.data)
 
-            updateLoadingPopup(false);
-                if (response.status == 200) {
+            // updateLoadingPopup(false);
+            //     if (response.status == 200) {
 
-                    console.log('login successful', response.data);
+            //         console.log('login successful', response.data);
 
-                    // sessionStorage.setItem("phone_number", phoneNumber)
-                    navigate(`/mainpage`)
-            // if (response.status == 200) {
-            //     const response2 = await axios.get(`https://owo-eko-api.onrender.com/user/details/${email}`)
-
-
-            //     console.log("getUserDeatils", response2.status)
-
-            //     updateLoadingPopup(false);
-            //     if (response2.status == 200) {
-
-            //         console.log('login successful', response2.data);
-
-            //         sessionStorage.setItem("phone_number", phoneNumber)
+            //         // sessionStorage.setItem("phone_number", phoneNumber)
             //         navigate(`/mainpage`)
-            //     } else {
-            //         updateErrorText(response2.data)
+            if (response.status == 200) {
+                const response2 = await axios.get(`https://owo-eko-api.onrender.com/user/details/${logIn.email}`)
 
-            //         updateErrorPopup(true)
-            //         setTimeout(() => {
-            //             updateErrorPopup(false)
-            //         }, 2000)
 
-            //         console.log('login failed', response2.data);
-            //     }
+                console.log("getUserDeatils", response2.status)
+
+                updateLoadingPopup(false);
+                if (response2.status == 200) {
+
+                    let details = response2.data["details"]
+                    console.log('login successful', details["balance"]);
+
+                    updateDetails((prev) => ({
+                        ...prev,
+                        balance: details["balance"],
+                        email: details["email"],
+                        id: details["id"],
+                        phone: details["phone"],
+                        status: details["status"],
+                        username: details["username"]
+                    }))
+                    sessionStorage.setItem("user_details", JSON.stringify(userDetails))
+
+
+                    navigate(`/mainpage`)
+                } else {
+                    updateErrorText(response2.data)
+
+                    updateErrorPopup(true)
+                    setTimeout(() => {
+                        updateErrorPopup(false)
+                    }, 2000)
+
+                    console.log('login failed', response2.data);
+                }
             } else {
 
                 updateLoadingPopup(false);
@@ -137,7 +149,7 @@ const Login = () => {
                             OnChange={loginDetails}
                         />
                         <div id={Style.forgot}><Link to={'/signup'}>Forgot Password ?</Link></div>
-                        
+
                         <div id={Style.btnDiv}>
                             <Button
                                 type={"submit"}

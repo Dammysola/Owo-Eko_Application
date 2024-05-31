@@ -1,30 +1,31 @@
-import { createContext, useContext, useState} from "react"
+import { createContext, useContext, useState } from "react"
 
 export const myContext = createContext()
 
-export const userContextHook =()=> useContext(myContext)
+export const userContextHook = () => useContext(myContext)
 
-const UserContext = ({children}) => {
+const UserContext = ({ children }) => {
   const [userDetails, setUserDetails] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
+    balance: 0,
+    email: "",
+    id: 0,
+    phone: "",
+    status: 0,
+    username: ""
   })
 
   const [logged, setLogged] = useState(false);
 
-  const updateDetails = (data)=>{
+  const updateDetails = (data) => {
     setUserDetails(data)
   }
 
-  const updateSetLogged = (data)=>{
+  const updateSetLogged = (data) => {
     setLogged(data)
   }
 
-  
   return (
-    <myContext.Provider value={{userDetails, updateDetails, logged, updateSetLogged}}>
+    <myContext.Provider value={{ userDetails, updateDetails, logged, updateSetLogged }}>
       {children}
     </myContext.Provider>
   )
