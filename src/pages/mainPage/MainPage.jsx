@@ -309,10 +309,10 @@ const MainPage = () => {
       setToggleImg(!toggleImg)
       setCount(count + 1)
 
-      if (count === 10) {
-        updateClaimPopup(true)
-        // setProgressImg(!progressImg)
-      }
+      // if (count === 10) {
+      //   updateClaimPopup(true)
+      //   // setProgressImg(!progressImg)
+      // }
      
       setProgressWidth(`${(count / 100) * 100}%`)
 
