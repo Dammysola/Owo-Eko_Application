@@ -26,6 +26,7 @@ const MainPage = () => {
 
 
   const links = [
+    //Adsterra
     {
       text: "1",
       link: "https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9",
@@ -74,6 +75,7 @@ const MainPage = () => {
       text: "12",
       link: "https://www.highcpmgate.com/jihvm3ui?key=f808f400599295c77be7e8ffc7c042a9",
     },
+    //Moneytag
     {
       text: "13",
       link: "https://meenetiy.com/4/7549769",
