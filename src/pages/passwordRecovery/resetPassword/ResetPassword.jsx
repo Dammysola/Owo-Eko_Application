@@ -2,13 +2,19 @@ import React, { useState } from 'react'
 import Style from '../resetPassword/ResetPassword.module.css'
 import InputField from '../../../components/input_Form/InputField'
 import Button from '../../../components/button/Button'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const ResetPassword = () => {
+    // const [confirmPassword, setConfirmPasword] = useState('')
+    const navigate = useNavigate()
+
     const [resetPassword, setResetPassword] =useState({
         email: '',
-        password: ''
+        createPassword: '',
+        confirmPassword: ''
     })
 
     const newDetails = (e)=>{
@@ -20,9 +26,31 @@ const ResetPassword = () => {
             [name]: value
         }))
     }
+    const resetpasswordSubmit = async ()=>{
+        try {
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/changepassword', 
+                {
+                    "email":resetPassword.email ,
+                    "createPasswprd": resetPassword.createPassword,
+                    "confrimPassword": resetPassword.confirmPassword
+                }
+             )
+             console.log(response.data);
+
+             if (response.status == 200) {
+                console.log("success", response.data);
+             }
+        } catch (error) {
+            let userError = error.response.data.message
+            navigate('/mainpage')
+            console.log("failed", userError);
+        }
+    } 
+
     const handleSubmit =(e)=>{
+        resetpasswordSubmit()
         e.preventDefault(e)
-        console.log(resetPassword.email, resetPassword.password);
+        console.log(resetPassword.email, resetPassword.confirmPassword, resetPassword.createPassword);
     }
   return (
     <div id={Style.ResetPassword_MainDiv}>
@@ -41,11 +69,19 @@ const ResetPassword = () => {
                             />
                         </div>
                         <InputField
-                            label={"Password"}
-                            placeholder={"Enter Password"}
+                            label={" Create Password"}
+                            placeholder={"New Password"}
                             type={"text"}
-                            name={"password"}
-                            value={resetPassword.password}
+                            name={"createPassword"}
+                            value={resetPassword.createPassword}
+                            OnChange={newDetails}
+                        />
+                         <InputField
+                            label={"Confirm Password"}
+                            placeholder={"Confirm Password"}
+                            type={"text"}
+                            name={"confirmPassword"}
+                            value={resetPassword.confirmPassword}
                             OnChange={newDetails}
                         />
                         <div id={Style.btnDiv}>

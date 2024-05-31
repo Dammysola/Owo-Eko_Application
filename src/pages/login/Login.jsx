@@ -157,7 +157,7 @@ const Login = () => {
                             value={logIn.password}
                             OnChange={loginDetails}
                         />
-                        <div id={Style.forgot}><Link to={'/signup'}>Forgot Password ?</Link></div>
+                        <div id={Style.forgot}><Link to={'/forgotpassword'}>Forgot Password ?</Link></div>
 
                         <div id={Style.btnDiv}>
                             <Button

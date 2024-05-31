@@ -47,7 +47,7 @@ const router = createBrowserRouter([
                 element: <Forgot_Password/>
             },
             {
-                path: "/sendOTP",
+                path: "/sendOTP/:email",
                 element: <PasswordOTP/>
             },
             {
