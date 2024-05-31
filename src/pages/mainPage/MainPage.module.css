@@ -12,7 +12,8 @@
     justify-content: center;
     align-items: center;
 }
-#MainPage_screenTextDiv{
+
+#MainPage_screenTextDiv {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -20,18 +21,21 @@
     justify-content: center;
     row-gap: 20px;
 }
-#MainPage_screenTextDiv #MainPage_text{
+
+#MainPage_screenTextDiv #MainPage_text {
     text-align: center;
     width: 489px;
 }
-#milestoneDiv{
+
+#milestoneDiv {
     width: 502px;
     height: 20px;
     background-color: #DADADA;
     border-radius: 12px;
     overflow: hidden;
 }
-#MainPage_coinDiv{
+
+#MainPage_coinDiv {
     width: 320px;
     height: 73px;
     background-color: black;
@@ -41,28 +45,33 @@
     justify-content: center;
     align-items: center;
     /* column-gap:24px; */
-    color:#DADADA;
+    color: #DADADA;
 }
-#MainPage_biniCoin{
+
+#MainPage_biniCoin {
     font-size: 14px;
     margin-top: 10px;
     box-sizing: border-box;
 }
-#MainPage_coinDiv #MainPage_dummyCoinText_Div{
+
+#MainPage_coinDiv #MainPage_dummyCoinText_Div {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 10px;
 }
-#MainPage_coinDiv img{
+
+#MainPage_coinDiv img {
     width: 40px;
     height: 45px;
 }
-#MainPage_dummyCoinText_Div div{
+
+#MainPage_dummyCoinText_Div div {
     font-weight: bold;
     font-size: 24px;
 }
-#MainPage_TapsLeft{
+
+#MainPage_TapsLeft {
     width: 407px;
     height: 44px;
     border-radius: 16px;
@@ -71,7 +80,7 @@
     font-weight: bold;
     color: #FFFFFF;
     display: flex;
-   justify-content: center;
+    justify-content: center;
     align-items: center;
 }
 
@@ -79,26 +88,30 @@
     display: flex;
     justify-content: center;
 }
-#Mainpage_button{
-     background-color: transparent;
+
+#Mainpage_button {
+    background-color: transparent;
     border: none;
     margin-top: 20px;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
-#MainPage_claimDiv{
+
+#MainPage_claimDiv {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     column-gap: 200px;
 }
-#MainPage_claimDiv div{
+
+#MainPage_claimDiv div {
     width: 100px;
     height: 40px;
     display: flex;
     align-items: center;
     column-gap: 8px;
 }
-#MainPage_claimDiv button{
+
+#MainPage_claimDiv button {
     width: 100px;
     height: 40px;
     background-color: rgba(255, 255, 255, .3);
@@ -108,7 +121,8 @@
     font-size: 16px;
     color: white;
 }
-#MainPageText{
+
+#MainPageText {
     height: 180px;
     display: flex;
     justify-content: center;
@@ -143,15 +157,51 @@
     font-weight: bold;
     color: #FFFFFF;
 }
-#Mainpage_button img{
+
+#Mainpage_button {
+    background-color: transparent;
+}
+
+#Mainpage_button img {
     width: 200px;
     height: 200px;
 }
-#milestoneDiv img{
+
+#milestoneDiv img {
     width: 30px;
     /* padding-left: 20px; */
     box-sizing: border-box;
     /* background-color: #f5c293; */
+}
+
+#milestoneDiv {
+    background-color: grey;
+    border-radius: 20px;
+    height: 20px;
+    width: 600px;
+
+}
+
+#Progressfill {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: #D07119;
+    border-radius: 20px;
+    color: #fff;
+    height: 100%;
+    width: 0;
+    transition: 1s ease 0.3s;
+}
+
+#MainPage_screenTextDiv #ProgressBar_ImageDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#MainPage_screenTextDiv #ProgressBar_ImageDiv img{
+    width: 50px;
+    height: 58px;
 }
 
 
@@ -185,22 +235,3 @@
         font-size: 18px;
     }
 } */
-
-#milestoneDiv {
-    background-color: grey;
-    border-radius: 20px;
-    height: 20px;
-    width: 600px;
-
-}
-#Progressfill {
-    display: flex;
-    align-items: center;
-    justify-content: end; 
-    background-color: #D07119;
-    border-radius: 20px;
-    color: #fff;
-    height: 100%;
-    width: 0;
-    transition: 1s ease 0.3s;
-}

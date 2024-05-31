@@ -2,23 +2,26 @@ import React, { useEffect, useState } from 'react'
 import Style from '../mainPage/MainPage.module.css'
 import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
-import eyoImg from '../../assets/svg/eyo_image.svg'
 import singleCoin from '../../assets/svg/singleCoin.svg'
 import avatar from '../../assets/svg/avatar.svg'
 import busLight from '../../assets/svg/busLight.svg'
 import danfo from '../../assets/svg/danfoDark.svg'
+import trafficLightOff from '../../assets/svg/trafficLightOff.svg'
+import flag from '../../assets/svg/flag.svg'
+import trafficLightOn from '../../assets/svg/trafficLightOn.svg'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
 
 
 const MainPage = () => {
   const [toggleImg, setToggleImg] = useState(false)
+  const [progressImg, setProgressImg] = useState (true)
 
 
   let [count, setCount] = useState(0)
   let [index, setIndex] = useState(0)
   const [progressWidth, setProgressWidth] = useState("");
-  
+
   const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup } = popupContextHook()
 
 
@@ -108,12 +111,12 @@ const MainPage = () => {
       link: "https://shasogna.com/4/7549779",
     },
   ]
-// useEffect(()=>{
-     
-//   if (count == 10) {
-//     updateClaimPopup(true)
-//   }
-// },[count])
+  // useEffect(()=>{
+
+  //   if (count == 10) {
+  //     updateClaimPopup(true)
+  //   }
+  // },[count])
 
   const getUserDetails = async () => {
 
@@ -160,8 +163,7 @@ const MainPage = () => {
   }
 
   const increaseCount = async () => {
-    // const newCount = count + 1;
-    // setCount(newCount)
+  
     try {
       const response = await axios.post()
 
@@ -172,10 +174,6 @@ const MainPage = () => {
 
   }
 
-  // document.getElementById(Style.Mainpage_button).addEventListener("click", function(event) {
-  //   event.preventDefault(); // Prevent default behavior
-  //   window.open(this.href, "_blank"); // Open link in new tab
-  // });
 
   const testingLink = (event) => {
 
@@ -189,15 +187,16 @@ const MainPage = () => {
         setIndex(0)
       }
 
-     setCount(count + 1)
-   
-      // if (count === 10) {
-      //   updateClaimPopup(true)
-      // }
       setToggleImg(!toggleImg)
+      setCount(count + 1)
 
+      if (count === 10) {
+        updateClaimPopup(true)
+        // setProgressImg(!progressImg)
+      }
+     
       setProgressWidth(`${(count / 100) * 100}%`)
-  
+
       console.log("Link No", links[index].text)
       let url = links[index].link
       // let win = window.open(`${url}`, "_blank");
@@ -219,18 +218,6 @@ const MainPage = () => {
   }
 
 
-  // function openAndCloseLink() {
-  //   window.open("https://www.google.com", '_blank');
-  // }
-
-  // useEffect(() => {
-
-  //   updateLoadingPopup(true);
-  //   setTimeout(() => {
-  //     getUserDetails()
-  //   }, 5000)
-  // });
-
   return (
     <div id={Style.MainPage_Div}>
       <div id={Style.MainPage_firstDiv}>
@@ -238,15 +225,26 @@ const MainPage = () => {
           <div id={Style.MainPage_screenTextDiv}>
 
             <div id={Style.MainPage_coinDiv}>
-              <div id={Style.MainPage_biniCoin}>Your BINI COIN Balance</div>
+              <div id={Style.MainPage_biniCoin}>Your Change</div>
               <div id={Style.MainPage_dummyCoinText_Div}>
                 <img src={dummyCoin} alt="" />
                 <div>{count}</div>
               </div>
             </div>
 
-            <div id={Style.milestoneDiv}>
-              <div id={Style.Progressfill}  style={{width: progressWidth}}><img src={danfo} alt="" /></div>
+            <div id={Style.ProgressBar_mainDiv}>
+              <div id={Style.ProgressBar_ImageDiv}>
+                <div></div>
+                {progressImg ? (<img src={trafficLightOff} alt="" />): (
+                  <img src={trafficLightOn} alt="" />
+                ) }
+                <img src={trafficLightOff} alt="" />
+                <img src={flag} alt="" />
+              </div>
+              
+              <div id={Style.milestoneDiv}>
+                <div id={Style.Progressfill} style={{ width: progressWidth }}><img src={danfo} alt="" /></div>
+              </div>
             </div>
 
             <div id={Style.MainPage_text}>Tap tap tap, can't slow down, Rhythm flows, in this town. Energy high, fingers pop, Tap tap tap, feel the shine.</div>

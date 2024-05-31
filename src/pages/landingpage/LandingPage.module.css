@@ -23,7 +23,18 @@
 #No_MobileView{
     display: none;
 }
-
+#carousel_text {
+    height: 300px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+#carousel_text p{
+    /* text-align: center; */
+    color: #AAAAAA;
+    font-size: 1.1rem;
+}
 
 @media screen and (max-width: 500px){
     #LandingPage_mainDiv{
