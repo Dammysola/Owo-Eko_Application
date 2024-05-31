@@ -9,9 +9,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const passwordOTP = () => { 
     let navigate = useNavigate()
-    let {userData} = useParams()
-
-    
+    let {email} = useParams()
+    const [userCode, setUserCode] = useState('')
 
 
     const [enterOTP, setEnterOTP] = useState('')
@@ -20,21 +19,38 @@ const passwordOTP = () => {
     const OTPsubmit = async ()=>{
 
         try {
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/verify-otp-pass', {} )
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/verify-otp-pass', 
+            {
+            "email": email,
+            "OTP": userCode
+             } 
+            )
+            console.log(response.status);
+
+            if (response.status == 200) {
+                console.log('Verification successful', response.data);
+        
+                navigate('/resetpassword')
+              }
+        
+
         } catch (error) {
-            
+            let userError = error.response.data.message
+
+            console.log("failed", userError);
+
         }
     } 
 
     const OTPdetails = (e)=>{
         const value = e.target.value
-
         setEnterOTP(
             value
         )
     }
 
     const handleOTPsubmission = (e)=>{
+        OTPsubmit()
         e.preventDefault(e)
         console.log(enterOTP);
     }

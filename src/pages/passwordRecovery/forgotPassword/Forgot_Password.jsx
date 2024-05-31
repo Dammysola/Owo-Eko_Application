@@ -20,8 +20,9 @@ const Forgot_Password = () => {
 
     const passwordSubmit = async()=>{
         
+        
         try {
-           const response = await axios.post ('https://owo-eko-api.onrender.com/user/forget-pass', {"email":forgotPassword})
+           const response = await axios.post('https://owo-eko-api.onrender.com/user/forget-pass', {"email":forgotPassword})
 
            console.log(response.data);
            console.log("login status", response.status);
@@ -29,8 +30,12 @@ const Forgot_Password = () => {
            if (response.status == 200) {
                 console.log('login successful', response.data);
 
-                navigate('/sendOTP')
+                navigate(`/sendOTP/${forgotPassword}`)
 
+           }
+           else {
+            
+            console.log('login failed', response.data);
            }
         } catch (error) {
             let userError = error.response.data.message
