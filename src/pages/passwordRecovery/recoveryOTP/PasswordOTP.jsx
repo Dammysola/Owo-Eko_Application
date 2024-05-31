@@ -2,11 +2,29 @@ import React, { useState } from 'react'
 import Style from '../recoveryOTP/PasswordOTP.module.css'
 import Button from '../../../components/button/Button'
 import InputField from '../../../components/input_Form/InputField'
+import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 
 const passwordOTP = () => { 
+    let navigate = useNavigate()
+    let {userData} = useParams()
+
+    let data = 
+
+
     const [enterOTP, setEnterOTP] = useState('')
+
+
+    const OTPsubmit = async ()=>{
+
+        try {
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/verify-otp-pass', {} )
+        } catch (error) {
+            
+        }
+    } 
 
     const OTPdetails = (e)=>{
         const value = e.target.value

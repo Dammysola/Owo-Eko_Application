@@ -2,11 +2,42 @@ import React, { useState } from 'react'
 import Style from '../forgotPassword/Forgot_Password.module.css'
 import InputField from '../../../components/input_Form/InputField'
 import Button from '../../../components/button/Button'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const Forgot_Password = () => {
+    //  const [email, setEmail] = useState('')
+    //  const [message, setMessage] = useState()
+    //  const [passwordError, setPasswordError] = useState()
+
+    const navigate = useNavigate()
+
+
     const [forgotPassword, setForgotPassword] = useState('')
+
+
+    const passwordSubmit = async()=>{
+        
+        try {
+           const response = await axios.post ('https://owo-eko-api.onrender.com/user/forget-pass', {"email":forgotPassword})
+
+           console.log(response.data);
+           console.log("login status", response.status);
+
+           if (response.status == 200) {
+                console.log('login successful', response.data);
+
+                navigate('/sendOTP')
+
+           }
+        } catch (error) {
+            let userError = error.response.data.message
+            
+            console.log("failed", userError);
+        }
+    }
 
     const details = (e)=>{
         const value = e.target.value
@@ -17,6 +48,7 @@ const Forgot_Password = () => {
     }
 
     const handleSubmit = (e)=>{
+        passwordSubmit()
         e.preventDefault(e)
         console.log(forgotPassword);
     }
