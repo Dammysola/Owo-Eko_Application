@@ -12,6 +12,7 @@ const passwordOTP = () => {
     let navigate = useNavigate()
     let { email } = useParams()
 
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
     const [enterOTP, setEnterOTP] = useState('')
 
 
