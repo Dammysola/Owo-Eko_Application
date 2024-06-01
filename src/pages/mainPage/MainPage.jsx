@@ -24,7 +24,7 @@ const MainPage = () => {
   let [userDetails, setUserDetails] = useState({});
 
 
-  const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup } = popupContextHook()
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile} = popupContextHook()
 
 
   const links = [
@@ -239,12 +239,7 @@ const MainPage = () => {
     //   link: "https://barelydonkeysteed.com/q96gzeeh5b?key=26f5da381486796359c8dd3b302e8499"
     // },
   ]
-  // useEffect(()=>{
 
-  //   if (count == 10) {
-  //     updateClaimPopup(true)
-  //   }
-  // },[count])
 
   const getUserDetails = async () => {
 
@@ -326,6 +321,7 @@ const MainPage = () => {
           updateClaimPopup(true)
         //   // setProgressImg(!progressImg)
       }
+   
 
       setProgressWidth(`${(userDetails.balance / 100) * 100}%`)
 
@@ -355,6 +351,7 @@ const MainPage = () => {
     setUserDetails(details)
     
   }, []);
+ 
 
 
   return (

@@ -83,7 +83,7 @@ const SignUp = () => {
       }, 2000)
 
       setSignUpError(userError)
-      console.log("SignUp Failed: ", signUpError)
+      console.log("SignUp Failed: ", setSignUpError)
     }
   }
 

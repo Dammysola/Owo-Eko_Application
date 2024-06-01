@@ -131,11 +131,11 @@
 }
 
 #MainPageText button {
-    width: 218px;
+    min-width: 218px;
     height: 60px;
     border-radius: 16px;
     border: none;
-    column-gap: 16px;
+    column-gap: 7px;
     background-color: rgba(255, 255, 255, .2);
     display: flex;
     justify-content: center;
@@ -143,6 +143,7 @@
     font-size: 24px;
     font-weight: bold;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 #MainPageText div {

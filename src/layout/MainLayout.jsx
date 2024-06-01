@@ -13,12 +13,14 @@ import Loading from '../popUps/loading/Loading'
 import PopupContext, { popupContextHook } from '../PopupContext'
 import No_Mobile from '../popUps/noMobile/No_Mobile'
 import Claim from '../popUps/claim/Claim'
+import Profile from '../pages/profile/Profile'
+
 
 
 
 const MainLayout = () => {
 
-  const { loadingPopup, errorPopup, claimPopup} = popupContextHook();
+  const { loadingPopup, errorPopup, claimPopup, profile} = popupContextHook();
   const [isMobile, setIsMobile] = useState(false);
 //   const [error, setError] = useState('');
 
@@ -50,6 +52,7 @@ const MainLayout = () => {
             {errorPopup && <Error />}
             {claimPopup && <Claim/>}
             {isMobile? <No_Mobile/> : <div><Outlet /></div>}
+            {/* {profile && <Profile/>} */}
           </div>
         </UserContext>
     </>
