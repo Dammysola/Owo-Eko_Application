@@ -316,7 +316,7 @@ const MainPage = () => {
       setToggleImg(!toggleImg)
       setCount(count - 1)
 
-      if (count === 0) {
+      if (count === 1) {
         setCount(50)
           updateClaimPopup(true)
         //   // setProgressImg(!progressImg)
