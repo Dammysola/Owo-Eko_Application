@@ -4,6 +4,7 @@ import InputField from '../../../components/input_Form/InputField'
 import Button from '../../../components/button/Button'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { popupContextHook } from '../../../PopupContext'
 
 
 
@@ -14,45 +15,65 @@ const Forgot_Password = () => {
 
     const navigate = useNavigate()
 
-
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
     const [forgotPassword, setForgotPassword] = useState('')
 
 
-    const passwordSubmit = async()=>{
-        
-        
+    const passwordSubmit = async () => {
+
+
         try {
-           const response = await axios.post('https://owo-eko-api.onrender.com/user/forget-pass', {"email":forgotPassword})
+            updateLoadingPopup(true)
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/forget-pass', { "email": forgotPassword })
 
-           console.log(response.data);
-           console.log("login status", response.status);
+            console.log(response.data);
+            console.log("login status", response.status);
 
-           if (response.status == 200) {
+            updateLoadingPopup(false)
+
+            if (response.status == 200) {
                 console.log('login successful', response.data);
 
                 navigate(`/sendOTP/${forgotPassword}`)
 
-           }
-           else {
-            
-            console.log('login failed', response.data);
-           }
+            }
+            else {
+                updateErrorText(response.data)
+                updateErrorPopup(true)
+
+                setTimeout(() => {
+                    updateErrorPopup(false)
+                }, 1000)
+
+                console.log('signup failed', response.data);
+
+                console.log('login failed', response.data);
+            }
         } catch (error) {
+            updateLoadingPopup(false);
             let userError = error.response.data.message
-            
-            console.log("failed", userError);
+
+            updateErrorText(userError)
+
+            updateErrorPopup(true)
+            setTimeout(() => {
+                updateErrorPopup(false)
+            }, 2000)
+
+            setSignUpError(userError)
+            console.log("failed", setSignUpError);
         }
     }
 
-    const details = (e)=>{
+    const details = (e) => {
         const value = e.target.value
 
-        setForgotPassword (
+        setForgotPassword(
             value
         )
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         passwordSubmit()
         e.preventDefault(e)
         console.log(forgotPassword);
