@@ -239,12 +239,7 @@ const MainPage = () => {
       link: "https://barelydonkeysteed.com/q96gzeeh5b?key=26f5da381486796359c8dd3b302e8499"
     },
   ]
-  // useEffect(()=>{
 
-  //   if (count == 10) {
-  //     updateClaimPopup(true)
-  //   }
-  // },[count])
 
   const getUserDetails = async () => {
 

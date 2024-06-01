@@ -18,6 +18,9 @@ const Forgot_Password = () => {
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
     const [forgotPassword, setForgotPassword] = useState('')
 
+    const [validation, setValidation] = useState({
+		email: false
+	})
 
     const passwordSubmit = async () => {
 
@@ -60,8 +63,8 @@ const Forgot_Password = () => {
                 updateErrorPopup(false)
             }, 2000)
 
-            setSignUpError(userError)
-            console.log("failed", setSignUpError);
+            // setSignUpError(userError)
+            console.log("failed", userError);
         }
     }
 
@@ -74,8 +77,19 @@ const Forgot_Password = () => {
     }
 
     const handleSubmit = (e) => {
-        passwordSubmit()
         e.preventDefault(e)
+
+        let emailVal = forgotPassword.includes("@") && forgotPassword.includes(".") ? false : true;
+
+        setValidation({
+			email: emailVal
+        })
+        let valid = emailVal == false 
+        if (valid) {
+            passwordSubmit() 
+        }
+        
+        
         console.log(forgotPassword);
     }
     return (
@@ -88,6 +102,7 @@ const Forgot_Password = () => {
                         label={"Email Address"}
                         placeholder={"Enter Email Address"}
                         type={"email"}
+                        error={validation.email}
                         value={forgotPassword}
                         OnChange={details}
                     />
