@@ -13,6 +13,8 @@ const PopupContext = ({ children }) => {
     const [withdrawalPopup, setWithdrawalPopup] = useState(false);
     const [loadingPopup, setLoadingPopup] = useState(false);
     const [claimPopup, setClaimPopup] = useState(false)
+    const [profile, setProfile] = useState(false)
+
 
     const updateConfirmationPopup = (data) => {
         setConfirmationPopup(data)
@@ -38,6 +40,9 @@ const PopupContext = ({ children }) => {
     const updateClaimPopup = (data)=>{
         setClaimPopup(data)
     }
+    const updateProfile = (data)=>{
+        setProfile(data)
+    }
 
     return (
         <myContext.Provider value={{ 
@@ -56,7 +61,9 @@ const PopupContext = ({ children }) => {
             errorText,
             updateErrorText,
             claimPopup,
-            updateClaimPopup}}>
+            updateClaimPopup,
+            profile,
+            updateProfile}}>
             {children}
         </myContext.Provider>
     )

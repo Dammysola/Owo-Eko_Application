@@ -24,7 +24,7 @@ const MainPage = () => {
   let [userDetails, setUserDetails] = useState({});
 
 
-  const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup } = popupContextHook()
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile} = popupContextHook()
 
 
   const links = [
@@ -321,6 +321,7 @@ const MainPage = () => {
           updateClaimPopup(true)
         //   // setProgressImg(!progressImg)
       }
+   
 
       setProgressWidth(`${(userDetails.balance / 100) * 100}%`)
 
@@ -350,6 +351,7 @@ const MainPage = () => {
     setUserDetails(details)
     
   }, []);
+ 
 
 
   return (

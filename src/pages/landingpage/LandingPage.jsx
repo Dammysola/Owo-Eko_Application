@@ -15,9 +15,9 @@ const LandingPage = () => {
           <Button
             text={"Play Now"} />
         </Link>
-        <div id={Style.carousel_text}>
+        {/* <div id={Style.carousel_text}>
           <p>Please be aware that ads may appear in your browser while using our site. Rest assured, these ads help us keep our services free for you. Don't forget to close all tabs when you're done browsing. Thank you for your understanding and enjoy your visit!</p>
-        </div>
+        </div> */}
       </div>
     </div>
   )
