@@ -25,7 +25,6 @@ const SignUp = () => {
 		password: false,
 	})
 
-  const [signUpError, setSignUpError] = useState()
 
   const Details = (e) => {
     const value = e.target.value

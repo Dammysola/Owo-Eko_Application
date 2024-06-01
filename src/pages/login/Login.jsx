@@ -13,8 +13,7 @@ const Login = () => {
 
     const navigate = useNavigate()
 
-    const { userDetails,updateDetails, updateSetLogged } = userContextHook()
-
+    const { userDetails, updateDetails, updateSetLogged } = userContextHook()
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
 
@@ -22,6 +21,11 @@ const Login = () => {
         email: '',
         password: ''
     })
+
+    const [validation, setValidation] = useState({
+		email: false,
+		password: false,
+	})
 
     const loginDetails = (e) => {
         const name = e.target.name
@@ -129,8 +133,22 @@ const Login = () => {
     }
 
     const handleLoginSubmit = (e) => {
-        LoginSubmit()
         e.preventDefault(e)
+
+        let emailVal = logIn.email.includes("@") && logIn.email.includes(".") ? false : true;
+        let passwordVal = logIn.password.length > 4 ? false : true;
+
+        setValidation({
+            email: emailVal,
+            password: passwordVal,
+        })
+
+        let valid = emailVal == false && passwordVal == false
+
+        if (valid) {
+            LoginSubmit()
+        }
+        console.log(logIn.email, logIn.password);
     }
 
     return (
@@ -146,6 +164,7 @@ const Login = () => {
                                 type={"email"}
                                 name={"email"}
                                 value={logIn.email}
+                                error={validation.email}
                                 OnChange={loginDetails}
                             />
                         </div>
@@ -155,6 +174,7 @@ const Login = () => {
                             type={"text"}
                             name={"password"}
                             value={logIn.password}
+                            error={validation.password}
                             OnChange={loginDetails}
                         />
                         <div id={Style.forgot}><Link to={'/forgotpassword'}>Forgot Password ?</Link></div>
