@@ -19,6 +19,12 @@ const SignUp = () => {
     password: '',
   })
 
+  const [validation, setValidation] = useState({
+		email: false,
+		phoneNumber: false,
+		password: false,
+	})
+
   const [signUpError, setSignUpError] = useState()
 
   const Details = (e) => {
@@ -83,8 +89,24 @@ const SignUp = () => {
   }
 
   const handleSubmit = (e) => {
-    FormSubmit()
+    
     e.preventDefault(e)
+    
+		let emailVal = signUp.email.includes("@") && signUp.email.includes(".") ? false : true;
+		let phoneVal = signUp.phoneNumber.length > 10 ? false : true;
+		let passwordVal = signUp.password.length > 4 ? false : true;
+
+		setValidation({
+			email: emailVal,
+			phoneNumber: phoneVal,
+			password: passwordVal,
+		})
+
+    let valid = emailVal == false && phoneVal == false && passwordVal == false
+
+    if(valid){
+      FormSubmit()
+    }
     console.log(signUp.email, signUp.phoneNumber, signUp.password);
   }
   return (
@@ -93,13 +115,13 @@ const SignUp = () => {
         <div id={Style.SignUp_mainDiv}>
           <div id={Style.SignUp_text}>Sign Up</div>
           <form onSubmit={handleSubmit}>
-
             <div>
               <InputField
                 label={"Email Address"}
                 placeholder={"Enter Email Address"}
                 type={"email"}
                 name={"email"}
+                error={validation.email}
                 value={signUp.email}
                 OnChange={Details}
               />
@@ -109,6 +131,7 @@ const SignUp = () => {
                 label={"Phone Number"}
                 placeholder={"Enter Phone Number"}
                 type={"tel"}
+                error={validation.phoneNumber}
                 name={"phoneNumber"}
                 value={signUp.phoneNumber}
                 OnChange={Details}
@@ -121,6 +144,7 @@ const SignUp = () => {
                 placeholder={"Create Password"}
                 type={"password"}
                 name={"password"}
+                error={validation.password}
                 value={signUp.password}
                 OnChange={Details}
               />

@@ -19,10 +19,11 @@ const passwordOTP = () => {
     const OTPsubmit = async ()=>{
 
         try {
+            console.log(email)
             const response = await axios.post('https://owo-eko-api.onrender.com/user/verify-otp-pass', 
             {
             "email": email,
-            "OTP": userCode
+            "otp": userCode
              } 
             )
             console.log(response.status);

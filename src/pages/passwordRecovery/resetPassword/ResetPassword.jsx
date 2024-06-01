@@ -30,9 +30,9 @@ const ResetPassword = () => {
         try {
             const response = await axios.post('https://owo-eko-api.onrender.com/user/changepassword', 
                 {
-                    "email":resetPassword.email ,
-                    "createPasswprd": resetPassword.createPassword,
-                    "confrimPassword": resetPassword.confirmPassword
+                    "email":resetPassword.email,
+                    "createpass": resetPassword.createPassword,
+                    "confirmpass": resetPassword.confirmPassword
                 }
              )
              console.log(response.data);
