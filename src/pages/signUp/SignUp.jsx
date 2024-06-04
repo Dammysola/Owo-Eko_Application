@@ -37,6 +37,7 @@ const SignUp = () => {
       })
     )
   }
+  
   const FormSubmit = async () => {
 
     try {
@@ -106,8 +107,8 @@ const SignUp = () => {
     if(valid){
       FormSubmit()
     }
-    console.log(signUp.email, signUp.phoneNumber, signUp.password);
   }
+
   return (
     <div id={Style.SignDiv}>
       <div id={Style.SignUpDiv}>

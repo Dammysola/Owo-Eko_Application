@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Style from '../profile/Profile.module.css'
 import avatar from '../../assets/svg/avatar.svg'
 import TotalCoins from './tabs/TotalCoins';
@@ -9,9 +9,9 @@ import { popupContextHook } from '../../PopupContext';
 const Profile = () => {
     let [tabIndex, setTabIndex] = useState(0);
     let [count, setCount] = useState(0);
+    let [userDetails, setUserDetails] = useState({});
 
-
-    //   const { updateDetails } = popupContextHook();
+    const { updateProfile, profile } = popupContextHook();
 
 
     const tabClick = (index) => {
@@ -27,7 +27,7 @@ const Profile = () => {
 
         let url = 'https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9'
         let win = window.open(`${url}`, "_blank", "popup, width=10,height=10").then((ev) => {
-            onload= (ev)=>{
+            onload = (ev) => {
                 console.log("message")
             }
         });
@@ -43,19 +43,29 @@ const Profile = () => {
         // };
     }
 
+    useEffect(() => {
+        let details = JSON.parse(localStorage.getItem("user_details"));
+
+        setUserDetails(details)
+
+    }, []);
+
     return (
-        <div id={Style.Profile_mainDiv}>
-            <div id={Style.Profile_wrapper}>
+        <div id={Style.wrapper}> 
+        <buttton id={Style.Profile_mainDiv} onClick={()=>updateProfile(!profile)}>
+            
+        </buttton>
+        <div id={Style.Profile_wrapper}>
                 <div id={Style.Profile_details}>
                     <div id={Style.Profile_nameDiv}>
                         <img src={avatar} alt="" />
-                        <div>John Doe</div>
+                        <div>{userDetails.username}</div>
                     </div>
                     <div id={Style.balance}>
                         <div id={Style.available}>
                             <img src={dummyCoin} alt="" />Available Coin</div>
 
-                        <p>{count}:15000</p>
+                        <p>{userDetails.balance}</p>
                     </div>
                     <button onClick={testingLink} id={Style.withdraw_btn}>Withdrawal</button>
                 </div>
@@ -69,7 +79,8 @@ const Profile = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
+        
     )
 }
 

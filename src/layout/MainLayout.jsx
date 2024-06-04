@@ -52,7 +52,7 @@ const MainLayout = () => {
             {errorPopup && <Error />}
             {claimPopup && <Claim/>}
             {isMobile? <No_Mobile/> : <div><Outlet /></div>}
-            {/* {profile && <Profile/>} */}
+            {profile && <Profile/>}
           </div>
         </UserContext>
     </>
