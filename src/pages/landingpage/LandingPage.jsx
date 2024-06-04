@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from './LandingPage.module.css'
 import Button from '../../components/button/Button'
 import { Link } from 'react-router-dom'
@@ -11,6 +11,39 @@ import mail from '../../assets/svg/mail.svg'
 import call from '../../assets/svg/call.svg'
 
 const LandingPage = () => {
+  const [active1, setActive1] = useState(false)
+  const [active2, setActive2] = useState(false)
+  const [active3, setActive3] = useState(false)
+
+  const faqs = document.getElementsByClassName(Style.FAQ_questions)
+
+  console.log(faqs);
+  const faqActive = (index) => {
+
+    if (index == 1) {
+
+      setActive1(!active1)
+
+    } else if (index == 2) {
+
+      setActive2(!active2)
+    } else if (index == 3) {
+
+      setActive3(!active3)
+    }
+
+    // console.log("Index", index);
+
+    //   faqs[index].classList.add("active")
+
+  }
+
+  // faqs.forEach(FAQ_questions =>{
+  //   FAQ_questions.addEventListener("click", ()=>{
+  //     FAQ_questions.classList.toggle("active")
+  //   })
+  // })
+
   const CardOne = [
     {
       image: './src/assets/svg/signUp.svg',
@@ -125,18 +158,33 @@ const LandingPage = () => {
         </div>
 
         <div id={Style.FAQ_questionDiv}>
-          
-            <div className={Style.FAQ_questions}>
-              How do i earn coins?
-              <img src={arrow} alt="" />
+
+          <div className={Style.FAQ_questions} onClick={() => faqActive(1)}>
+            <div className={Style.question}>
+              How do i earn coins? 
+              <img src={arrow} alt="" className={`${Style.arrow} ${active1 ? Style.arrow_active : ""}`}/>
             </div>
-            <div className={Style.FAQ_questions}>How do I redeem my coins?
-            <img src={arrow} alt="" />
+            <div className={`${Style.answer} ${active1 ? Style.answer_active : ""}`}>
+              <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
             </div>
-            <div className={Style.FAQ_questions}>When will I receive my payment?
-            <img src={arrow} alt="" />
+          </div>
+          <div className={Style.FAQ_questions} onClick={() => faqActive(2)}>
+            <div className={Style.question} >
+              How do I redeem my coins?
+              <img src={arrow } alt="" className={`${Style.arrow} ${active2 ? Style.arrow_active : ""}`} />
             </div>
-          <div>
+            <div className={`${Style.answer} ${active2 ? Style.answer_active : ""}`}>
+              <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
+            </div>
+          </div>
+          <div className={Style.FAQ_questions} onClick={() => faqActive(3)}>
+            <div className={Style.question}>
+              When will I receive my payment?
+              <img src={arrow} alt="" className={`${Style.arrow} ${active3 ? Style.arrow_active : ""}`}/>
+            </div>
+            <div className={`${Style.answer} ${active3 ? Style.answer_active : ""}`}>
+              <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
+            </div>
           </div>
         </div>
       </div>
@@ -150,7 +198,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div id={Style.lastLine_Div}>
-        <hr />
+          <hr />
           All rights reserved. © 2024 OWOEKO
         </div>
       </footer>
