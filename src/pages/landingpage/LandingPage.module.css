@@ -1,52 +1,317 @@
-#nav{ 
-    height: 100vh;
+#nav {
+    /* min-height: 100vh; */
 }
-#LandingPage_mainDiv{
-   display: flex;
-   flex-direction: column;
-   row-gap: 41px;
+
+#LandingPage_mainDiv {
+    background: url('../../assets/svg/theater.svg');
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 41px;
     text-align: center;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 150px;
 }
-#LandingPage_boldText{
+
+#LandingPage_boldText {
     font-size: 50px;
     font-weight: bold;
     color: #FFFFFF;
     width: 718px;
 }
-#LandingPage_smallText{
+
+#style {
+    display: flex;
+}
+
+#LandingPage_smallText {
     width: 718px;
     font-size: 18px;
     color: #FFFFFF;
 }
-#No_MobileView{
+
+#No_MobileView {
     display: none;
 }
+
 #carousel_text {
     height: 300px;
     width: 70%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
-#carousel_text p{
+
+#carousel_text p {
     /* text-align: center; */
     color: #AAAAAA;
     font-size: 1.1rem;
 }
 
-@media screen and (max-width: 500px){
-    #LandingPage_mainDiv{
+
+
+
+#CardOne_MainDiv {
+    background-color: rgba(208, 113, 25, 0.2);
+}
+
+#Card_MainDiv_heading {
+    padding-top: 90px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#VideoFrame_mainDiv {
+    min-height: 100vh;
+}
+
+#VideoFrame_Wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#VideoFrame_mainDiv p {
+    font-weight: bold;
+    font-size: 3rem;
+    height: 40px;
+}
+
+#VideoFrame_mainDiv #videoFrame_text {
+    font-size: 1.125rem;
+    width: 70%;
+}
+
+#Reason_mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 81px;
+    min-height: 100vh;
+    background-color: rgba(208, 113, 25, 0.2);
+}
+
+#Reason_mainDiv_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35.3rem;
+    height: 650px;
+    border-radius: 40px;
+    background: linear-gradient(120deg, rgba(208, 113, 25, 0.5), rgba(106, 58, 13, 0.4));
+}
+
+#Reason_List_mainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 27px;
+}
+
+#Reason_mainDiv_textDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    box-sizing: border-box;
+}
+
+#Reason_mainDiv #Reason_mainDiv_wrapper_text {
+    /* width: 400px; */
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    /* height: 60px; */
+}
+
+#Reason_mainDiv #reason_Text {
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    height: 70px;
+    width: 90%;
+}
+
+.Reason_ListDiv {
+    width: 28.75rem;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    background-color: #F3EEEE;
+    border-radius: 16px;
+}
+
+.Reason_ListDiv p {
+    color: #1A1A1A;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 15px;
+}
+
+.Reason_ListDiv div {
+    font-size: 1rem;
+    color: #20202047;
+}
+
+#Reason_mainDiv #how_to_Play_mainDiv p {
+    font-size: 3rem;
+    font-weight: bold;
+    height: 30px;
+}
+
+#how_to_Play_earning {
+    width: 80%;
+    font-size: 1.1rem;
+    height: 70px;
+}
+
+#TabScreen_Div {
+    width: 666px;
+    height: 500px;
+    background: linear-gradient(120deg, rgba(208, 113, 25, 0.5), rgba(106, 58, 13, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+#FAQ_MainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 261px;
+    height: 100vh;
+}
+
+#FAQ_Wrapper {
+    width: 460px;
+    background: url('../../assets/svg/danfoDark.svg') no-repeat;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#FAQ_Wrapper p {
+    font-weight: bold;
+    font-size: 3rem;
+    height: 80px;
+}
+
+#FAQ_questionDiv {
+    width: 580px;
+    min-height: 260px;
+    background-color: #FFFFFF;
+    color: #4D4949;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 1.12rem;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.FAQ_questions {
+    min-width: 100%;
+    min-height: 44px;
+    /* height: 44px; */
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #666666;
+    cursor: pointer;
+}
+.FAQ_questions .question{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.arrow{
+    
+    transition: transform .6s ease-in-out;
+}
+
+.arrow_active{
+    transition: transform .6s ease-in-out;
+    transform: rotate(180deg);
+}
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+}
+.FAQ_questions .answer p{
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1A1A1A;
+}
+.FAQ_questions .answer{
+    height: 0h;
+}
+
+.FAQ_questions .answer_active{
+    max-height: 100vh;
+    
+    transition: max-height 1.4s ease;
+}
+/* .FAQ_questions img{
+    transition: transform 0.5s ease-in;
+} */
+/* .FAQ_questions:active img{
+    transform: rotate(180deg);
+} */
+
+
+
+footer{
+    height: 200px;
+}
+#contactUs_Div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 90px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+#contactUs_Div div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 12px;
+}
+#lastLine_Div {
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding: 0px 90px;
+}
+
+
+@media screen and (max-width: 500px) {
+    #LandingPage_mainDiv {
         padding-top: 80px;
         row-gap: 20px;
     }
-    #LandingPage_boldText{
+
+    #LandingPage_boldText {
         font-size: 24px;
         font-weight: bold;
         width: 366px;
     }
-    #LandingPage_smallText{
+
+    #LandingPage_smallText {
         font-size: 13px;
         width: 340px;
         padding: 0px 5px;

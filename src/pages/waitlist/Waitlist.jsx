@@ -9,7 +9,7 @@ const Waitlist = () => {
 
     const navigate = useNavigate()
 
-    const [signUpError, setSignUpError] = useState()
+    const [waitlistError, setWaitlistError] = useState()
 
     const [waitlist, setWaitlist] = useState({
         firstName: '',
@@ -43,23 +43,22 @@ const Waitlist = () => {
                 }
             )
 
-
             if (response.data == 200) {
                 console.log('Signup successful:', response.data);
-                // navigate('/');
+                navigate('/landingpage');
 
-                let sendData = JSON.stringify(waitlist);
+                // let sendData = JSON.stringify(waitlist);
                 // navigate(`/verify/${sendData}`)
-            }else {
+            } else {
 
                 console.log('signup failed', response.data);
-              }
+            }
 
         }
         catch (error) {
             let userError = error.response.data.message
-      setSignUpError(userError)
-      console.log("SignUp Failed: ", signUpError)
+            setWaitlistError(userError)
+            console.log("Waitlist Failed: ", waitlistError)
         }
     }
 
