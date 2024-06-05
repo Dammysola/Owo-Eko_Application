@@ -11,6 +11,7 @@ const UserContext = ({ children }) => {
     phoneNumber: false,
 		password: false,
 	})
+  
   const [userDetails, setUserDetails] = useState({
     balance: 0,
     email: "",

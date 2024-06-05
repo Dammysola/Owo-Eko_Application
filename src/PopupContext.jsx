@@ -5,6 +5,7 @@ export const myContext = createContext()
 export const popupContextHook = () => useContext(myContext)
 
 const PopupContext = ({ children }) => {
+    
     const [confirmationPopup, setConfirmationPopup] = useState(false);
     const [errorPopup, setErrorPopup] = useState(false);
     const [errorText, setErrorText] = useState("");

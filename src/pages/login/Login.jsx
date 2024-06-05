@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import InputField from '../../components/input_Form/InputField'
 import Button from '../../components/button/Button'
 import Style from '../login/Login.module.css'
@@ -7,13 +7,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
 import SignUp from '../signUp/SignUp'
+import { useUser } from '../../api_services/User'
 
 
 const Login = () => {
 
     const navigate = useNavigate()
+    
+    const { getUserDetails } = useUser();
 
-    const { userDetails, updateDetails, updateSetLogged } = userContextHook()
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
 
@@ -23,9 +25,9 @@ const Login = () => {
     })
 
     const [validation, setValidation] = useState({
-		email: false,
-		password: false,
-	})
+        email: false,
+        password: false,
+    })
 
     const loginDetails = (e) => {
         const name = e.target.name
@@ -61,49 +63,13 @@ const Login = () => {
             //         // sessionStorage.setItem("phone_number", phoneNumber)
             //         navigate(`/mainpage`)
             if (response.status == 200) {
-                const response2 = await axios.get(`https://owo-eko-api.onrender.com/user/details/${logIn.email}`)
+                const response2 = await getUserDetails(logIn.email);
 
+                if (response2 == 200) {
 
-                console.log("getUserDeatils", response2.status)
-
-                updateLoadingPopup(false);
-                if (response2.status == 200) {
-
-                    let details = response2.data["details"]
-                    console.log('login successful', details["username"]);
-
-                    updateDetails((prev) => ({
-                        ...prev,
-                        balance: details["balance"],
-                        email: details["email"],
-                        id: details["id"],
-                        phone: details["phone"],
-                        status: details["status"],
-                        username: details["username"]
-                    }))
-                    console.log("userDeteials", userDetails)
-                    localStorage.setItem("user_details", JSON.stringify({
-                        ...userDetails,
-                        balance: details["balance"],
-                        email: details["email"],
-                        id: details["id"],
-                        phone: details["phone"],
-                        status: details["status"],
-                        username: details["username"]
-                    }))
-
-
-                    navigate(`/mainpage`)
-                } else {
-                    updateErrorText(response2.data)
-
-                    updateErrorPopup(true)
-                    setTimeout(() => {
-                        updateErrorPopup(false)
-                    }, 2000)
-
-                    console.log('login failed', response2.data);
+                    navigate(`/mainpage`);
                 }
+
             } else {
 
                 updateLoadingPopup(false);
@@ -119,7 +85,7 @@ const Login = () => {
 
         } catch (err) {
             updateLoadingPopup(false);
-            let userError = err.response.data.message
+            let userError = err
 
             updateErrorText(userError)
 
