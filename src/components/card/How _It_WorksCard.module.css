@@ -30,3 +30,35 @@
     width: 60%;
 }
 
+@media screen and (max-width: 500px) {
+    #Card_MainDiv{
+        height: 300px;
+        width: 100vw;
+        row-gap: 10px;
+    }
+    #CardDiv{
+        width: 20.6rem;
+        height: 260px;
+    }
+    #CardDiv img{
+        width: 7.43rem;
+        height: 120px;
+    }
+  
+}
+@media screen and (min-width: 600px){
+    #Card_MainDiv{
+        height: 400px;
+        width: 100vw;
+        row-gap: 10px;
+    }
+    #CardDiv{
+        width: 90%; 
+        /* height: 260px; */
+    }
+    #CardDiv img{
+        width: 7.43rem;
+        height: 120px;
+    }
+}
+

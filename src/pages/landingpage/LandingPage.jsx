@@ -112,9 +112,10 @@ const LandingPage = () => {
       <div id={Style.VideoFrame_mainDiv}>
         <div id={Style.VideoFrame_Wrapper}>
           <div>
-            <p>Sneak Peek - How to Play</p>
-            <div id={Style.videoFrame_text}>Here's how to play OwoEko seamlessly. Follow these simple steps to start earning rewards effortlessly</div>
+          <p>Sneak Peek - How to Play</p>
+          <div id={Style.videoFrame_text}>Here's how to play OwoEko seamlessly. Follow these simple steps to start earning rewards effortlessly</div>
           </div>
+
           <div>
             <img src={videoFrame} alt="" />
           </div>
@@ -161,8 +162,8 @@ const LandingPage = () => {
 
           <div className={Style.FAQ_questions} onClick={() => faqActive(1)}>
             <div className={Style.question}>
-              How do i earn coins? 
-              <img src={arrow} alt="" className={`${Style.arrow} ${active1 ? Style.arrow_active : ""}`}/>
+              How do i earn coins?
+              <img src={arrow} alt="" className={`${Style.arrow} ${active1 ? Style.arrow_active : ""}`} />
             </div>
             <div className={`${Style.answer} ${active1 ? Style.answer_active : ""}`}>
               <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
@@ -171,7 +172,7 @@ const LandingPage = () => {
           <div className={Style.FAQ_questions} onClick={() => faqActive(2)}>
             <div className={Style.question} >
               How do I redeem my coins?
-              <img src={arrow } alt="" className={`${Style.arrow} ${active2 ? Style.arrow_active : ""}`} />
+              <img src={arrow} alt="" className={`${Style.arrow} ${active2 ? Style.arrow_active : ""}`} />
             </div>
             <div className={`${Style.answer} ${active2 ? Style.answer_active : ""}`}>
               <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
@@ -180,7 +181,7 @@ const LandingPage = () => {
           <div className={Style.FAQ_questions} onClick={() => faqActive(3)}>
             <div className={Style.question}>
               When will I receive my payment?
-              <img src={arrow} alt="" className={`${Style.arrow} ${active3 ? Style.arrow_active : ""}`}/>
+              <img src={arrow} alt="" className={`${Style.arrow} ${active3 ? Style.arrow_active : ""}`} />
             </div>
             <div className={`${Style.answer} ${active3 ? Style.answer_active : ""}`}>
               <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
@@ -190,13 +191,18 @@ const LandingPage = () => {
       </div>
       <footer>
         <div id={Style.contactUs_Div}>
-          <img src={logo} alt="" />
+          <img id={Style.contactUs_Div_logo} src={logo} alt="" />
+
           <div>
             Contact Us
-            <img src={mail} alt="" />support@owoeko.ng
-            <img src={call} alt="" />+234 9012222221
+            <p id={Style.contactUs_LogoDiv}>
+              <img src={mail} alt="" />support@owoeko.ng
+              <img src={call} alt="" />+234 9012222221
+            </p>
+
           </div>
         </div>
+
         <div id={Style.lastLine_Div}>
           <hr />
           All rights reserved. © 2024 OWOEKO

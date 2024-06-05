@@ -3,8 +3,9 @@
 }
 
 #LandingPage_mainDiv {
-    background: url('../../assets/svg/theater.svg');
-    height: 70vh;
+    background: url('../../assets/svg/theater.svg')no-repeat;
+    background-size: cover;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     row-gap: 41px;
@@ -52,6 +53,7 @@
 
 
 #CardOne_MainDiv {
+    margin-top: -30px;
     background-color: rgba(208, 113, 25, 0.2);
 }
 
@@ -64,7 +66,7 @@
 }
 
 #VideoFrame_mainDiv {
-    min-height: 100vh;
+    height: 100vh;
 }
 
 #VideoFrame_Wrapper {
@@ -137,12 +139,11 @@
 }
 
 .Reason_ListDiv {
-    width: 28.75rem;
+    width: 28.75rem; 
     height: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
+    /* align-items: center; */
     /* flex-direction: column;
     align-items: center;
     justify-content: center; */
@@ -159,7 +160,10 @@
 
 .Reason_ListDiv div {
     font-size: 1rem;
-    color: #20202047;
+    color: #474747;
+}
+#how_to_Play_mainDiv{
+    height: 100vh;
 }
 
 #Reason_mainDiv #how_to_Play_mainDiv p {
@@ -209,7 +213,8 @@
 }
 
 #FAQ_questionDiv {
-    width: 580px;
+    /* width: 580px; */
+    width: 26.25rem;
     min-height: 260px;
     background-color: #FFFFFF;
     color: #4D4949;
@@ -301,8 +306,8 @@ footer{
 
 @media screen and (max-width: 500px) {
     #LandingPage_mainDiv {
-        padding-top: 80px;
-        row-gap: 20px;
+        padding-top: 170px;
+        row-gap: 30px;
     }
 
     #LandingPage_boldText {
@@ -312,9 +317,322 @@ footer{
     }
 
     #LandingPage_smallText {
-        font-size: 13px;
-        width: 340px;
+        font-size: 1rem;
+        width: 355px;
         padding: 0px 5px;
         box-sizing: border-box;
     }
+    #CardOne_MainDiv {
+        min-height: 100vh;
+        background-color: rgba(208, 113, 25, 0.2);
+        padding-bottom: 20px;
+        box-sizing: border-box;
+    }
+    #style {
+        display: flex;
+        flex-direction: column;
+    }
+    #VideoFrame_Wrapper {
+        flex-direction: column;
+    }
+    #Reason_mainDiv {
+        display: flex;
+        flex-direction: column;
+    }
+    #Card_MainDiv_heading {
+        padding-top: 30px;
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    #VideoFrame_Wrapper {
+        flex-direction: column;
+        /* margin-top: -100px; */
+        row-gap: 30px;
+       padding: 0px 30px;
+       box-sizing: border-box;
+    }
+    #VideoFrame_mainDiv {
+
+        height: 100vh;
+    }
+    #VideoFrame_mainDiv p {
+        font-weight: bold;
+        font-size: 1.5rem;
+        height: 30px;
+    }
+    #VideoFrame_mainDiv #videoFrame_text {
+        font-size: 1.12rem;
+        width: 98%;
+    }
+    #VideoFrame_Wrapper img{
+        width: 100%;
+        /* width: 20rem; */
+        height: 241px;
+    }
+    #Reason_mainDiv {
+        min-height: 100vh;
+        flex-direction: column;
+        background-color: rgba(208, 113, 25, 0.2);
+    }
+    
+    #Reason_mainDiv_wrapper {
+        width: 90%;
+        flex-direction: column;
+        /* width: 20rem; */
+        height: 540px;
+        margin-top: 50px;
+        box-sizing: border-box;
+    }
+    .Reason_ListDiv {
+        width: 93%; 
+        padding: 0px 10px;
+        box-sizing: border-box;
+    }
+    #Reason_mainDiv_textDiv {
+        margin-left: 0px;
+    }
+    #Reason_mainDiv #Reason_mainDiv_wrapper_text {
+        text-align: left;
+        height: 40px;
+        font-size: 1.5rem;
+        /* margin-left: -15px; */
+    }
+    #Reason_mainDiv #reason_Text {
+        font-size: 1rem;
+        color: #FFFFFF;
+        height: 70px;
+        width: 90%;
+    }
+    .Reason_ListDiv p {
+        margin-top: 5px;
+        font-size: 1.5rem;
+        height: 10px;
+    }
+    .Reason_ListDiv div {
+        width: 101%;
+    }
+    #Reason_mainDiv #how_to_Play_mainDiv p {
+        margin-top: 60px;
+        height: 5px;
+        font-size: 1.5rem;
+        margin-left: -15px;
+    }
+    #TabScreen_Div {
+        width: 20rem;
+        height: 300px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        border-radius: 40px;
+    }
+    #TabScreen_Div img{
+        width: 90%;
+    }
+    #how_to_Play_mainDiv{
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 15px;
+        row-gap: 30px;
+    }
+    #how_to_Play_earning {
+        width: 90%;
+        font-size: 1.1rem;
+        height: 70px;
+    }
+    #FAQ_MainDiv {
+        flex-direction: column;
+    }
+    #FAQ_Wrapper {
+    background-size: 300px;
+    background-position: center;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    }
+    #FAQ_Wrapper p {
+        font-weight: bold;
+        font-size: 1.53rem;
+        height: 10px;
+    }
+    #FAQ_Wrapper div {
+        padding: 25px;
+        box-sizing: border-box;
+        width: 80%;
+        height: 80px;
+    }
+    #FAQ_questionDiv {
+        width: 21rem;
+        padding: 20px;
+        row-gap: 20px;
+    }
+    footer{
+        height: 250px;
+    }
+    #contactUs_Div {
+        flex-direction: column;
+        justify-content:start;
+        padding: 0px 10px;
+        margin-bottom: 10px;
+        row-gap: 16px;
+    }
+    #contactUs_Div_logo{
+        width: 9.87rem;
+    }
+    #contactUs_Div div{
+        flex-direction: column;
+        justify-content:start ;
+        align-items: start;
+        column-gap: 12px;
+        font-size: 1.2rem;
+    }
+    #contactUs_LogoDiv{
+       display: flex; 
+       column-gap: 5px;
+       font-size: 1rem;
+    }
+    #lastLine_Div {
+        margin-top: 20px;
+        padding: 0px 10px; 
+        font-size: 1.2rem;
+    }
+   
+    
+    
+
+}
+@media screen and (min-width: 600px){
+    #VideoFrame_Wrapper {
+       box-sizing: border-box;
+       /* flex: 1; */
+    }
+    /* #VideoFrame_mainDiv {
+        height: 100vh;
+        text-align: start;
+    }
+    #VideoFrame_mainDiv p {
+        font-weight: bold;
+        font-size: 1.5rem;
+        height: 0px;
+    }
+    
+    #VideoFrame_mainDiv #videoFrame_text {
+        margin-left: -65px;
+    }
+    #VideoFrame_Wrapper img{
+        width: 100%;
+        /* width: 20rem; */
+        /*height: 241px;
+    } */
+
+    #VideoFrame_mainDiv {
+        padding: 30px;
+        height: 60vh;
+    }
+    #VideoFrame_Wrapper {
+        margin-top: -200px;
+     }
+    
+    #VideoFrame_mainDiv p {
+        font-size: 2rem;
+        height: 45px;
+    }
+    
+    #VideoFrame_mainDiv #videoFrame_text {
+        font-size: 1.25rem;
+        width: 90%;
+    }
+    #VideoFrame_Wrapper img{
+        /* width: 100%; */
+        /* width: 100%; */
+        width: 24rem;
+        /* height: 241px; */
+    }
+    #Reason_mainDiv {
+        flex-direction: column;
+    }
+    /* #Reason_mainDiv {
+        min-height: 100vh;
+        flex-direction: column;
+        background-color: rgba(208, 113, 25, 0.2);
+    } */
+    
+    #Reason_mainDiv_wrapper {
+        width: 65%;
+        flex-direction: column;
+        /* width: 20rem; */
+        height: 540px;
+        margin-top: 50px;
+        box-sizing: border-box;
+    }
+    .Reason_ListDiv {
+        width: 101%; 
+        padding: 0px 10px;
+        box-sizing: border-box;
+    }
+    #Reason_mainDiv_textDiv {
+        margin-left: 0px;
+    }
+    #Reason_mainDiv #Reason_mainDiv_wrapper_text {
+        text-align: left;
+        height: 40px;
+        font-size: 2rem;
+        /* margin-left: -15px; */
+    }
+    /* #Reason_mainDiv #reason_Text {
+        font-size: 1rem;
+        color: #FFFFFF;
+        height: 70px;
+        width: 90%;
+    } */
+    /* .Reason_ListDiv p {
+        margin-top: 5px;
+        font-size: 1.5rem;
+        height: 10px;
+    } */
+    .Reason_ListDiv div {
+        width: 101%;
+    }
+    /* #Reason_mainDiv #how_to_Play_mainDiv p {
+        margin-top: 60px;
+        height: 5px;
+        font-size: 1.5rem;
+        margin-left: -15px;
+    } */
+    /* #how_to_Play_mainDiv{
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* justify-content: center; */
+       /* margin: 0px 15px;
+        row-gap: 30px;
+    } */
+   
+#FAQ_MainDiv {
+    padding: 20px;
+    box-sizing: border-box;
+    column-gap: 100px;
+    height: 80vh;
+} 
+#FAQ_Wrapper {
+    background-size: 350px;
+    background-position: center;
+    height: 380px;
+}
+#FAQ_Wrapper p {
+    font-weight: bold;
+    font-size: 2.5rem;
+    height: 70px;
+}
+#contactUs_Div {
+    padding: 0px 30px;
+}
+#lastLine_Div {
+    padding: 0px 30px;
+}
+
 }
