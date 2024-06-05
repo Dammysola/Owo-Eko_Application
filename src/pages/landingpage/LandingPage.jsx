@@ -9,6 +9,9 @@ import arrow from '../../assets/svg/arrow-circle-down.svg'
 import logo from '../../assets/svg/logo.svg'
 import mail from '../../assets/svg/mail.svg'
 import call from '../../assets/svg/call.svg'
+import signUp from '../../assets/svg/signUp.svg'
+import tapping from '../../assets/svg/tapping.svg'
+import money from '../../assets/svg/money.svg'
 
 const LandingPage = () => {
   const [active1, setActive1] = useState(false)
@@ -46,17 +49,17 @@ const LandingPage = () => {
 
   const CardOne = [
     {
-      image: './src/assets/svg/signUp.svg',
+      image: signUp,
       header: 'Sign Up',
       text: 'Create an account in seconds'
     },
     {
-      image: './src/assets/svg/tapping.svg',
+      image: tapping,
       header: 'Start Tapping',
       text: 'Tap 1000 times each day to earn 1000 coins'
     },
     {
-      image: './src/assets/svg/money.svg',
+      image: money,
       header: 'Redeem Your Coins',
       text: 'Redeem your coins for Naira. 1000 coins = 1000 Naira'
     }
