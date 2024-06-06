@@ -48,7 +48,7 @@ export const Links = [
       text: "12",
       link: "https://www.highcpmgate.com/jihvm3ui?key=f808f400599295c77be7e8ffc7c042a9",
     },
-    
+
     //Moneytag
     {
         text: "Money Tag - 1",
@@ -210,6 +210,88 @@ export const Links = [
     },
     {
         text: "Money Tag UK - 20",
+        link: "https://grushoungy.com/4/7572502",
+    },
+
+    //Moneytag UK 2
+    {
+        text: "Money Tag Uk 2 - 1",
+        link: "https://eephoawaum.com/4/7572632",
+    },
+    {
+        text: "Money Tag Uk 2 - 2",
+        link: "https://eeptoabs.com/4/7572624",
+    },
+    {
+        text: "Money Tag UK 2 - 3",
+        link: "https://oangewha.net/4/7572627",
+    },
+    {
+        text: "Money Tag UK 2 - 4",
+        link: "https://roapsoogaiz.net/4/7572631",
+    },
+    {
+        text: "Money Tagm UK 2 - 5",
+        link: "https://doostozoa.net/4/7572615",
+    },
+    {
+        text: "Money Tag UK 2 - 6",
+        link: "https://kauraishojy.com/4/7572595",
+    },
+    {
+        text: "Money Tag UK 2 - 7",
+        link: "https://oatchaudu.net/4/7572628",
+    },
+    {
+        text: "Money Tag UK 2 - 8",
+        link: "https://glorganoth.com/4/7572619",
+    },
+    {
+        text: "Money Tag UK 2 - 9",
+        link: "https://thefacux.com/4/7572613",
+    },
+    {
+        text: "Money Tag UK 2 - 10",
+        link: "https://soocaips.com/4/7572597",
+    },
+    {
+        text: "Money Tag UK 2 - 11",
+        link: "https://nukeluck.net/4/7572617",
+    },
+    {
+        text: "Money Tag UK 2 - 12",
+        link: "https://taucaphoful.net/4/7572591",
+    },
+    {
+        text: "Money Tag UK 2 - 13",
+        link: "https://oangewha.net/4/7572588",
+    },
+    {
+        text: "Money Tag UK 2 - 14",
+        link: "https://thoadsaibsou.net/4/7572618",
+    },
+    {
+        text: "Money Tag UK 2 - 15",
+        link: "https://intorterraon.com/4/7572620",
+    },
+    {
+        text: "Money Tag UK 2 - 16",
+        link: "https://zeewhaih.com/4/7572589",
+    },
+    {
+        text: "Money Tag UK 2 - 17",
+        link: "https://chiglees.com/4/7572621",
+    },
+    {
+        text: "Money Tag UK 2 - 18",
+        link: "https://gleeglis.net/4/7572614",
+    },
+    {
+        text: "Money Tag UK 2 - 19",
+        link: "https://rndnoibattor.com/4/7572599",
+    },
+    {
+        text: "Money Tag UK 2 - 20",
         link: "https://grushoungy.com/4/7572502",
     },
 
