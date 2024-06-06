@@ -147,8 +147,8 @@ const LandingPage = () => {
           </div>
         </div>
         <div id={Style.how_to_Play_mainDiv}>
-          <p>Sneak Peek - How to Play</p>
-          <div id={Style.how_to_Play_earning}>ere's how to play OwoEko seamlessly. Follow these simple steps to start earning rewards effortlessly</div>
+          <p>See Our App in Action</p>
+          <div id={Style.how_to_Play_earning}>Get a glimpse of the engaging and user-friendly interface of our tapping app. Designed for an immersive experience</div>
           <div id={Style.TabScreen_Div}>
             <img src={tabScreen} alt="" />
           </div>
@@ -169,7 +169,7 @@ const LandingPage = () => {
               <img src={arrow} alt="" className={`${Style.arrow} ${active1 ? Style.arrow_active : ""}`} />
             </div>
             <div className={`${Style.answer} ${active1 ? Style.answer_active : ""}`}>
-              <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
+              <p>You can earn coins in OkoEko by completing various in-app activities such as tapping challenges, daily login bonuses, and special events.</p>
             </div>
           </div>
           <div className={Style.FAQ_questions} onClick={() => faqActive(2)}>
@@ -178,7 +178,7 @@ const LandingPage = () => {
               <img src={arrow} alt="" className={`${Style.arrow} ${active2 ? Style.arrow_active : ""}`} />
             </div>
             <div className={`${Style.answer} ${active2 ? Style.answer_active : ""}`}>
-              <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
+              <p>Redeeming coins in OwoEko is easy! Simply go to the 'Profile' section of the app, where you'll find a variety of options to choose from. Select withdraw, and follow the prompts to complete the redemption process.</p>
             </div>
           </div>
           <div className={Style.FAQ_questions} onClick={() => faqActive(3)}>
@@ -187,7 +187,7 @@ const LandingPage = () => {
               <img src={arrow} alt="" className={`${Style.arrow} ${active3 ? Style.arrow_active : ""}`} />
             </div>
             <div className={`${Style.answer} ${active3 ? Style.answer_active : ""}`}>
-              <p>Lorem Find answers to common questions about how to play, earn rew yfbtfytfytbfytbyutbddtdutdujduj</p>
+              <p>Payment is processed immediately! Once you redeem your coins for a reward, you will receive your payment right away</p>
             </div>
           </div>
         </div>

@@ -170,9 +170,7 @@
 
 #milestoneDiv img {
     width: 30px;
-    /* padding-left: 20px; */
     box-sizing: border-box;
-    /* background-color: #f5c293; */
 }
 
 #milestoneDiv {
@@ -202,8 +200,10 @@
 }
 #MainPage_screenTextDiv #ProgressBar_ImageDiv img{
     width: 50px;
-    height: 58px;
+    height: 40px;
 }
+
+
 
 
 
