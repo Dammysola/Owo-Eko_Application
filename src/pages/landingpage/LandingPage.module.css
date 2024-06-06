@@ -513,30 +513,11 @@ footer{
     
 
 }
-/* @media screen and (min-width: 600px) */
-{
+/* @media screen and (min-width: 600px){
     #VideoFrame_Wrapper {
        box-sizing: border-box;
-       /* flex: 1; */
     }
-    /* #VideoFrame_mainDiv {
-        height: 100vh;
-        text-align: start;
-    }
-    #VideoFrame_mainDiv p {
-        font-weight: bold;
-        font-size: 1.5rem;
-        height: 0px;
-    }
-    
-    #VideoFrame_mainDiv #videoFrame_text {
-        margin-left: -65px;
-    }
-    #VideoFrame_Wrapper img{
-        width: 100%;
-        /* width: 20rem; */
-        /*height: 241px;
-    } */
+
 
     #VideoFrame_mainDiv {
         padding: 30px;
@@ -556,24 +537,18 @@ footer{
         width: 90%;
     }
     #VideoFrame_Wrapper img{
-        /* width: 100%; */
-        /* width: 100%; */
+        
         width: 24rem;
-        /* height: 241px; */
+       
     }
     #Reason_mainDiv {
         flex-direction: column;
     }
-    /* #Reason_mainDiv {
-        min-height: 100vh;
-        flex-direction: column;
-        background-color: rgba(208, 113, 25, 0.2);
-    } */
+
     
     #Reason_mainDiv_wrapper {
         width: 65%;
         flex-direction: column;
-        /* width: 20rem; */
         height: 540px;
         margin-top: 50px;
         box-sizing: border-box;
@@ -590,37 +565,12 @@ footer{
         text-align: left;
         height: 40px;
         font-size: 2rem;
-        /* margin-left: -15px; */
     }
-    /* #Reason_mainDiv #reason_Text {
-        font-size: 1rem;
-        color: #FFFFFF;
-        height: 70px;
-        width: 90%;
-    } */
-    /* .Reason_ListDiv p {
-        margin-top: 5px;
-        font-size: 1.5rem;
-        height: 10px;
-    } */
+
     .Reason_ListDiv div {
         width: 101%;
     }
-    /* #Reason_mainDiv #how_to_Play_mainDiv p {
-        margin-top: 60px;
-        height: 5px;
-        font-size: 1.5rem;
-        margin-left: -15px;
-    } */
-    /* #how_to_Play_mainDiv{
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-        /* justify-content: center; */
-       /* margin: 0px 15px;
-        row-gap: 30px;
-    } */
+
    
 #FAQ_MainDiv {
     padding: 20px;
@@ -645,4 +595,4 @@ footer{
     padding: 0px 30px;
 }
 
-}
+} */
