@@ -143,6 +143,8 @@
     height: 100px;
     display: flex;
     flex-direction: column;
+    padding: 0px 10px;
+    box-sizing: border-box;
     /* align-items: center; */
     /* flex-direction: column;
     align-items: center;
@@ -301,6 +303,11 @@ footer{
     margin-top: 10px;
     box-sizing: border-box;
     padding: 0px 90px;
+}
+#contactUs_LogoDiv{
+    display: flex;
+    column-gap: 10px;
+
 }
 
 
@@ -504,7 +511,8 @@ footer{
     
 
 }
-@media screen and (min-width: 600px){
+/* @media screen and (min-width: 600px) */
+{
     #VideoFrame_Wrapper {
        box-sizing: border-box;
        /* flex: 1; */
@@ -615,7 +623,7 @@ footer{
 #FAQ_MainDiv {
     padding: 20px;
     box-sizing: border-box;
-    column-gap: 100px;
+    column-gap: 90px;
     height: 80vh;
 } 
 #FAQ_Wrapper {
