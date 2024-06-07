@@ -14,7 +14,7 @@ export function useUser() {
         if (storedDetails != null) {
 
             console.log("Init")
-            const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${email}`)
+            const response = await axios.get(`https://owoeko.com/owo-eko-api/user/details/${email}`)
 
             console.log("getUserDeatils", response.status)
 

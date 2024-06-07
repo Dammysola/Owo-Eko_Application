@@ -16,7 +16,7 @@ const Claim = () => {
       updateLoadingPopup(true);
       let details = JSON.parse(localStorage.getItem("user_details"));
 
-      const response = await axios.post("https://owo-eko-api.onrender.com/user/claim",
+      const response = await axios.post("https://owoeko.com/owo-eko-api/user/claim",
         {
           "email": details.email,
           "coin": 50

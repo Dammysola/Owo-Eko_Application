@@ -21,7 +21,7 @@ const passwordOTP = () => {
         try {
             updateLoadingPopup(true)
             console.log(email)
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/verify-otp-pass',
+            const response = await axios.post('https://owoeko.com/owo-eko-api/user/verify-otp-pass',
                 {
                     "email": email,
                     "otp": enterOTP

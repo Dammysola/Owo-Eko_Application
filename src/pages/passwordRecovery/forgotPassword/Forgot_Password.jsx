@@ -19,15 +19,15 @@ const Forgot_Password = () => {
     const [forgotPassword, setForgotPassword] = useState('')
 
     const [validation, setValidation] = useState({
-		email: false
-	})
+        email: false
+    })
 
     const passwordSubmit = async () => {
 
 
         try {
             updateLoadingPopup(true)
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/forget-pass', { "email": forgotPassword })
+            const response = await axios.post('https://owoeko.com/owo-eko-api/user/forget-pass', { "email": forgotPassword })
 
             console.log(response.data);
             console.log("login status", response.status);
@@ -82,14 +82,14 @@ const Forgot_Password = () => {
         let emailVal = forgotPassword.includes("@") && forgotPassword.includes(".") ? false : true;
 
         setValidation({
-			email: emailVal
+            email: emailVal
         })
-        let valid = emailVal == false 
+        let valid = emailVal == false
         if (valid) {
-            passwordSubmit() 
+            passwordSubmit()
         }
-        
-        
+
+
         console.log(forgotPassword);
     }
     return (

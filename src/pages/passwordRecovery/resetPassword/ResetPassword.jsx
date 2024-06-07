@@ -37,7 +37,7 @@ const ResetPassword = () => {
     const resetpasswordSubmit = async ()=>{
         try {
             updateLoadingPopup(true)
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/changepassword', 
+            const response = await axios.post('https://owoeko.com/owo-eko-api/user/changepassword', 
                 {
                     "email":resetPassword.email,
                     "createpass": resetPassword.createPassword,

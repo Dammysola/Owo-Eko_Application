@@ -31,7 +31,7 @@ const Verify = () => {
     console.log(email, userCode, "Show")
     try {
     updateLoadingPopup(true);
-      const response = await axios.post("https://owo-eko-api.onrender.com/user/verify-otp",
+      const response = await axios.post("https://owoeko.com/owo-eko-api/user/verify-otp",
         {
           "email": email,
           "otp": userCode
