@@ -85,7 +85,7 @@ const Login = () => {
 
         } catch (err) {
             updateLoadingPopup(false);
-            let userError = err
+            let userError = err.response.data.message
 
             updateErrorText(userError)
 
