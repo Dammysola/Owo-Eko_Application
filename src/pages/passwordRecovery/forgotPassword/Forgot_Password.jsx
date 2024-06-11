@@ -28,7 +28,7 @@ const Forgot_Password = () => {
         try {
             updateLoadingPopup(true)
             const response = await axios.post('https://owo-eko-api.onrender.com/user/forget-pass', { "email": forgotPassword })
-
+            
             updateLoadingPopup(false)
 
             if (response.status == 200) {
@@ -74,7 +74,7 @@ const Forgot_Password = () => {
         setValidation({
             email: emailVal
         })
-        
+
         let valid = emailVal == false
 
         if (valid) {
