@@ -58,6 +58,8 @@ const Login = () => {
             if (response.status == 200) {
                 const response2 = await getUserDetails(logIn.email);
 
+                console.log(response2);
+
                 if (response2 == 200) {
 
                     navigate(`/mainpage`);

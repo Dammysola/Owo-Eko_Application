@@ -34,6 +34,8 @@ export function useUser() {
                     username: details["username"]
                 }))
 
+                
+                console.log("Details Success ",response.data)
 
                 localStorage.setItem("user_details", JSON.stringify({
                     ...userDetails,
@@ -48,6 +50,7 @@ export function useUser() {
             } else {
                 updateErrorText(response.data)
 
+                console.log("Details Error ",response.data)
                 updateErrorPopup(true)
                 setTimeout(() => {
                     updateErrorPopup(false)
