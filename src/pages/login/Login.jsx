@@ -13,7 +13,7 @@ import { useUser } from '../../api_services/User'
 const Login = () => {
 
     const navigate = useNavigate()
-    
+
     const { getUserDetails } = useUser();
 
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
@@ -67,7 +67,7 @@ const Login = () => {
 
                 updateLoadingPopup(false);
                 updateErrorText(response.data)
-
+                console.log("Login failed", response.data)
                 updateErrorPopup(true)
                 setTimeout(() => {
                     updateErrorPopup(false)
@@ -79,6 +79,9 @@ const Login = () => {
             let userError = err.response.data.message
 
             updateErrorText(userError)
+
+
+            console.log("Login failed", userError)
 
             updateErrorPopup(true)
             setTimeout(() => {
