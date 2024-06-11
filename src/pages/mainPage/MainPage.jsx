@@ -67,6 +67,7 @@ const MainPage = () => {
 
             if (userDetails.balance <= 500) {
 
+
                 if (index < (links.length - 1)) {
                     setIndex(index + 1)
                 }
