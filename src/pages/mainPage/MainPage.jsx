@@ -65,7 +65,7 @@ const MainPage = () => {
         if (connection) {
 
 
-            if (userDetails.balance != 300) {
+            if (userDetails.balance <= 500) {
 
                 if (index < (links.length - 1)) {
                     setIndex(index + 1)
@@ -92,7 +92,7 @@ const MainPage = () => {
 
                 let url = links[index].link
                 // let win = window.open(`${url}`, "_blank");
-                // let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
+                window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
 
                 // win.addEventListener('load', function () {
                 //   console.log('All assets are loaded')

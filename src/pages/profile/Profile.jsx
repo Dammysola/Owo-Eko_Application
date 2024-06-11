@@ -27,11 +27,11 @@ const Profile = () => {
     }, []);
 
     return (
-        <div id={Style.wrapper}> 
-        <buttton id={Style.Profile_mainDiv} onClick={()=>updateProfile(!profile)}>
-            
-        </buttton>
-        <div id={Style.Profile_wrapper}>
+        <div id={Style.wrapper}>
+            <buttton id={Style.Profile_mainDiv} onClick={() => updateProfile(!profile)}>
+
+            </buttton>
+            <div id={Style.Profile_wrapper}>
                 <div id={Style.Profile_details}>
                     <div id={Style.Profile_nameDiv}>
                         <img src={avatar} alt="" />
@@ -56,7 +56,7 @@ const Profile = () => {
 
             </div>
         </div >
-        
+
     )
 }
 

@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import Style from '../withdrawal/Withdrawal.module.css'
 import InputField from '../../components/input_Form/InputField'
 import Button from '../../components/button/Button'
+import { popupContextHook } from '../../PopupContext'
 
 const Withdrawal = () => {
+  
   const [UserDetails, setUserDetails] = useState({
     phoneNumber: '',
     bank: '',
     accNumber: ''
   })
+  const { updateWithdrawalPopup } = popupContextHook();
 
   const Details = (e) => {
     const value = e.target.value
@@ -27,27 +30,31 @@ const Withdrawal = () => {
     console.log(UserDetails.confirmPassword, UserDetails.createPassword, UserDetails.phoneNumber);
   }
   return (
-    <div id={Style.Withdrawal_mainDiv}>
-      <div id={Style.Withdrawal_formWrapper}>
-        <p id={Style.header}>Withdrawal</p>
-        <form onSubmit={handleSubmit}>
-          
-          <div id={Style.banks}>
-            <label>Bank</label>
-            <select name="" id={Style.DOB}>
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-              <option value="">4</option>
-              <option value="">5</option>
-              <option value="">6</option>
-              <option value="">7</option>
-              <option value="">8</option>
-              <option value="">9</option>
-              <option value="">10</option>
-              <option value="">11</option>
-            </select>
-          </div>
+    <div id={Style.wrapper}>
+      <buttton id={Style.Profile_mainDiv} onClick={() => updateWithdrawalPopup(false)}>
+
+      </buttton>
+      <div id={Style.Withdrawal_mainDiv}>
+        <div id={Style.Withdrawal_formWrapper}>
+          <p id={Style.header}>Withdrawal</p>
+          <form onSubmit={handleSubmit}>
+
+            <div id={Style.banks}>
+              <label>Bank</label>
+              <select name="" id={Style.DOB}>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+                <option value="">11</option>
+              </select>
+            </div>
             <InputField
               label={"Account Number"}
               placeholder={"Enter Destination Account Number"}
@@ -57,10 +64,11 @@ const Withdrawal = () => {
               OnChange={Details}
             />
             <div id={Style.button}>
-<Button  type={"submit"} text={"Next"} onSubmit={handleSubmit} />
+              <Button type={"submit"} text={"Next"} onSubmit={handleSubmit} />
             </div>
-            
-        </form>
+
+          </form>
+        </div>
       </div>
     </div>
   )
