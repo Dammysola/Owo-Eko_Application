@@ -10,7 +10,6 @@ export function useUser() {
 
         let storedDetails = JSON.parse(localStorage.getItem("user_details"));
 
-
             const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${email}`)
 
             console.log("CC");
