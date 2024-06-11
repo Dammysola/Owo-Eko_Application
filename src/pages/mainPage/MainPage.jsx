@@ -65,7 +65,7 @@ const MainPage = () => {
         if (connection) {
 
 
-            if (userDetails.balance != 350) {
+            if (userDetails.balance != 400) {
 
                 if (index < (links.length - 1)) {
                     setIndex(index + 1)
