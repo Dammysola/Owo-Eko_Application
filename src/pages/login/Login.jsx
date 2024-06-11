@@ -63,6 +63,14 @@ const Login = () => {
                 if (response2 == 200) {
 
                     navigate(`/mainpage`);
+                } else {
+                    updateLoadingPopup(false);
+                    updateErrorText("Could not Login")
+                    console.log("Response Status Error")
+                    updateErrorPopup(true)
+                    setTimeout(() => {
+                        updateErrorPopup(false)
+                    }, 2000)
                 }
 
             } else {

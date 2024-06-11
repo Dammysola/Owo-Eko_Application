@@ -23,6 +23,8 @@ export function useUser() {
 
                 let details = response.data["details"]
 
+                console.log("Datails", details)
+
 
                 updateDetails((prev) => ({
                     ...storedDetails,
