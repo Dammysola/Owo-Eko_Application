@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -10px;
+    margin-top: -25px;
 }
 
 #MainPage_firstDiv {
@@ -33,6 +33,12 @@
     background-color: #DADADA;
     border-radius: 12px;
     overflow: hidden;
+}
+#MainPage_milestoneText{
+    width: 502px;
+    display: flex;
+    column-gap: 33.3%;
+    margin-top: -15px;
 }
 
 #MainPage_coinDiv {
@@ -195,8 +201,7 @@
 
 #MainPage_screenTextDiv #ProgressBar_ImageDiv {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    column-gap: 28.5%;
 }
 #MainPage_screenTextDiv #ProgressBar_ImageDiv img{
     width: 50px;

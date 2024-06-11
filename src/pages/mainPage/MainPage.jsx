@@ -136,6 +136,12 @@ const MainPage = () => {
                             <div id={Style.milestoneDiv}>
                                 <div id={Style.Progressfill} style={{ width: progressWidth }}><img src={danfo} alt="" /></div>
                             </div>
+                            <div id={Style.MainPage_milestoneText}>
+                                <p>0</p>
+                                <p>250</p>
+                                <p>500</p>
+                                <p>1000</p>
+                            </div>
                         </div>
 
                         <div id={Style.MainPage_text}>Tap tap tap, can't slow down, Rhythm flows, in this town. Energy high, fingers pop, Tap tap tap, feel the shine.</div>
