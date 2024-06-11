@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { popupContextHook } from '../PopupContext'
 import { userContextHook } from '../UserContext'
-import React, { forwardRef, useImperativeHandle } from "react";
 
 export function useUser() {
     const { userDetails, updateDetails } = userContextHook()
