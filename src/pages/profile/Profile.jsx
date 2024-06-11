@@ -15,9 +15,7 @@ const Profile = () => {
 
     const tabClick = (index) => {
 
-        console.log("previous", tabIndex);
         setTabIndex(index)
-        console.log(tabIndex);
 
     }
 

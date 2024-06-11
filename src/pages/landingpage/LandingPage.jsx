@@ -20,7 +20,6 @@ const LandingPage = () => {
 
   const faqs = document.getElementsByClassName(Style.FAQ_questions)
 
-  console.log(faqs);
   const faqActive = (index) => {
 
     if (index == 1) {

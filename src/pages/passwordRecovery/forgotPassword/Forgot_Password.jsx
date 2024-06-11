@@ -27,15 +27,11 @@ const Forgot_Password = () => {
 
         try {
             updateLoadingPopup(true)
-            const response = await axios.post('https://owoeko.com/owo-eko-api/user/forget-pass', { "email": forgotPassword })
-
-            console.log(response.data);
-            console.log("login status", response.status);
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/forget-pass', { "email": forgotPassword })
 
             updateLoadingPopup(false)
 
             if (response.status == 200) {
-                console.log('login successful', response.data);
 
                 navigate(`/sendOTP/${forgotPassword}`)
 
@@ -47,10 +43,6 @@ const Forgot_Password = () => {
                 setTimeout(() => {
                     updateErrorPopup(false)
                 }, 1000)
-
-                console.log('signup failed', response.data);
-
-                console.log('login failed', response.data);
             }
         } catch (error) {
             updateLoadingPopup(false);
@@ -63,8 +55,6 @@ const Forgot_Password = () => {
                 updateErrorPopup(false)
             }, 2000)
 
-            // setSignUpError(userError)
-            console.log("failed", userError);
         }
     }
 
@@ -84,11 +74,12 @@ const Forgot_Password = () => {
         setValidation({
             email: emailVal
         })
+        
         let valid = emailVal == false
+
         if (valid) {
             passwordSubmit()
         }
-
 
         console.log(forgotPassword);
     }

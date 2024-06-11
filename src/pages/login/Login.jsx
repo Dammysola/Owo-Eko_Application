@@ -42,23 +42,16 @@ const Login = () => {
     }
 
     const LoginSubmit = async () => {
-        console.log("cc")
         try {
 
             updateLoadingPopup(true);
-            const response = await axios.post("https://owoeko.com/owo-eko-api/user/login", {
+            const response = await axios.post("https://owo-eko-api.onrender.com/user/login", {
                 "email": logIn.email,
                 "password": logIn.password
             })
 
-            console.log(logIn.email)
-            console.log("Login Status", response.status)
-            console.log("Login Data", response.data)
-
             // updateLoadingPopup(false);
             //     if (response.status == 200) {
-
-            //         console.log('login successful', response.data);
 
             //         // sessionStorage.setItem("phone_number", phoneNumber)
             //         navigate(`/mainpage`)
@@ -79,8 +72,6 @@ const Login = () => {
                 setTimeout(() => {
                     updateErrorPopup(false)
                 }, 2000)
-
-                console.log('login failed', response.data);
             }
 
         } catch (err) {
@@ -93,8 +84,6 @@ const Login = () => {
             setTimeout(() => {
                 updateErrorPopup(false)
             }, 2000)
-
-            console.log("SignUp Failed: ", userError)
         }
     }
 
@@ -114,7 +103,6 @@ const Login = () => {
         if (valid) {
             LoginSubmit()
         }
-        console.log(logIn.email, logIn.password);
     }
 
     return (
