@@ -50,6 +50,8 @@ const Login = () => {
                 "password": logIn.password
             })
 
+
+            console.log("Login Details", response.data);
             // updateLoadingPopup(false);
             //     if (response.status == 200) {
 
