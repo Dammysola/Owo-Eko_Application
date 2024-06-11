@@ -46,7 +46,7 @@ const Login = () => {
         try {
 
             updateLoadingPopup(true);
-            const response = await axios.post("https://owoeko.com/owo-eko-api/user/login", {
+            const response = await axios.post("https://owo-eko-api.onrender.com/user/login", {
                 "email": logIn.email,
                 "password": logIn.password
             })

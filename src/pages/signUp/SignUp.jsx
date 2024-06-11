@@ -42,7 +42,7 @@ const SignUp = () => {
 
     try {
       updateLoadingPopup(true);
-      const response = await axios.post("https://owoeko.com/owo-eko-api/user/send-otp",
+      const response = await axios.post("https://owo-eko-api.onrender.com/user/send-otp",
         {
           "email": signUp.email,
           "phone": signUp.phoneNumber,

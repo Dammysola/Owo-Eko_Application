@@ -27,7 +27,7 @@ const Forgot_Password = () => {
 
         try {
             updateLoadingPopup(true)
-            const response = await axios.post('https://owoeko.com/owo-eko-api/user/forget-pass', { "email": forgotPassword })
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/forget-pass', { "email": forgotPassword })
 
             console.log(response.data);
             console.log("login status", response.status);
