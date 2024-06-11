@@ -18,6 +18,7 @@ export function useUser() {
 
             updateLoadingPopup(false)
             
+            console.log("Details Initiated", response)
 
             if (response.status == 200) {
 
@@ -60,7 +61,7 @@ export function useUser() {
 
             }
 
-            return (response.status);
+            return response.status;
 
         }
     }
