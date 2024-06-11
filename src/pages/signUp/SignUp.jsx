@@ -83,8 +83,7 @@ const SignUp = () => {
         updateErrorPopup(false)
       }, 2000)
 
-      setSignUpError(userError)
-      console.log("SignUp Failed: ", setSignUpError)
+      console.log("SignUp Failed: ", userError)
     }
   }
 

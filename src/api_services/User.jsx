@@ -13,20 +13,16 @@ export function useUser() {
 
         if (storedDetails != null) {
 
-            console.log("Init")
             const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${email}`)
 
-            console.log("getUserDeatils", response.status)
 
             updateLoadingPopup(false)
             
-            console.log("Detials", response.data)
 
             if (response.status == 200) {
 
                 let details = response.data["details"]
 
-                console.log('login successful', details["username"]);
 
                 updateDetails((prev) => ({
                     ...storedDetails,
@@ -38,7 +34,6 @@ export function useUser() {
                     username: details["username"]
                 }))
 
-                console.log("userDeteials", userDetails)
 
                 localStorage.setItem("user_details", JSON.stringify({
                     ...userDetails,
@@ -58,7 +53,6 @@ export function useUser() {
                     updateErrorPopup(false)
                 }, 2000)
 
-                console.log('login failed', response.data);
             }
 
             return (response.status);

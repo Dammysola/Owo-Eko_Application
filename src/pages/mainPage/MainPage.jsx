@@ -36,7 +36,6 @@ const MainPage = () => {
 
         let details = JSON.parse(localStorage.getItem("user_details"));
 
-        console.log("SSSS", details)
 
         updateDetails(details)
 
@@ -87,7 +86,6 @@ const MainPage = () => {
 
             setProgressWidth(`${(userDetails.balance / 100) * 100}%`)
 
-            console.log("Link No", links[index].text)
             let url = links[index].link
             // let win = window.open(`${url}`, "_blank");
             // let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
@@ -159,7 +157,7 @@ const MainPage = () => {
                 </div>
             </div>
             <div id={Style.MainPageText}>
-                <button onClick={() => { console.log("message"); updateProfile(!profile) }}><img src={avatar} alt="" />{userDetails.username}</button>
+                <button onClick={() => {updateProfile(!profile) }}><img src={avatar} alt="" />{userDetails.username}</button>
                 <div> <img src={busConductor} alt="" />Eko la wa</div>
             </div>
         </div>

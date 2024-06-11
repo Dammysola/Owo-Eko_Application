@@ -8,7 +8,6 @@ import { popupContextHook } from '../../PopupContext';
 
 const Profile = () => {
     let [tabIndex, setTabIndex] = useState(0);
-    let [count, setCount] = useState(0);
     let [userDetails, setUserDetails] = useState({});
 
     const { updateProfile, profile } = popupContextHook();
@@ -16,31 +15,8 @@ const Profile = () => {
 
     const tabClick = (index) => {
 
-        console.log("previous", tabIndex);
         setTabIndex(index)
-        console.log(tabIndex);
 
-    }
-
-    const testingLink = () => {
-        // let win = open('https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9', '_blank', 'noopener, noreferrer');
-
-        let url = 'https://www.highcpmgate.com/cdaz5uchgt?key=aca08e2352060a0a52e8edd8e8a6f4e9'
-        let win = window.open(`${url}`, "_blank", "popup, width=10,height=10").then((ev) => {
-            onload = (ev) => {
-                console.log("message")
-            }
-        });
-
-        // win.document.write(`<iframe src=${url} sandbox="allow-top-navigation" width="100%" height="100%"></iframe>`)
-
-        // win.onload = (ev) => {
-        //     console.log("message")
-        //     setCount(count++)
-        //     setTimeout(() => {
-        //         win.close();
-        //     }, 2500)
-        // };
     }
 
     useEffect(() => {
@@ -67,7 +43,7 @@ const Profile = () => {
 
                         <p>{userDetails.balance}</p>
                     </div>
-                    <button onClick={testingLink} id={Style.withdraw_btn}>Withdrawal</button>
+                    <button id={Style.withdraw_btn}>Withdrawal</button>
                 </div>
                 <div id={Style.tab_cont}>
 

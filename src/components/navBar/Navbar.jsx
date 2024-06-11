@@ -1,13 +1,14 @@
 import React from 'react'
 import Style from "../navBar/NavBar.module.css"
 import EyoImage from '../../assets/svg/logo.svg'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <>
             <div id={Style.mainDiv}>
                 <div>
-                    <img src={EyoImage} alt="" />
+                   <Link to="/"><img src={EyoImage} alt="" /></Link> 
                 </div>
                 {/* <div>
                     <button id={Style.nav_btn}>Play Now</button>
