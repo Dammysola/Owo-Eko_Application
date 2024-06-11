@@ -315,7 +315,7 @@ footer{
 }
 
 
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
     #LandingPage_mainDiv {
         padding-top: 170px;
         row-gap: 30px;
@@ -402,7 +402,7 @@ footer{
         box-sizing: border-box;
     }
     #Reason_mainDiv_textDiv {
-        margin-left: 0px;
+        margin-left: -35px;
     }
     #Reason_mainDiv #Reason_mainDiv_wrapper_text {
         text-align: left;
@@ -426,9 +426,8 @@ footer{
     }
     #Reason_mainDiv #how_to_Play_mainDiv p {
         margin-top: 60px;
-        height: 5px;
+        height: 1px;
         font-size: 1.5rem;
-        margin-left: -15px;
     }
     #TabScreen_Div {
         width: 20rem;
@@ -442,15 +441,24 @@ footer{
         width: 90%;
     }
     #how_to_Play_mainDiv{
+        width: 100vw;
         height: 80vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0px 15px;
+        /* margin: 0px 15px; */
         row-gap: 30px;
     }
+    #how_to_Play_textDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-left: 50px;
+        box-sizing: border-box;
+        row-gap: 20px;
+    }
     #how_to_Play_earning {
-        width: 90%;
+        width: 90%; 
         font-size: 1.1rem;
         height: 70px;
     }
@@ -481,6 +489,8 @@ footer{
         row-gap: 20px;
     }
     footer{
+        margin-top: 50px;
+        box-sizing: border-box;
         height: 250px;
     }
     #contactUs_Div {
@@ -515,12 +525,10 @@ footer{
     
 
 }
-/* @media screen and (min-width: 600px){
+@media  (min-width: 600px) and (max-width: 900px){
     #VideoFrame_Wrapper {
        box-sizing: border-box;
     }
-
-
     #VideoFrame_mainDiv {
         padding: 30px;
         height: 60vh;
@@ -546,7 +554,33 @@ footer{
     #Reason_mainDiv {
         flex-direction: column;
     }
-
+    #Reason_mainDiv #how_to_Play_mainDiv p {
+        margin-top: 60px;
+        height: 1px;
+        font-size: 2rem;
+    }
+    #how_to_Play_mainDiv{
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* margin: 0px 15px; */
+        row-gap: 30px;
+    }
+    #how_to_Play_textDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-left: 50px;
+        box-sizing: border-box;
+        row-gap: 20px;
+    }
+    #how_to_Play_earning {
+        width: 90%; 
+        font-size: 1.3rem;
+        height: 70px;
+    }
     
     #Reason_mainDiv_wrapper {
         width: 65%;
@@ -571,30 +605,28 @@ footer{
 
     .Reason_ListDiv div {
         width: 101%;
-    }
-
-   
-#FAQ_MainDiv {
+    }   
+    #FAQ_MainDiv {
     padding: 20px;
     box-sizing: border-box;
     column-gap: 90px;
     height: 80vh;
-} 
-#FAQ_Wrapper {
+    } 
+    #FAQ_Wrapper {
     background-size: 350px;
     background-position: center;
     height: 380px;
-}
-#FAQ_Wrapper p {
+    }
+    #FAQ_Wrapper p {
     font-weight: bold;
     font-size: 2.5rem;
     height: 70px;
-}
-#contactUs_Div {
+    }
+    #contactUs_Div {
     padding: 0px 30px;
-}
-#lastLine_Div {
+    }
+    #lastLine_Div {
     padding: 0px 30px;
-}
+    }
 
-} */
+}

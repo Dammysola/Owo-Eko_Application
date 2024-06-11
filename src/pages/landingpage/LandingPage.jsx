@@ -114,8 +114,8 @@ const LandingPage = () => {
       <div id={Style.VideoFrame_mainDiv}>
         <div id={Style.VideoFrame_Wrapper}>
           <div>
-          <p>Sneak Peek - How to Play</p>
-          <div id={Style.videoFrame_text}>Here's how to play OwoEko seamlessly. Follow these simple steps to start earning rewards effortlessly</div>
+            <p>Sneak Peek - How to Play</p>
+            <div id={Style.videoFrame_text}>Here's how to play OwoEko seamlessly. Follow these simple steps to start earning rewards effortlessly</div>
           </div>
 
           <div>
@@ -146,8 +146,10 @@ const LandingPage = () => {
           </div>
         </div>
         <div id={Style.how_to_Play_mainDiv}>
-          <p>See Our App in Action</p>
-          <div id={Style.how_to_Play_earning}>Get a glimpse of the engaging and user-friendly interface of our tapping app. Designed for an immersive experience</div>
+          <div id={Style.how_to_Play_textDiv}>
+            <p>See Our App in Action</p>
+            <div id={Style.how_to_Play_earning}>Get a glimpse of the engaging and user-friendly interface of our tapping app. Designed for an immersive experience</div>
+          </div>
           <div id={Style.TabScreen_Div}>
             <img src={tabScreen} alt="" />
           </div>
