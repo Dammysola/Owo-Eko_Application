@@ -28,7 +28,7 @@ const MainPage = () => {
     const { getUserDetails } = useUser();
 
     const { userDetails, updateDetails } = userContextHook()
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile } = popupContextHook()
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup } = popupContextHook()
 
     const links = Links
 
@@ -63,36 +63,43 @@ const MainPage = () => {
         event.preventDefault();
         let connection = window.navigator.onLine;
         if (connection) {
-            if (index < (links.length - 1)) {
-                setIndex(index + 1)
+
+
+            if (userDetails.balance != 300) {
+
+                if (index < (links.length - 1)) {
+                    setIndex(index + 1)
+                }
+                else {
+                    setIndex(0)
+                }
+
+
+                // if (count === 10) {
+                //   updateClaimPopup(true)
+                // }
+                setToggleImg(!toggleImg)
+                setCount(count - 1)
+
+                if (count === 1) {
+                    setCount(50)
+                    updateClaimPopup(true)
+                    //   // setProgressImg(!progressImg)
+                }
+
+
+                setProgressWidth(`${(userDetails.balance / 1000) * 100}%`)
+
+                let url = links[index].link
+                // let win = window.open(`${url}`, "_blank");
+                // let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
+
+                // win.addEventListener('load', function () {
+                //   console.log('All assets are loaded')
+                // })
+            } else {
+                updateTapExceededPopup(true);
             }
-            else {
-                setIndex(0)
-            }
-
-
-            // if (count === 10) {
-            //   updateClaimPopup(true)
-            // }
-            setToggleImg(!toggleImg)
-            setCount(count - 1)
-
-            if (count === 1) {
-                setCount(50)
-                updateClaimPopup(true)
-                //   // setProgressImg(!progressImg)
-            }
-
-
-            setProgressWidth(`${(userDetails.balance / 1000) * 1000}%`)
-
-            let url = links[index].link
-            // let win = window.open(`${url}`, "_blank");
-            let win = window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
-
-            // win.addEventListener('load', function () {
-            //   console.log('All assets are loaded')
-            // })
 
         } else {
 
@@ -157,7 +164,7 @@ const MainPage = () => {
                 </div>
             </div>
             <div id={Style.MainPageText}>
-                <button onClick={() => {updateProfile(!profile) }}><img src={avatar} alt="" />{userDetails.username}</button>
+                <button onClick={() => { updateProfile(!profile) }}><img src={avatar} alt="" />{userDetails.username}</button>
                 <div> <img src={busConductor} alt="" />Eko la wa</div>
             </div>
         </div>

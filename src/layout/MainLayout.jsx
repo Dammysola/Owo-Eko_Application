@@ -20,7 +20,7 @@ import Profile from '../pages/profile/Profile'
 
 const MainLayout = () => {
 
-  const { loadingPopup, errorPopup, claimPopup, profile} = popupContextHook();
+  const { loadingPopup, errorPopup, claimPopup, profile, tapExceededPopup, withdrawalPopup} = popupContextHook();
   const [isMobile, setIsMobile] = useState(false);
 //   const [error, setError] = useState('');
 
@@ -48,6 +48,8 @@ const MainLayout = () => {
         <UserContext>
           <div id={Style.wrapper}>
             <NavBar />
+            {withdrawalPopup && <Withdrawal />}
+            {tapExceededPopup && <Tap_Exceeded />}
             {loadingPopup && <Loading />}
             {errorPopup && <Error />}
             {claimPopup && <Claim/>}

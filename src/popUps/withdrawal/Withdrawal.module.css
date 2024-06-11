@@ -7,7 +7,9 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 99;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
 }
 #Withdrawal_formWrapper{
     width: 648px;
@@ -21,7 +23,7 @@
     padding: 0px 30px;
     box-sizing: border-box;
     row-gap: 40px;
-    margin-top: -110px;
+    margin-top: -80px;
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
 }
