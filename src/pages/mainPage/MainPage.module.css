@@ -37,8 +37,13 @@
 #MainPage_milestoneText{
     width: 502px;
     display: flex;
-    column-gap: 33.3%;
+    column-gap: 25%;
     margin-top: -15px;
+
+}
+
+#MainPage_milestoneText p{
+    margin-left: -5px;
 }
 
 #MainPage_coinDiv {
@@ -201,11 +206,13 @@
 
 #MainPage_screenTextDiv #ProgressBar_ImageDiv {
     display: flex;
-    column-gap: 28.5%;
+    column-gap: 25%;
+    width: 502px;
 }
 #MainPage_screenTextDiv #ProgressBar_ImageDiv img{
     width: 50px;
     height: 40px;
+    margin-right: -10px;
 }
 
 

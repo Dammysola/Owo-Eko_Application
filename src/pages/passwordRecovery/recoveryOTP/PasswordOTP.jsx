@@ -56,6 +56,44 @@ const passwordOTP = () => {
         }
     }
 
+    const resendOtp = async (e) => {
+        e.preventDefault(e);
+
+        try {
+
+            console.log("Otp")
+            console.log(email)
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/resendotp',
+                {
+                    "email": email,
+                }
+            )
+            console.log(response.status);
+
+            if (response.status == 200) {
+                console.log('Otp Resent', response.data);
+
+            }else{
+                
+                console.log('Otp Resent', response.data);
+            }
+        } catch (error) {
+            let userError = error.response.data.message
+
+            updateErrorText(userError)
+
+            setTimeout(() => {
+                updateErrorPopup(false)
+            }, 2000)
+
+            // setOTPError(userError)
+            // console.log("failed", setOTPError)
+
+            console.log("failed", error);
+
+        }
+    }
+
     const OTPdetails = (e) => {
         const value = e.target.value
         setEnterOTP(
@@ -83,6 +121,7 @@ const passwordOTP = () => {
                         OnChange={OTPdetails}
                     />
 
+                    <button id={Style.resend} onClick={resendOtp}>Resend OTP</button>
                     <div id={Style.Password_OTP_btnDiv}>
                         <Button
                             type={"submit"}
