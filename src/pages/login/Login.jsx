@@ -8,6 +8,7 @@ import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
 import SignUp from '../signUp/SignUp'
 import { useUser } from '../../api_services/User'
+import eye from '../../assets/svg/eye.svg'
 
 
 const Login = () => {
@@ -18,6 +19,11 @@ const Login = () => {
 
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
 
     const [logIn, setLogIn] = useState({
         email: '',
@@ -137,15 +143,20 @@ const Login = () => {
                                 OnChange={loginDetails}
                             />
                         </div>
-                        <InputField
-                            label={"Password"}
-                            placeholder={"Enter Password"}
-                            type={"text"}
-                            name={"password"}
-                            value={logIn.password}
-                            error={validation.password}
-                            OnChange={loginDetails}
-                        />
+                        <div id={Style.PasswordDiv}>
+                            <InputField
+                                label={"Password"}
+                                placeholder={"Enter Password"}
+                                type={passwordVisible ? 'text' : 'password'}
+                                name={"password"}
+                                value={logIn.password}
+                                error={validation.password}
+                                OnChange={loginDetails}
+                            />
+                            <div id={Style.eye_ImgDiv}>
+                                <img onClick={togglePasswordVisibility} src={eye} alt="" />
+                            </div>
+                        </div>
                         <div id={Style.forgot}><Link to={'/forgotpassword'}>Forgot Password ?</Link></div>
 
                         <div id={Style.btnDiv}>

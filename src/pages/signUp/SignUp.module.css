@@ -21,7 +21,14 @@
     margin-top: 24px;
 }
 #SignUp_passwordInput_Div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 24px;
+}
+#SignUp_passwordInput_Div img{
+    text-align: center;
+    margin: 35px 0 0 -40px;
 }
 #SignUp_text{
     text-align: center;

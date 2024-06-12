@@ -23,6 +23,15 @@
 #inputDiv{
     margin: 24px 0px;
 }
+#PasswordDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#PasswordDiv img{
+    text-align: center;
+    margin: 35px 0 0 -40px;
+}
 #forgot{
     margin: 10px  0px;
     text-align: end;

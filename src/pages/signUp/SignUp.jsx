@@ -6,6 +6,7 @@ import Button from '../../components/button/Button'
 import { userContextHook } from '../../UserContext'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
+import eye from '../../assets/svg/eye.svg'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -25,6 +26,11 @@ const SignUp = () => {
 		password: false,
 	})
 
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+      setPasswordVisible(!passwordVisible);
+  };
 
   const Details = (e) => {
     const value = e.target.value
@@ -141,13 +147,13 @@ const SignUp = () => {
               <InputField
                 label={"Create Password"}
                 placeholder={"Create Password"}
-                type={"password"}
+                type={passwordVisible ? 'text' : 'password'}
                 name={"password"}
                 error={validation.password}
                 value={signUp.password}
                 OnChange={Details}
               />
-
+              <img onClick={togglePasswordVisibility} src={eye} alt="" />
             </div>
             <div id={Style.SignUp_btnDiv}>
               <Button

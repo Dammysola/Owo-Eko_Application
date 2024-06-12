@@ -13,6 +13,7 @@ import Forgot_Password from './pages/passwordRecovery/forgotPassword/Forgot_Pass
 import ResetPassword from './pages/passwordRecovery/resetPassword/ResetPassword'
 import PasswordOTP from './pages/passwordRecovery/recoveryOTP/PasswordOTP'
 import Main_Layout from './landingPage_layout/Main_Layout'
+import Bank_Details from './pages/bank_details/Bank_Details'
 
 
 
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
             {
                 path: "/resetpassword",
                 element: <ResetPassword/>
+            },
+            {
+                path:"/bankDetails",
+                element: <Bank_Details/>
             },
 
             {
