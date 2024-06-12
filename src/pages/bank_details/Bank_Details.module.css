@@ -1,0 +1,46 @@
+#Bank_Details_MainDiv{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -114px;
+}
+#Bank_Details_Div{
+    width: 600px;
+}
+#Bank_Details_Div form{
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+#Bank_Details_Div p{
+    font-weight: bold;
+    font-size: 50px;
+    color: #FFFFFF;
+    height: 34px;
+    text-align: center;
+}
+#Bank_Details_Div select{
+    width: 100%;
+    height: 51px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, .15);
+    border: none;
+    color: #FFFFFF;
+}
+#inputDiv{
+    margin: 24px 0px;
+}
+#inputDiv label{
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 50px;
+}
+#Bank_Details_MainDiv #btnDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}

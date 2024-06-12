@@ -41,7 +41,7 @@ const Withdrawal = () => {
 
             <div id={Style.banks}>
               <label>Bank</label>
-              <select name="" id={Style.DOB}>
+              <select name="" id=''>
                 <option value="">1</option>
                 <option value="">2</option>
                 <option value="">3</option>
