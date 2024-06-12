@@ -12,16 +12,30 @@ import PopupContext from './PopupContext'
 import Forgot_Password from './pages/passwordRecovery/forgotPassword/Forgot_Password'
 import ResetPassword from './pages/passwordRecovery/resetPassword/ResetPassword'
 import PasswordOTP from './pages/passwordRecovery/recoveryOTP/PasswordOTP'
+import Main_Layout from './landingPage_layout/Main_Layout'
+
+
+
 
 const router = createBrowserRouter([
     {
         path:"/",
-        element: <PopupContext><MainLayout/></PopupContext>,
+        element: <Main_Layout/>,
         children:[
             {
                 index: true,
                 element: <LandingPage/>
             },
+        ]
+    
+    },
+    {
+        path:"/",
+        element: <PopupContext><MainLayout/></PopupContext>,
+        children:[
+    
+
+    
             {
                 path: "/waitlist",
                 element: <Waitlist/>
@@ -64,11 +78,8 @@ const router = createBrowserRouter([
                 element: <MainPage/>
             }
         ]
-    },
-    {
-        path: "/mainpage",
-        element: <MainPage/>
     }
+   
 ])
 
 export default router
