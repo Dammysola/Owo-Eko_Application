@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useEffect,useRef, useState } from 'react'
 import Style from '../recoveryOTP/PasswordOTP.module.css'
 import Button from '../../../components/button/Button'
 import InputField from '../../../components/input_Form/InputField'
@@ -14,6 +14,55 @@ const passwordOTP = () => {
 
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
     const [enterOTP, setEnterOTP] = useState('')
+
+
+    // const [isRunning, setIsRunning] = useState(false)
+    // const [elapseTime, setElapseTime]= useState(0)
+    // const intervalRef =useRef(null)
+    // const startTimeRef = useRef(0)
+
+
+    // useEffect(()=>{
+    //     if (isRunning) {
+    //         intervalRef.current = setInterval(()=>{
+    //             setElapseTime(Date.now() - startTimeRef.current)
+    //         },10)
+    //     }
+
+    //     return ()=>{
+    //         clearInterval(intervalRef.current)
+    //     }
+    // }, [isRunning])
+
+    // const start = ()=>{
+    //     setIsRunning(true)
+    //     startTimeRef.current = Date.now() - elapseTime
+    // }
+    // const reset = ()=>{
+    //     setElapseTime(0)
+    //     setIsRunning(false)
+    //     console.log(isRunning);
+    // }
+    // const pause = ()=>{
+    //     setIsRunning(false)
+    //     console.log(isRunning);
+    // }
+
+    // const formatTime = ()=>{
+
+    //     let hours = Math.floor(elapseTime / (1000 * 60 * 60))
+    //     let minutes = Math.floor(elapseTime / (1000 * 60) % 60)
+    //     let seconds = Math.floor(elapseTime / (1000) % 60)
+
+    //     hours = String(hours).padStart(2, "00")
+    //     minutes = String(minutes).padStart(2, "00")
+    //     seconds = String(seconds).padStart(2, "00")
+
+    //     return `${hours}: ${minutes}: ${seconds}`
+    // }
+
+
+
 
 
     const OTPsubmit = async () => {
@@ -95,6 +144,7 @@ const passwordOTP = () => {
     }
 
     const OTPdetails = (e) => {
+        
         const value = e.target.value
         setEnterOTP(
             value
@@ -102,6 +152,7 @@ const passwordOTP = () => {
     }
 
     const handleOTPsubmission = (e) => {
+        // start()
         OTPsubmit()
         e.preventDefault(e)
         console.log(enterOTP);
@@ -122,11 +173,13 @@ const passwordOTP = () => {
                     />
 
                     <button id={Style.resend} onClick={resendOtp}>Resend OTP</button>
+
+                        {/* <div>{formatTime()}</div> */}
                     <div id={Style.Password_OTP_btnDiv}>
                         <Button
                             type={"submit"}
                             text={"Submit"}
-                            onChange={handleOTPsubmission}
+                            onSubmit={handleOTPsubmission}
                         />
                     </div>
                 </form>
