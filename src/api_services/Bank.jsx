@@ -11,15 +11,11 @@ export function useBank() {
         const headers = { 'Authorization': `Bearer ${token}` };
         const response = await axios.get(`https://api.paystack.co/bank`, { headers })
 
-        console.log("Bank");
-
         updateLoadingPopup(false)
 
         if (response.status == 200) {
 
             let bankDetails = response.data["data"]
-
-            console.log("Bank Details Datails", bankDetails)
 
             return bankDetails;
 
