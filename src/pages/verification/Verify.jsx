@@ -5,9 +5,12 @@ import Button from '../../components/button/Button'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
+import { useUser } from '../../api_services/User'
 
 const Verify = () => {
   
+  const { getUserDetails } = useUser();
+
   let navigate = useNavigate()
   let { userData } = useParams()
   const [userCode, setUserCode] = useState('')
@@ -40,12 +43,16 @@ const Verify = () => {
 
       console.log(response.status)
 
-      updateLoadingPopup(false);
-      if (response.status == 200) {
-        console.log('Verification successful', response.data);
+      
+      const response2 = await getUserDetails(email);
+      console.log(response2);
+
+      if (response2 == 200) {
+        console.log('Verification successful', response2.data);
 
         navigate('/mainpage')
       }else {
+        updateLoadingPopup(false);
         updateErrorText(response.data)
 
         updateErrorPopup(true)
@@ -57,9 +64,9 @@ const Verify = () => {
 
     } catch (err) {
       updateLoadingPopup(false);
-      let userError = err.response.data.message
+      let userError = err
 
-      updateErrorText(userError)
+      updateErrorText("Error")
 
       updateErrorPopup(true)
       setTimeout(() => {
