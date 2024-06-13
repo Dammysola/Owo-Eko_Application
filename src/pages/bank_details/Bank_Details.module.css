@@ -1,4 +1,4 @@
-#Bank_Details_MainDiv{
+#Bank_Details_MainDiv {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -6,22 +6,26 @@
     flex-direction: column;
     margin-top: -114px;
 }
-#Bank_Details_Div{
+
+#Bank_Details_Div {
     width: 600px;
 }
-#Bank_Details_Div form{
+
+#Bank_Details_Div form {
     width: 100%;
     padding: 16px;
     box-sizing: border-box;
 }
-#Bank_Details_Div p{
+
+#Bank_Details_Div p {
     font-weight: bold;
     font-size: 50px;
     color: #FFFFFF;
     height: 34px;
     text-align: center;
 }
-#Bank_Details_Div select{
+
+#Bank_Details_Div select {
     width: 100%;
     height: 51px;
     padding: 0 20px;
@@ -30,16 +34,48 @@
     background-color: rgba(255, 255, 255, .15);
     border: none;
     color: #FFFFFF;
+    appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, rgb(250, 245, 245) 50%),
+        linear-gradient(135deg, rgb(245, 244, 244) 50%, transparent 50%),
+        linear-gradient(to right, transparent, transparent);
+    background-position:
+        calc(100% - 20px) calc(1em + 7px),
+        calc(100% - 15px) calc(1em + 7px);
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat: no-repeat;
 }
-#inputDiv{
+
+
+/* select.minimal {
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+  } */
+
+#inputDiv {
     margin: 24px 0px;
 }
-#inputDiv label{
+
+#inputDiv label {
     font-size: 16px;
     color: #FFFFFF;
     line-height: 50px;
 }
-#Bank_Details_MainDiv #btnDiv{
+
+#Bank_Details_MainDiv #btnDiv {
     display: flex;
     justify-content: center;
     margin-top: 40px;
