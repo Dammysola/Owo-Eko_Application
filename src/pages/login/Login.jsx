@@ -78,6 +78,22 @@ const Login = () => {
             //         navigate(`/mainpage`)
             if (response.status == 200) {
                 localStorage.setItem("loggedin_id", response.data["loggedin_id"])
+                localStorage.setItem("user_details", JSON.stringify({
+            
+                    balance: "",
+                    email: "",
+                    id: "",
+                    phone: "",
+                    status: "",
+                    username: ""
+                }))
+                
+                localStorage.setItem("account_details", JSON.stringify({
+                    acc_name: "",
+                    acc_num: "",
+                    bank_code: "",
+                    bank_name: ""
+                }))
                 const response2 = await getUserDetails(logIn.email);
 
                 console.log(response2);
