@@ -2,7 +2,7 @@ import React from 'react'
 import Style from './InputField.module.css'
 
 const InputField = (props) => {
-    const { label, placeholder, type, value, name, OnChange, error, maxlength} = props
+    const { label, placeholder, type, value, name, OnChange, error, maxlength, disabled} = props
     return (
         <div className={Style.InputDiv}>
             <label className={Style.label}>{label}</label>
@@ -11,6 +11,7 @@ const InputField = (props) => {
                 placeholder={placeholder}
                 type={type}
                 value={value}
+                disabled={disabled}
                 name={name}
                 maxLength={maxlength}
                 onChange={OnChange}
