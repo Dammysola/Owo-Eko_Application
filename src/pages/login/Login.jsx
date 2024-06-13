@@ -43,7 +43,6 @@ const Login = () => {
         const res = await axios.get("https://api.ipify.org/?format=json");
         console.log(res.data);
         setIP(res.data.ip);
-        
     };
 
     const loginDetails = (e) => {
