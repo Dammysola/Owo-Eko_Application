@@ -83,7 +83,6 @@ export function useBank() {
             "name": accountName,
             "account_number": bankNumber,
             "bank_code": bankCode,
-            
             "loggedin_id": loggedin_id,
         });
 

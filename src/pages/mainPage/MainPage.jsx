@@ -37,11 +37,10 @@ const MainPage = () => {
         let details = JSON.parse(localStorage.getItem("user_details"));
         let account = JSON.parse(localStorage.getItem("account_details"));
 
-
         updateDetails(details)
         updateAccountDetails(account)
 
-        if(accountDetails.bank_code != ""){
+        if(account.acc_name != ""){
             updateBankReg(false)
         }else{
             updateBankReg(true)
@@ -83,7 +82,6 @@ const MainPage = () => {
                     setIndex(0)
                 }
 
-
                 setToggleImg(!toggleImg)
                 setCount(count - 1)
 
@@ -92,8 +90,6 @@ const MainPage = () => {
                     updateClaimPopup(true)
                     // setProgressImg(!progressImg)
                 }
-                
-
 
                 setProgressWidth(`${(userDetails.balance / 1000) * 100}%`)
 

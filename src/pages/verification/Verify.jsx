@@ -7,7 +7,7 @@ import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
 
 const Verify = () => {
-  
+
   let navigate = useNavigate()
   let { userData } = useParams()
   const [userCode, setUserCode] = useState('')
@@ -16,7 +16,7 @@ const Verify = () => {
 
   let data = JSON.parse(userData)
 
-  const {email, phoneNumber, password} = data
+  const { email, phoneNumber, password } = data
 
   const handleOnChange = (e) => {
     const value = e.target.value
@@ -29,8 +29,9 @@ const Verify = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(e);
     console.log(email, userCode, "Show")
+
     try {
-    updateLoadingPopup(true);
+      updateLoadingPopup(true);
       const response = await axios.post("https://owo-eko-api.onrender.com/user/verify-otp",
         {
           "email": email,
@@ -45,7 +46,7 @@ const Verify = () => {
         console.log('Verification successful', response.data);
 
         navigate('/mainpage')
-      }else {
+      } else {
         updateErrorText(response.data)
 
         updateErrorPopup(true)
@@ -57,7 +58,7 @@ const Verify = () => {
 
     } catch (err) {
       updateLoadingPopup(false);
-      let userError = err.response.data.message
+      let userError = err
 
       updateErrorText(userError)
 
@@ -65,14 +66,14 @@ const Verify = () => {
       setTimeout(() => {
         updateErrorPopup(false)
       }, 2000);
-      
+
       console.log("Verification dd: ", userError)
     }
   }
   return (
     <div id={Style.VerificationDiv}>
       <div id={Style.Verification_textDiv}>
-        <div id={Style.Verification_header}>Complete sign up be verifying your <br/>email address</div>
+        <div id={Style.Verification_header}>Complete sign up be verifying your <br />email address</div>
         <div id={Style.Verification_subtext}>We sent a code to {email}, enter code to continue</div>
       </div>
 

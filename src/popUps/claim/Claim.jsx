@@ -5,12 +5,14 @@ import { useUser } from '../../api_services/User';
 
 
 const Claim = () => {
-  
+
   const { getUserDetails } = useUser();
   const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup } = popupContextHook()
 
 
   const claimCoin = async () => {
+
+    let loggedin_id = localStorage.getItem("loggedin_id");
 
     try {
       updateLoadingPopup(true);
@@ -19,12 +21,13 @@ const Claim = () => {
       const response = await axios.post("https://owo-eko-api.onrender.com/user/claim",
         {
           "email": details.email,
-          "coin": 50
+          "coin": 50,
+          "loggedin_id": loggedin_id,
         },
       )
 
       console.log(response.status)
-      console.log("Clain",response.details)
+      console.log("Clain", response.details)
 
       if (response.status == 200) {
 
