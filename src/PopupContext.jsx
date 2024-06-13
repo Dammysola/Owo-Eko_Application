@@ -15,6 +15,7 @@ const PopupContext = ({ children }) => {
     const [loadingPopup, setLoadingPopup] = useState(false);
     const [claimPopup, setClaimPopup] = useState(false)
     const [profile, setProfile] = useState(false)
+    const [bankReg, setBankReg] = useState(false)
 
 
     const updateConfirmationPopup = (data) => {
@@ -44,6 +45,9 @@ const PopupContext = ({ children }) => {
     const updateProfile = (data)=>{
         setProfile(data)
     }
+    const updateBankReg = (data)=>{
+        setBankReg(data)
+    }
 
     return (
         <myContext.Provider value={{ 
@@ -64,7 +68,10 @@ const PopupContext = ({ children }) => {
             claimPopup,
             updateClaimPopup,
             profile,
-            updateProfile}}>
+            updateProfile,
+            bankReg,
+            updateBankReg}}
+            >
             {children}
         </myContext.Provider>
     )

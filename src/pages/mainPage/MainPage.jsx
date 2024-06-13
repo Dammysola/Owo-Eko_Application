@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Style from '../mainPage/MainPage.module.css'
 import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
-import singleCoin from '../../assets/svg/singleCoin.svg'
 import busConductor from '../../assets/image/bus_conductor.png'
 import avatar from '../../assets/svg/avatar.svg'
 import busLight from '../../assets/svg/busLight.svg'
@@ -10,7 +9,6 @@ import danfo from '../../assets/svg/danfoDark.svg'
 import trafficLightOff from '../../assets/svg/trafficLightOff.svg'
 import flag from '../../assets/svg/flag.svg'
 import trafficLightOn from '../../assets/svg/trafficLightOn.svg'
-import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
 import { userContextHook } from '../../UserContext'
 import { useUser } from '../../api_services/User'
@@ -21,14 +19,20 @@ const MainPage = () => {
     let [count, setCount] = useState(50)
     let [index, setIndex] = useState(0)
     const [toggleImg, setToggleImg] = useState(false)
-    const [progressImg, setProgressImg] = useState(true)
     const [progressWidth, setProgressWidth] = useState("");
+
 
 
     const { getUserDetails } = useUser();
 
     const { userDetails, updateDetails } = userContextHook()
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup } = popupContextHook()
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg } = popupContextHook()
+
+
+    useEffect(() => {
+      updateBankReg(true);
+    }, []);
+  
 
     const links = Links
 
@@ -76,17 +80,15 @@ const MainPage = () => {
                 }
 
 
-                // if (count === 10) {
-                //   updateClaimPopup(true)
-                // }
                 setToggleImg(!toggleImg)
                 setCount(count - 1)
 
                 if (count === 1) {
                     setCount(50)
                     updateClaimPopup(true)
-                    //   // setProgressImg(!progressImg)
+                    // setProgressImg(!progressImg)
                 }
+                
 
 
                 setProgressWidth(`${(userDetails.balance / 1000) * 100}%`)
