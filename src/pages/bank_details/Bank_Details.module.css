@@ -31,6 +31,10 @@
     border: none;
     color: #FFFFFF;
 }
+#Bank_Details_Div select option{
+    width: 100%;
+    color: #000000;
+}
 #inputDiv{
     margin: 24px 0px;
 }
