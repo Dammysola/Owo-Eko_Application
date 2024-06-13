@@ -45,7 +45,13 @@
         5px 5px;
     background-repeat: no-repeat;
 }
-#inputDiv {
+
+
+#Bank_Details_Div select option{
+    width: 100%;
+    color: #000000;
+}
+#inputDiv{
     margin: 24px 0px;
 }
 #inputDiv label {

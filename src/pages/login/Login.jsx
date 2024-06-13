@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import InputField from '../../components/input_Form/InputField'
 import Button from '../../components/button/Button'
 import Style from '../login/Login.module.css'
@@ -17,9 +17,11 @@ const Login = () => {
 
     const { getUserDetails } = useUser();
 
+    const [ip, setIP] = useState("");
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
-    const [passwordVisible, setPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
@@ -34,6 +36,15 @@ const Login = () => {
         email: false,
         password: false,
     })
+
+
+
+    const getIp = async () => {
+        const res = await axios.get("https://api.ipify.org/?format=json");
+        console.log(res.data);
+        setIP(res.data.ip);
+        
+    };
 
     const loginDetails = (e) => {
         const name = e.target.name
@@ -53,17 +64,20 @@ const Login = () => {
             updateLoadingPopup(true);
             const response = await axios.post("https://owo-eko-api.onrender.com/user/login", {
                 "email": logIn.email,
-                "password": logIn.password
+                "password": logIn.password,
+                "ipaddress": ip
             })
 
 
-            console.log("Login Details", response.data);
+            console.log("Login Details", response.data["loggedin_id"]);
+
             // updateLoadingPopup(false);
             //     if (response.status == 200) {
 
-            //         // sessionStorage.setItem("phone_number", phoneNumber)
+                    // localStorage.setItem("loggedin_id", response.data["loggedin_id"])
             //         navigate(`/mainpage`)
             if (response.status == 200) {
+                localStorage.setItem("loggedin_id", response.data["loggedin_id"])
                 const response2 = await getUserDetails(logIn.email);
 
                 console.log(response2);
@@ -125,6 +139,10 @@ const Login = () => {
             LoginSubmit()
         }
     }
+
+    useEffect(() => {
+        getIp();
+    }, []);
 
     return (
         <div id={Style.Login_MainDiv}>
