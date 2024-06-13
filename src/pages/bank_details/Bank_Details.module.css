@@ -16,7 +16,6 @@
     padding: 16px;
     box-sizing: border-box;
 }
-
 #Bank_Details_Div p {
     font-weight: bold;
     font-size: 50px;
@@ -24,7 +23,6 @@
     height: 34px;
     text-align: center;
 }
-
 #Bank_Details_Div select {
     width: 100%;
     height: 51px;
@@ -47,6 +45,8 @@
         5px 5px;
     background-repeat: no-repeat;
 }
+
+
 #Bank_Details_Div select option{
     width: 100%;
     color: #000000;
@@ -54,13 +54,11 @@
 #inputDiv{
     margin: 24px 0px;
 }
-
 #inputDiv label {
     font-size: 16px;
     color: #FFFFFF;
     line-height: 50px;
 }
-
 #Bank_Details_MainDiv #btnDiv {
     display: flex;
     justify-content: center;

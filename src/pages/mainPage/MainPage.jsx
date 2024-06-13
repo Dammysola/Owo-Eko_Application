@@ -25,13 +25,9 @@ const MainPage = () => {
 
     const { getUserDetails } = useUser();
 
-    const { userDetails, updateDetails } = userContextHook()
+    const { userDetails, updateDetails, accountDetails, updateAccountDetails } = userContextHook()
     const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg } = popupContextHook()
 
-
-    useEffect(() => {
-      updateBankReg(true);
-    }, []);
   
 
     const links = Links
@@ -39,9 +35,17 @@ const MainPage = () => {
     const Details = async () => {
 
         let details = JSON.parse(localStorage.getItem("user_details"));
+        let account = JSON.parse(localStorage.getItem("account_details"));
 
 
         updateDetails(details)
+        updateAccountDetails(account)
+
+        if(accountDetails.bank_code != ""){
+            updateBankReg(false)
+        }else{
+            updateBankReg(true)
+        }
 
         setProgressWidth(`${(details.balance / 1000) * 100}%`)
 
