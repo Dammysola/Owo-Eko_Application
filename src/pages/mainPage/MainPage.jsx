@@ -28,7 +28,7 @@ const MainPage = () => {
     const { getUserDetails } = useUser();
 
     const { userDetails, updateDetails } = userContextHook()
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup } = popupContextHook()
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg } = popupContextHook()
 
     const links = Links
 
@@ -76,9 +76,6 @@ const MainPage = () => {
                 }
 
 
-                // if (count === 10) {
-                //   updateClaimPopup(true)
-                // }
                 setToggleImg(!toggleImg)
                 setCount(count - 1)
 
@@ -87,6 +84,7 @@ const MainPage = () => {
                     updateClaimPopup(true)
                     //   // setProgressImg(!progressImg)
                 }
+                
 
 
                 setProgressWidth(`${(userDetails.balance / 1000) * 100}%`)
