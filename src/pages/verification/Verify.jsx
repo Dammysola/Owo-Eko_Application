@@ -8,7 +8,7 @@ import { popupContextHook } from '../../PopupContext'
 import { useUser } from '../../api_services/User'
 
 const Verify = () => {
-  
+
   const { getUserDetails } = useUser();
 
 
@@ -43,25 +43,24 @@ const Verify = () => {
         }
       )
 
-      console.log(response.status)
+      console.log("Loggedin Id", response.data["loggedin_id"]);
 
-      
-      const response2 = await getUserDetails(email);
-      console.log(response2);
+      if (response.status == 200) {
+        
+      updateLoadingPopup(false);
 
-      if (response2 == 200) {
-        console.log('Verification successful', response2.data);
+        console.log("Verification Successful", response.data)
+          navigate(`/login`);
 
-        navigate('/mainpage')
-      }else {
+      } else {
+
         updateLoadingPopup(false);
         updateErrorText(response.data)
-
+        console.log("Verification Failed", response.data)
         updateErrorPopup(true)
         setTimeout(() => {
           updateErrorPopup(false)
-        }, 1000)
-        console.log('Verification Failed', response.data);
+        }, 2000)
       }
 
     } catch (err) {

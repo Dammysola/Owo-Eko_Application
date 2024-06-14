@@ -21,16 +21,11 @@ const MainPage = () => {
     const [toggleImg, setToggleImg] = useState(false)
     const [progressWidth, setProgressWidth] = useState("");
 
-
-
     const { getUserDetails } = useUser();
 
     const { userDetails, updateDetails, accountDetails, updateAccountDetails } = userContextHook()
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg} = popupContextHook()
-
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg } = popupContextHook()
   
-  
-
     const links = Links
 
     const Details = async () => {
