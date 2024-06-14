@@ -7,12 +7,14 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 99;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
 }
 
 #Confirmation_Wrapper {
     width: 648px;
-    height: 604px;
+    min-height: 604px;
     background-color: rgba(255, 255, 255, .12);
     border-radius: 34px;
     display: flex;
@@ -32,20 +34,51 @@
     font-size: 50px;
     color: white;
 }
-#Confirmation_Wrapper table {
-    border-spacing: 180px 33px;
+
+#ConfirmationDetails{
     margin-top: 40px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 33px;
 }
-#Confirmation_Wrapper table .fadded  {
-    font-size: 18px;
-    color: #CEC7C7;
-
+#ConfirmationDetails .text{
+    display: flex;
+    column-gap: 180px;
+    width: 80%;
+    margin-bottom: 30px;
 }
-#Confirmation_Wrapper thead span {
+.accDetails{
+    text-align: center;
+    width: 55%;
+}
+#accDetails{
+    text-align: center;
+    width: 30%;
+}
+/* #Confirmation_Wrapper table {
+    border-spacing: 180px 33px;
+} */
+#Confirmation_Wrapper #header{
+    display: flex;
+    column-gap: 180px;
+    width: 80%;
+}
+#Confirmation_Wrapper #header span{
     font-weight: bold;
     font-size: 20px;
 }
+/* #Confirmation_Wrapper table .fadded  {
+    font-size: 18px;
+    color: #CEC7C7;
+
+} */
+/* #Confirmation_Wrapper thead span {
+    font-weight: bold;
+    font-size: 20px; 
+} */
 #Confirmation_Wrapper button {
     width: 350px;
 }
