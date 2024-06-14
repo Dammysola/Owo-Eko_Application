@@ -27,7 +27,6 @@ const MainPage = () => {
 
     const { userDetails, updateDetails, accountDetails, updateAccountDetails } = userContextHook()
     const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg } = popupContextHook()
-
   
 
     const links = Links
