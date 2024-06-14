@@ -9,6 +9,7 @@ import { popupContextHook } from '../../PopupContext'
 import SignUp from '../signUp/SignUp'
 import { useUser } from '../../api_services/User'
 import eye from '../../assets/svg/eye.svg'
+import eye_slash from '../../assets/svg/eye-slash.svg'
 
 
 const Login = () => {
@@ -19,12 +20,16 @@ const Login = () => {
 
     const [ip, setIP] = useState("");
     const [passwordVisible, setPasswordVisible] = useState(false);
+    
 
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
+    };
+    const toggleEyeImg = () => {
+        setToggleImg(!toggleImg);
     };
 
     const [logIn, setLogIn] = useState({
@@ -150,6 +155,7 @@ const Login = () => {
 
         let valid = emailVal == false && passwordVal == false
 
+
         if (valid) {
             LoginSubmit()
         }
@@ -187,7 +193,11 @@ const Login = () => {
                                 OnChange={loginDetails}
                             />
                             <div id={Style.eye_ImgDiv}>
-                                <img onClick={togglePasswordVisibility} src={eye} alt="" />
+                            
+                                {
+                                    passwordVisible ?(<img onClick={togglePasswordVisibility}  src={eye} alt="" />): (<img onClick={togglePasswordVisibility} src={eye_slash} alt="" />)
+                                }
+                                
                             </div>
                         </div>
                         <div id={Style.forgot}><Link to={'/forgotpassword'}>Forgot Password ?</Link></div>

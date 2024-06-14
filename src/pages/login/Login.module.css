@@ -49,6 +49,10 @@
 #Login_signUp span{
     color: #D07119;
 }
+#eye_ImgDiv button{
+    background-color: transparent;
+    border: none;
+}
 
 @media screen and (max-width: 320px){
     #Login_MainDiv{

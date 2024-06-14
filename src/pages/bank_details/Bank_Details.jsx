@@ -21,7 +21,7 @@ const Bank_Details = () => {
     const [accountName, setAccountName] = useState();
     const [validated, setValidated] = useState(false);
 
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateBankReg } = popupContextHook()
 
     const { getAllBank, getValidateBank, addBankDetails } = useBank();
 
@@ -141,7 +141,6 @@ const Bank_Details = () => {
         let response = await addBankDetails(details["email"], accountName, bankDetails.accNumber, AllBanks[bankDetails.bank]["bankCode"]);
 
             if (response == 200) {
-
                 navigate("/mainpage")
             }
 
