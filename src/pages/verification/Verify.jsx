@@ -8,7 +8,7 @@ import { popupContextHook } from '../../PopupContext'
 import { useUser } from '../../api_services/User'
 
 const Verify = () => {
-
+  
   const { getUserDetails } = useUser();
 
 
@@ -43,24 +43,25 @@ const Verify = () => {
         }
       )
 
-      console.log("Loggedin Id", response.data["loggedin_id"]);
+      console.log(response.status)
 
-      if (response.status == 200) {
-        
-      updateLoadingPopup(false);
+      
+      const response2 = await getUserDetails(email);
+      console.log(response2);
 
-        console.log("Verification Successful", response.data)
-          navigate(`/login`);
+      if (response2 == 200) {
+        console.log('Verification successful', response2.data);
 
-      } else {
-
+        navigate('/mainpage')
+      }else {
         updateLoadingPopup(false);
         updateErrorText(response.data)
-        console.log("Verification Failed", response.data)
+
         updateErrorPopup(true)
         setTimeout(() => {
           updateErrorPopup(false)
-        }, 2000)
+        }, 1000)
+        console.log('Verification Failed', response.data);
       }
 
     } catch (err) {
@@ -78,43 +79,43 @@ const Verify = () => {
     }
   }
   
-//   const resendOtp = async (e) => {
-//     e.preventDefault(e);
+  const resendOtp = async (e) => {
+    e.preventDefault(e);
 
-//     try {
+    try {
 
-//         console.log("Otp")
-//         console.log(email)
-//         const response = await axios.post('https://owo-eko-api.onrender.com/user/resendotp',
-//             {
-//                 "email": email,
-//             }
-//         )
-//         console.log("hello");
-//         console.log(response.status);
+        console.log("Otp")
+        console.log(email)
+        const response = await axios.post('https://owo-eko-api.onrender.com/user/resendotp',
+            {
+                "email": email,
+            }
+        )
+        console.log("hello");
+        console.log(response.status);
 
-//         if (response.status == 200) {
-//             console.log('Otp Resent', response);
-//             console.log("hiii");
+        if (response.status == 200) {
+            console.log('Otp Resent', response);
+            console.log("hiii");
 
-//         }else{
+        }else{
             
-//             console.log('Otp Resent', response);
-//         }
-//     } catch (error) {
-//         let userError = error.response.data.message
+            console.log('Otp Resent', response);
+        }
+    } catch (error) {
+        let userError = error.response.data.message
 
-//         updateErrorText(userError)
+        updateErrorText(userError)
 
-//         setTimeout(() => {
-//             updateErrorPopup(false)
-//         }, 2000)
+        setTimeout(() => {
+            updateErrorPopup(false)
+        }, 2000)
 
 
-//         console.log("failed", error);
+        console.log("failed", error);
 
-//     }
-// }
+    }
+}
 
 
 
@@ -144,7 +145,7 @@ const Verify = () => {
             />
           </div>
         </form>
-        <p>Didn’t receive a code? <button>Resend Code</button></p>
+        <p>Didn’t receive a code? <button onClick={resendOtp}>Resend Code</button></p>
       </div>
 
     </div>
