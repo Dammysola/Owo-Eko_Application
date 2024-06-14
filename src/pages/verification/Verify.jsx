@@ -45,19 +45,16 @@ const Verify = () => {
 
       console.log(response.status)
 
-      
-      const response2 = await getUserDetails(email);
-      console.log(response2);
 
-      if (response2 == 200) {
-        console.log('Verification successful', response2.data);
+      updateLoadingPopup(false);
+      if (response.status == 200) {
+        console.log('Verification successful', response.data);
 
-        navigate('/mainpage')
+        navigate('/login');
       }else {
-        updateLoadingPopup(false);
-        updateErrorText(response.data)
+        updateErrorText("Verification Failed");
 
-        updateErrorPopup(true)
+        updateErrorPopup(true);
         setTimeout(() => {
           updateErrorPopup(false)
         }, 1000)
