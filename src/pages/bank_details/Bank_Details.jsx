@@ -5,6 +5,7 @@ import Button from '../../components/button/Button'
 import { useBank } from '../../api_services/Bank'
 import { popupContextHook } from '../../PopupContext'
 import { useNavigate } from 'react-router-dom'
+import { useUser } from '../../api_services/User'
 
 
 
@@ -23,7 +24,9 @@ const Bank_Details = () => {
 
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
+    const { getUserDetails } = useUser();
     const { getAllBank, getValidateBank, addBankDetails } = useBank();
+    
 
     const accountChange = (e) => {
         const name = e.target.name
@@ -36,16 +39,11 @@ const Bank_Details = () => {
             })
         )
 
-        if (name == "bank") {
-
-        }
-
         console.log(bankDetails)
 
         setAccountName("");
 
         setValidated(false)
-
 
     }
 
@@ -127,9 +125,9 @@ const Bank_Details = () => {
 
     const AddBankDetails = async () => {
 
-        
+
         let details = JSON.parse(localStorage.getItem("user_details"));
-        
+
         let loggedin_id = localStorage.getItem("loggedin_id");
 
 
@@ -138,10 +136,12 @@ const Bank_Details = () => {
         updateLoadingPopup(true);
         try {
 
-        let response = await addBankDetails(details["email"], accountName, bankDetails.accNumber, AllBanks[bankDetails.bank]["bankCode"]);
+            let response = await addBankDetails(details["email"], accountName, bankDetails.accNumber, AllBanks[bankDetails.bank]["bankCode"]);
 
             if (response == 200) {
 
+                 await getUserDetails(details.email);
+                
                 navigate("/mainpage")
             }
 
@@ -152,7 +152,7 @@ const Bank_Details = () => {
             let userError = err.response
 
             console.log(err)
-            console.log("Add Details",userError)
+            console.log("Add Details", userError)
 
             updateErrorText("Could not add Account")
 

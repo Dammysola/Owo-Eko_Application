@@ -128,7 +128,7 @@ const Login = () => {
             updateErrorText(userError)
 
 
-            console.log("Login failed", userError)
+            console.log("Login failed", err)
 
             updateErrorPopup(true)
             setTimeout(() => {

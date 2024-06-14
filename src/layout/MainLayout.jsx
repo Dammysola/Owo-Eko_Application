@@ -25,6 +25,9 @@ const MainLayout = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [error, setError] = useState('');
 
+  let account = JSON.parse(localStorage.getItem("account_details"));
+
+
   useEffect(() => {
     const checkUserAgent = () => {
       if (navigator.userAgent.match (/Android/i) ||
@@ -44,6 +47,8 @@ const MainLayout = () => {
     // window.addEventListener('resize', handleResize)
     // return () => window.removeEventListener('resize', handleResize)
 })
+
+
   return (
     <>
         <UserContext>
