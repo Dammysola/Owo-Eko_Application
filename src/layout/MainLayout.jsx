@@ -21,7 +21,7 @@ import Bank_Registration from '../popUps/bank_registration/Bank_Registration'
 
 const MainLayout = () => {
 
-  const { loadingPopup, errorPopup, claimPopup, profile, tapExceededPopup, withdrawalPopup, bankReg} = popupContextHook();
+  const { loadingPopup, errorPopup, claimPopup, profile, tapExceededPopup, withdrawalPopup, bankReg, confirmationPopup} = popupContextHook();
   const [isMobile, setIsMobile] = useState(false);
   const [error, setError] = useState('');
 
@@ -57,6 +57,7 @@ const MainLayout = () => {
             {isMobile? <No_Mobile/> : <div><Outlet /></div>}
             {profile && <Profile/>}
             {bankReg && <Bank_Registration/>}
+            {confirmationPopup && <Confirmation/>}
           </div>
         </UserContext>
     </>

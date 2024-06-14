@@ -5,13 +5,19 @@ import TotalCoins from './tabs/TotalCoins';
 import WithdrawalHistory from './tabs/WithdrawalHistory';
 import dummyCoin from "../../assets/svg/dummyCoin.svg"
 import { popupContextHook } from '../../PopupContext';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
     let [tabIndex, setTabIndex] = useState(0);
     let [userDetails, setUserDetails] = useState({});
 
-    const { updateProfile, profile } = popupContextHook();
+    const { updateProfile, profile, updateWithdrawalPopup} = popupContextHook();
 
+
+    const add = ()=>{
+        updateProfile(false)
+        updateWithdrawalPopup(true)
+    }
 
     const tabClick = (index) => {
 
@@ -43,7 +49,9 @@ const Profile = () => {
 
                         <p>{userDetails.balance}</p>
                     </div>
-                    <button id={Style.withdraw_btn}>Withdrawal</button>
+                    
+                        <button id={Style.withdraw_btn} onClick={add}>Withdrawal</button>
+                
                 </div>
                 <div id={Style.tab_cont}>
 
