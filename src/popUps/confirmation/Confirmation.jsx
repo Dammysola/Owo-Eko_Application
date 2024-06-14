@@ -9,7 +9,7 @@ const Confirmation = () => {
 
     const [confirmationDetails, setConfirmationDetails] = useState({})
 
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateWithdrawalSuccessPopup } = popupContextHook()
 
     let loggedin_id = localStorage.getItem("loggedin_id");
     let details = JSON.parse(localStorage.getItem("user_details"));
@@ -22,7 +22,9 @@ const Confirmation = () => {
         setConfirmationDetails(account)
     }
 
-
+    const cancel = ()=>{
+        updateConfirmationPopup(false)
+    }
     const PaymentConfirmation = async () => {
 
         updateLoadingPopup(true)
@@ -37,7 +39,8 @@ const Confirmation = () => {
             console.log(response);
             if (response.status == 200) {
 
-                navigate("/mainpage")
+                updateConfirmationPopup(false)
+                updateWithdrawalSuccessPopup(true)
 
             }
             else {
@@ -83,7 +86,7 @@ const Confirmation = () => {
                 </div>
 
                 <div>
-                    <button id={Style.button}>Cancel</button>
+                    <button id={Style.button} onClick={cancel}>Cancel</button>
                     <Button
                         type={"submit"}
                         text={"Withdraw"}
