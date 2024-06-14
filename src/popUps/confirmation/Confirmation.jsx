@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Style from '../confirmation/Confirmation.module.css'
 import Button from '../../components/button/Button'
 import { popupContextHook } from '../../PopupContext'
+import axios from 'axios'
 
 
 const Confirmation = () => {
@@ -10,6 +11,7 @@ const Confirmation = () => {
 
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
 
+    let loggedin_id = localStorage.getItem("loggedin_id");
     let details = JSON.parse(localStorage.getItem("user_details"));
 
     useEffect(() => {
@@ -27,7 +29,9 @@ const Confirmation = () => {
         try {
 
             console.log("Email", details.email);
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/transfer', { "email": details.email })
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/transfer', {
+                 "email": details.email,
+                 "loggedin_id": loggedin_id})
 
             updateLoadingPopup(false)
             console.log(response);
@@ -46,7 +50,7 @@ const Confirmation = () => {
             }
         } catch (error) {
             updateLoadingPopup(false);
-            let userError = error.response
+            let userError = error
 
             console.log("Error", userError);
 
@@ -83,7 +87,7 @@ const Confirmation = () => {
                     <Button
                         type={"submit"}
                         text={"Withdraw"}
-                        onSubmit={PaymentConfirmation}
+                        onClick={()=>PaymentConfirmation()}
                     />
                 </div>
             </div>

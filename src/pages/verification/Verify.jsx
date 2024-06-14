@@ -11,6 +11,7 @@ const Verify = () => {
   
   const { getUserDetails } = useUser();
 
+
   let navigate = useNavigate()
   let { userData } = useParams()
   const [userCode, setUserCode] = useState('')
@@ -77,6 +78,47 @@ const Verify = () => {
       console.log("Verification dd: ", userError)
     }
   }
+  
+//   const resendOtp = async (e) => {
+//     e.preventDefault(e);
+
+//     try {
+
+//         console.log("Otp")
+//         console.log(email)
+//         const response = await axios.post('https://owo-eko-api.onrender.com/user/resendotp',
+//             {
+//                 "email": email,
+//             }
+//         )
+//         console.log("hello");
+//         console.log(response.status);
+
+//         if (response.status == 200) {
+//             console.log('Otp Resent', response);
+//             console.log("hiii");
+
+//         }else{
+            
+//             console.log('Otp Resent', response);
+//         }
+//     } catch (error) {
+//         let userError = error.response.data.message
+
+//         updateErrorText(userError)
+
+//         setTimeout(() => {
+//             updateErrorPopup(false)
+//         }, 2000)
+
+
+//         console.log("failed", error);
+
+//     }
+// }
+
+
+
   return (
     <div id={Style.VerificationDiv}>
       <div id={Style.Verification_textDiv}>
