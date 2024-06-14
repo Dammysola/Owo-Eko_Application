@@ -7,6 +7,7 @@ import { userContextHook } from '../../UserContext'
 import axios from 'axios'
 import { popupContextHook } from '../../PopupContext'
 import eye from '../../assets/svg/eye.svg'
+import eye_slash from '../../assets/svg/eye-slash.svg'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -21,15 +22,15 @@ const SignUp = () => {
   })
 
   const [validation, setValidation] = useState({
-		email: false,
-		phoneNumber: false,
-		password: false,
-	})
+    email: false,
+    phoneNumber: false,
+    password: false,
+  })
 
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
-      setPasswordVisible(!passwordVisible);
+    setPasswordVisible(!passwordVisible);
   };
 
   const Details = (e) => {
@@ -43,7 +44,7 @@ const SignUp = () => {
       })
     )
   }
-  
+
   const FormSubmit = async () => {
 
     try {
@@ -94,22 +95,22 @@ const SignUp = () => {
   }
 
   const handleSubmit = (e) => {
-    
-    e.preventDefault(e)
-    
-		let emailVal = signUp.email.includes("@") && signUp.email.includes(".") ? false : true;
-		let phoneVal = signUp.phoneNumber.length > 10 ? false : true;
-		let passwordVal = signUp.password.length > 4 ? false : true;
 
-		setValidation({
-			email: emailVal,
-			phoneNumber: phoneVal,
-			password: passwordVal,
-		})
+    e.preventDefault(e)
+
+    let emailVal = signUp.email.includes("@") && signUp.email.includes(".") ? false : true;
+    let phoneVal = signUp.phoneNumber.length > 10 ? false : true;
+    let passwordVal = signUp.password.length > 4 ? false : true;
+
+    setValidation({
+      email: emailVal,
+      phoneNumber: phoneVal,
+      password: passwordVal,
+    })
 
     let valid = emailVal == false && phoneVal == false && passwordVal == false
 
-    if(valid){
+    if (valid) {
       FormSubmit()
     }
   }
@@ -153,7 +154,9 @@ const SignUp = () => {
                 value={signUp.password}
                 OnChange={Details}
               />
-              <img onClick={togglePasswordVisibility} src={eye} alt="" />
+              {
+                passwordVisible ? (<img onClick={togglePasswordVisibility} src={eye} alt="" />) : (<img onClick={togglePasswordVisibility} src={eye_slash} alt="" />)
+              }
             </div>
             <div id={Style.SignUp_btnDiv}>
               <Button

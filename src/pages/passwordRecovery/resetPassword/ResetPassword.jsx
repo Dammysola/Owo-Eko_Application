@@ -125,19 +125,21 @@ const ResetPassword = () => {
                                 value={resetPassword.createPassword}
                                 OnChange={newDetails}
                             />
-                            <img  onClick={togglePasswordVisibility} src={eye} alt="" />
+                            <img onClick={togglePasswordVisibility} src={eye} alt="" />
                         </div>
-                        <div  className={Style.PasswordDiv}>
+                        <div className={Style.PasswordDiv}>
                             <InputField
                                 label={"Confirm Password"}
                                 placeholder={"Confirm Password"}
-                                type={passwordVisible2 ? 'text' :'password'}
+                                type={passwordVisible2 ? 'text' : 'password'}
                                 name={"confirmPassword"}
                                 error={validation.confirmPassword}
                                 value={resetPassword.confirmPassword}
                                 OnChange={newDetails}
                             />
-                            <img onClick={togglePasswordVisibility2} src={eye} alt="" />
+                            {
+                                passwordVisible ? (<img onClick={togglePasswordVisibility} src={eye} alt="" />) : (<img onClick={togglePasswordVisibility} src={eye_slash} alt="" />)
+                            }
                         </div>
                         <div id={Style.btnDiv}>
                             <Button

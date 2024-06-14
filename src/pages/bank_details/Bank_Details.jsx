@@ -22,7 +22,7 @@ const Bank_Details = () => {
     const [accountName, setAccountName] = useState();
     const [validated, setValidated] = useState(false);
 
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateBankReg } = popupContextHook()
 
     const { getUserDetails } = useUser();
     const { getAllBank, getValidateBank, addBankDetails } = useBank();
