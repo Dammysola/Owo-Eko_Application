@@ -9,7 +9,7 @@ const Confirmation = () => {
 
     const [confirmationDetails, setConfirmationDetails] = useState({})
 
-    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateWithdrawalSuccessPopup } = popupContextHook()
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateWithdrawalSuccessPopup, updateConfirmationPopup } = popupContextHook()
 
     let loggedin_id = localStorage.getItem("loggedin_id");
     let details = JSON.parse(localStorage.getItem("user_details"));
