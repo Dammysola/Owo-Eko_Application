@@ -13,20 +13,29 @@ import { popupContextHook } from '../../PopupContext'
 import { userContextHook } from '../../UserContext'
 import { useUser } from '../../api_services/User'
 import { Links } from '../../api_services/Links'
+import Maruwa from '../../assets/svg/maruwa_side.svg'
+import owa_img from '../../assets/svg/owa_img.svg'
 
 
 const MainPage = () => {
     let [count, setCount] = useState(50)
     let [index, setIndex] = useState(0)
-    const [toggleImg, setToggleImg] = useState(false)
+    const [toggleImg, setToggleImg] = useState(0)
     const [progressWidth, setProgressWidth] = useState("");
 
     const { getUserDetails } = useUser();
 
     const { userDetails, updateDetails, accountDetails, updateAccountDetails } = userContextHook()
     const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg } = popupContextHook()
-  
+
     const links = Links
+
+    const images = [
+        bus,
+        busLight,
+        Maruwa,
+        owa_img
+    ]
 
     const Details = async () => {
 
@@ -36,9 +45,9 @@ const MainPage = () => {
         updateDetails(details)
         updateAccountDetails(account)
 
-        if(account.acc_name != ""){
+        if (account.acc_name != "") {
             updateBankReg(false)
-        }else{
+        } else {
             updateBankReg(true)
         }
 
@@ -76,7 +85,7 @@ const MainPage = () => {
                     setIndex(0)
                 }
 
-                setToggleImg(!toggleImg)
+                setToggleImg((prevIndex) => (prevIndex + 1) % images.length)
                 setCount(count - 1)
 
                 if (count === 1) {
@@ -164,11 +173,14 @@ const MainPage = () => {
 
                     <div id={Style.btnDiv}>
                         <button id={Style.Mainpage_button} onClick={testingLink}>
-                            {toggleImg ? (
+                            {/* {images[toggleImg] ? (
                                 <img src={busLight} alt="" />
                             ) : (
-                                <img src={bus} alt="" />
-                            )}
+                                
+                            )} */}
+
+                                
+                            <img src={images[toggleImg]} alt="" />
                         </button>
                     </div>
                 </div>
