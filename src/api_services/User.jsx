@@ -34,6 +34,7 @@ export function useUser() {
                 id: details["id"],
                 phone: details["phone"],
                 status: details["status"],
+                time: details["time"],
                 username: details["username"]
             }))
 
@@ -54,6 +55,7 @@ export function useUser() {
                 id: details["id"],
                 phone: details["phone"],
                 status: details["status"],
+                time: details["time"],
                 username: details["username"]
             }))
 

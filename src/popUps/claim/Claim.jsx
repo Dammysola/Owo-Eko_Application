@@ -27,7 +27,7 @@ const Claim = () => {
       )
 
       console.log(response.status)
-      console.log("Clain", response.details)
+      console.log("Claim", response.details)
 
       if (response.status == 200) {
 
@@ -50,14 +50,14 @@ const Claim = () => {
         updateErrorPopup(true)
         setTimeout(() => {
           updateErrorPopup(false)
-        }, 1000)
+        }, 2000)
 
-        console.log('clain failed', response.data);
+        console.log('claim failed', response.data);
       }
     } catch (err) {
 
       updateLoadingPopup(false);
-      let userError = err
+      let userError = err.response.data.message;
 
       updateErrorText(userError)
 
@@ -66,7 +66,7 @@ const Claim = () => {
         updateErrorPopup(false)
       }, 2000)
 
-      console.log("SignUp Failed: ", userError)
+      console.log("Claim Failed: ", userError)
     }
   }
   return (
