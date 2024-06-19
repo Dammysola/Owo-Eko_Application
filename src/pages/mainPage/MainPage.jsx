@@ -42,7 +42,7 @@ const MainPage = () => {
             updateBankReg(true)
         }
 
-        setProgressWidth(`${(details.balance / 1000) * 100}%`)
+        setProgressWidth(`${(details.balance / 2000) * 100}%`)
 
         try {
             await getUserDetails(details.email);
@@ -67,9 +67,7 @@ const MainPage = () => {
         let connection = window.navigator.onLine;
         if (connection) {
 
-
             if (userDetails.balance <= 349) {
-
 
                 if (index < (links.length - 1)) {
                     setIndex(index + 1)
@@ -87,11 +85,11 @@ const MainPage = () => {
                     // setProgressImg(!progressImg)
                 }
 
-                setProgressWidth(`${(userDetails.balance / 1000) * 100}%`)
+                setProgressWidth(`${(userDetails.balance / 2000) * 100}%`)
 
                 let url = links[index].link
                 // let win = window.open(`${url}`, "_blank");
-                // window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
+                window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
 
                 // win.addEventListener('load', function () {
                 //   console.log('All assets are loaded')
@@ -133,13 +131,13 @@ const MainPage = () => {
                         <div id={Style.ProgressBar_mainDiv}>
                             <div id={Style.ProgressBar_ImageDiv}>
                                 <div></div>
-                                {userDetails.balance >= 250 ? (<img src={trafficLightOn} alt="" />) : (
-                                    <img src={trafficLightOff} alt="" />
-                                )}
                                 {userDetails.balance >= 500 ? (<img src={trafficLightOn} alt="" />) : (
                                     <img src={trafficLightOff} alt="" />
                                 )}
-                                {userDetails.balance >= 750 ? (<img src={trafficLightOn} alt="" />) : (
+                                {userDetails.balance >= 1000 ? (<img src={trafficLightOn} alt="" />) : (
+                                    <img src={trafficLightOff} alt="" />
+                                )}
+                                {userDetails.balance >= 1500 ? (<img src={trafficLightOn} alt="" />) : (
                                     <img src={trafficLightOff} alt="" />
                                 )}
                                 <img src={flag} alt="" />
@@ -150,10 +148,10 @@ const MainPage = () => {
                             </div>
                             <div id={Style.MainPage_milestoneText}>
                                 <p>0</p>
-                                <p>250</p>
                                 <p>500</p>
-                                <p>750</p>
                                 <p>1000</p>
+                                <p>1500</p>
+                                <p>2000</p>
                             </div>
                         </div>
 
