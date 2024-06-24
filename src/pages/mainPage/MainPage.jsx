@@ -102,11 +102,11 @@ const MainPage = () => {
                         // setProgressImg(!progressImg)
                     }
 
-                    setProgressWidth(`${(userDetails.balance / 2000) * 100}%`)
+                    setProgressWidth(`${(userDetails.balance / 2000) * 100}%`);
 
-                    let url = links[index].link
+                    let url = links[index].link;
                     // let win = window.open(`${url}`, "_blank");
-                    // window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
+                    window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10");
 
                     // win.addEventListener('load', function () {
                     //   console.log('All assets are loaded')
