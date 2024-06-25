@@ -34,9 +34,6 @@ const router = createBrowserRouter([
         path:"/",
         element: <PopupContext><MainLayout/></PopupContext>,
         children:[
-    
-
-    
             {
                 path: "/waitlist",
                 element: <Waitlist/>
