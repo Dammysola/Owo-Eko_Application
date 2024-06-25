@@ -51,7 +51,7 @@ const MainPage = () => {
             updateBankReg(true)
         }
 
-        setProgressWidth(`${(details.balance / 1000) * 100}%`)
+        setProgressWidth(`${(details.balance / 2000) * 100}%`)
 
         try {
             await getUserDetails(details.email);
@@ -73,40 +73,47 @@ const MainPage = () => {
     const testingLink = (event) => {
 
         event.preventDefault();
+
+        let dates = new Date();
+        let dateNow = dates.getTime();
+
+        console.log("Date :", dateNow);
+        console.log("Next Click :", userDetails.time);
+
         let connection = window.navigator.onLine;
         if (connection) {
+            if (userDetails.time == "" || dateNow > userDetails.time) {
 
+                if (userDetails.balance <= 1999) {
 
-            if (userDetails.balance <= 349) {
+                    if (index < (links.length - 1)) {
+                        setIndex(index + 1)
+                    }
+                    else {
+                        setIndex(0)
+                    }
 
+                    setToggleImg((prevIndex) => (prevIndex + 1) % images.length)
+                    setCount(count - 1)
 
-                if (index < (links.length - 1)) {
-                    setIndex(index + 1)
+                    if (count === 1) {
+                        setCount(50)
+                        updateClaimPopup(true)
+                        // setProgressImg(!progressImg)
+                    }
+
+                    setProgressWidth(`${(userDetails.balance / 2000) * 100}%`);
+
+                    let url = links[index].link;
+                    // let win = window.open(`${url}`, "_blank");
+                    window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10");
+
+                    // win.addEventListener('load', function () {
+                    //   console.log('All assets are loaded')
+                    // })
+                } else {
+                    updateTapExceededPopup(true);
                 }
-                else {
-                    setIndex(0)
-                }
-
-                setToggleImg((prevIndex) => (prevIndex + 1) % images.length)
-                setCount(count - 1)
-
-                if (count === 1) {
-                    setCount(50)
-                    updateClaimPopup(true)
-                    // setProgressImg(!progressImg)
-                }
-
-                setProgressWidth(`${(userDetails.balance / 1000) * 100}%`)
-
-                let url = links[index].link
-                // let win = window.open(`${url}`, "_blank");
-                // window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10")
-
-                // win.addEventListener('load', function () {
-                //   console.log('All assets are loaded')
-                // })
-            } else {
-                updateTapExceededPopup(true);
             }
 
         } else {
@@ -142,13 +149,13 @@ const MainPage = () => {
                         <div id={Style.ProgressBar_mainDiv}>
                             <div id={Style.ProgressBar_ImageDiv}>
                                 <div></div>
-                                {userDetails.balance >= 250 ? (<img src={trafficLightOn} alt="" />) : (
-                                    <img src={trafficLightOff} alt="" />
-                                )}
                                 {userDetails.balance >= 500 ? (<img src={trafficLightOn} alt="" />) : (
                                     <img src={trafficLightOff} alt="" />
                                 )}
-                                {userDetails.balance >= 750 ? (<img src={trafficLightOn} alt="" />) : (
+                                {userDetails.balance >= 1000 ? (<img src={trafficLightOn} alt="" />) : (
+                                    <img src={trafficLightOff} alt="" />
+                                )}
+                                {userDetails.balance >= 1500 ? (<img src={trafficLightOn} alt="" />) : (
                                     <img src={trafficLightOff} alt="" />
                                 )}
                                 <img src={flag} alt="" />
@@ -159,10 +166,10 @@ const MainPage = () => {
                             </div>
                             <div id={Style.MainPage_milestoneText}>
                                 <p>0</p>
-                                <p>250</p>
                                 <p>500</p>
-                                <p>750</p>
                                 <p>1000</p>
+                                <p>1500</p>
+                                <p>2000</p>
                             </div>
                         </div>
 
@@ -181,7 +188,7 @@ const MainPage = () => {
                                 
                             )} */}
 
-                                
+
                             <img src={images[toggleImg]} alt="" />
                         </button>
                     </div>

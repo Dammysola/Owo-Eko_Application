@@ -42,11 +42,8 @@ const Login = () => {
         password: false,
     })
 
-
-
     const getIp = async () => {
         const res = await axios.get("https://api.ipify.org/?format=json");
-        console.log(res.data);
         setIP(res.data.ip);
     };
 
@@ -71,7 +68,6 @@ const Login = () => {
                 "password": logIn.password,
                 "ipaddress": ip
             })
-
 
             console.log("Login Details", response.data["loggedin_id"]);
 

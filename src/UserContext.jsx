@@ -18,6 +18,7 @@ const UserContext = ({ children }) => {
     id: 0,
     phone: "",
     status: 0,
+    time: "",
     username: ""
   })
   
