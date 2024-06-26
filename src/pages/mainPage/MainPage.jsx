@@ -63,10 +63,10 @@ const MainPage = () => {
         let { total, hours, minutes, seconds } =
             getTimeRemaining(e);
 
-            console.log("Total",total);
-            console.log("Hours",hours);
-            console.log("Minur",minutes);
-            console.log("Sec",seconds);
+            // console.log("Total",total);
+            // console.log("Hours",hours);
+            // console.log("Minur",minutes);
+            // console.log("Sec",seconds);
         if (total >= 0) {
             // update the timer
             // check if less than 10 then we need to
@@ -102,16 +102,16 @@ const MainPage = () => {
     const getDeadTime = () => {
         let chosenDate = Date(Number(userDetails.time));
 
-        console.log("Chosen", chosenDate);
+        // console.log("Chosen", chosenDate);
         let deadline = userDetails.time == "" ? new Date() : chosenDate;
 
 
-        console.log("Deadline", deadline);
+        // console.log("Deadline", deadline);
         // This is where you need to adjust if
         // you entend to add more time
 
 
-        console.log("Deadlines", deadline);
+        // console.log("Deadlines", deadline);
         return deadline;
     };
 
@@ -166,8 +166,8 @@ const MainPage = () => {
 
         let chosenDate = Number(userDetails.time)
 
-        console.log("Date :", dateNow);
-        console.log("Next Click :", chosenDate);
+        // console.log("Date :", dateNow);
+        // console.log("Next Click :", chosenDate);
 
         if (dateNow > chosenDate) {
             console.log("Greater")
