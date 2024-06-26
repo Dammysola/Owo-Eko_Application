@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import style from "./TotalCoins.module.css"
 
 import dummyCoin from "../../../assets/svg/dummyCoin.svg"
 
 const TotalCoins = () => {
+    
+    let [userDetails, setUserDetails] = useState({});
+
+    useEffect(() => {
+        let details = JSON.parse(localStorage.getItem("user_details"));
+
+        setUserDetails(details)
+
+    }, []);
+
     return (
         <div id={style.wrapper}>
             <p id={style.text}>Total Number of coins earned</p>
@@ -11,7 +21,7 @@ const TotalCoins = () => {
 
                 <img src={dummyCoin} alt="" />
 
-                <p id={style.total}>12000</p>
+                <p id={style.total}>{userDetails.balance}</p>
             </div>
 
         </div>

@@ -87,13 +87,20 @@
     height: 42px;
 
 }
-
-#Profile_wrapper #Profile_details #withdraw_btn {
-    width: 209px;
+#Profile_details #Profile_btnDiv{
+    display: flex;
+    column-gap: 20px;
+    align-items: center ;
+}
+#Profile_details #Profile_btnDiv button{
+    width: 11rem;
     height: 46px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 1.2rem;
     color: #FFFFFF;
+}
+#Profile_wrapper #Profile_details #withdraw_btn {
+    
     padding: 16px;
     box-sizing: border-box;
     display: flex;

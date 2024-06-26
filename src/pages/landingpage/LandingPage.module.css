@@ -25,6 +25,10 @@
 
 #style {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    box-sizing: border-box;
 }
 
 #LandingPage_smallText {
@@ -487,6 +491,14 @@ footer{
         width: 21rem;
         padding: 20px;
         row-gap: 20px;
+    }
+    .FAQ_questions {
+        min-width: 100%;
+        min-height: 55px;
+        padding: 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #666666;
+        cursor: pointer;
     }
     footer{
         margin-top: 50px;

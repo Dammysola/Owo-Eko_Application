@@ -31,7 +31,7 @@ const Confirmation = () => {
         try {
 
             console.log("Email", details.email);
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/transfer', {
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/withdraw', {
                  "email": details.email,
                  "loggedin_id": loggedin_id})
 
