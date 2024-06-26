@@ -215,7 +215,7 @@ const MainPage = () => {
 
                         <div id={Style.MainPage_timeDiv}>
                             <div id={Style.MainPage_timeText}>You can continue tapping in</div>
-                            {timer}
+                            <p id={Style.MainPage_time} >{timer}</p>
                         </div>
                         <div id={Style.MainPage_coinDiv}>
                             <div id={Style.MainPage_biniCoin}>Account Balance</div>

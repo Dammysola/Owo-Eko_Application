@@ -15,13 +15,14 @@ import No_Mobile from '../popUps/noMobile/No_Mobile'
 import Claim from '../popUps/claim/Claim'
 import Profile from '../pages/profile/Profile'
 import Bank_Registration from '../popUps/bank_registration/Bank_Registration'
+import Receipt from '../popUps/receipt/Receipt'
 
 
 
 
 const MainLayout = () => {
 
-  const { loadingPopup, errorPopup, claimPopup, profile, tapExceededPopup, withdrawalPopup, bankReg, confirmationPopup, withdrawalSuccessPopup} = popupContextHook();
+  const { loadingPopup, errorPopup, claimPopup, profile, tapExceededPopup, withdrawalPopup, bankReg, confirmationPopup, withdrawalSuccessPopup, receiptPopup} = popupContextHook();
   const [isMobile, setIsMobile] = useState(false);
   const [error, setError] = useState('');
 
@@ -64,6 +65,7 @@ const MainLayout = () => {
             {bankReg && <Bank_Registration/>}
             {confirmationPopup && <Confirmation/>}
             {withdrawalSuccessPopup && <Withdrawal_Success/>}
+            {receiptPopup && <Receipt/>}
           </div>
         </UserContext>
     </>

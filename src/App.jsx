@@ -8,8 +8,7 @@ function App() {
   
   return (
     <>
-        {/* <RouterProvider router={router}/>  */}
-        <Receipt/>
+        <RouterProvider router={router}/> 
         
     </>
   )

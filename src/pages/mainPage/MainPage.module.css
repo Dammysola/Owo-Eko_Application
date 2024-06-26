@@ -21,6 +21,16 @@
     justify-content: center;
     row-gap: 20px;
 }
+#MainPage_timeDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#MainPage_time{
+font-size: 30px;
+}
 
 #MainPage_screenTextDiv #MainPage_text {
     text-align: center;

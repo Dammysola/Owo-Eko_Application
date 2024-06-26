@@ -22,7 +22,7 @@ const Confirmation = () => {
         setConfirmationDetails(account)
     }
 
-    const cancel = ()=>{
+    const cancel = () => {
         updateConfirmationPopup(false)
     }
     const PaymentConfirmation = async () => {
@@ -30,10 +30,19 @@ const Confirmation = () => {
         updateLoadingPopup(true)
         try {
 
+
+            let token = localStorage.getItem("token");
+
             console.log("Email", details.email);
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/withdraw', {
-                 "email": details.email,
-                 "loggedin_id": loggedin_id})
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/withdraw',
+                {
+                    "email": details.email,
+                    "loggedin_id": loggedin_id
+                },
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                }
+            )
 
             updateLoadingPopup(false)
             console.log(response);
@@ -90,7 +99,7 @@ const Confirmation = () => {
                     <Button
                         type={"submit"}
                         text={"Withdraw"}
-                        onClick={()=>PaymentConfirmation()}
+                        onClick={() => PaymentConfirmation()}
                     />
                 </div>
             </div>
