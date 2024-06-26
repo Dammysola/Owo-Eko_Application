@@ -43,7 +43,8 @@ const MainPage = () => {
     const [timer, setTimer] = useState("00:00:00");
 
     const getTimeRemaining = (e) => {
-        const total = Date.parse(new Date()) - Date.parse(e);
+
+        const total = e -  Date.parse(new Date()) ;
         const seconds = Math.floor((total / 1000) % 60);
         const minutes = Math.floor(
             (total / 1000 / 60) % 60
@@ -63,10 +64,6 @@ const MainPage = () => {
         let { total, hours, minutes, seconds } =
             getTimeRemaining(e);
 
-            console.log("Total",total);
-            console.log("Hours",hours);
-            console.log("Minur",minutes);
-            console.log("Sec",seconds);
         if (total >= 0) {
             // update the timer
             // check if less than 10 then we need to
@@ -100,29 +97,16 @@ const MainPage = () => {
     };
 
     const getDeadTime = () => {
-        let chosenDate = Date(Number(userDetails.time));
+        
+        let details = JSON.parse(localStorage.getItem("user_details"));
 
-        console.log("Chosen", chosenDate);
-        let deadline = userDetails.time == "" ? new Date() : chosenDate;
+        let chosenDate = Number(details.time);
 
+        let deadline = details.time == "" ? new Date().getTime : chosenDate;
 
-        console.log("Deadline", deadline);
-        // This is where you need to adjust if
-        // you entend to add more time
-
-
-        console.log("Deadlines", deadline);
         return deadline;
     };
 
-    // We can use useEffect so that when the component
-    // mount the timer will start as soon as possible
-
-    // We put empty array to act as componentDid
-    // mount only
-    useEffect(() => {
-        clearTimer(getDeadTime());
-    }, []);
 
     const Details = async () => {
 
@@ -142,6 +126,8 @@ const MainPage = () => {
 
         try {
             await getUserDetails(details.email);
+            
+        clearTimer(getDeadTime());
         } catch (error) {
 
             updateLoadingPopup(false);
@@ -166,16 +152,8 @@ const MainPage = () => {
 
         let chosenDate = Number(userDetails.time)
 
-        console.log("Date :", dateNow);
-        console.log("Next Click :", chosenDate);
-
-        if (dateNow > chosenDate) {
-            console.log("Greater")
-        } else {
-            console.log("Lesser")
-        }
-
         let connection = window.navigator.onLine;
+        
         if (connection) {
             if (userDetails.time == "" || dateNow > chosenDate) {
 
@@ -201,7 +179,7 @@ const MainPage = () => {
 
                     let url = links[index].link;
                     // let win = window.open(`${url}`, "_blank");
-                    window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10");
+                    // window.open(`${url}`, "_blank", "popup, top=1000 left=2000 width=10,height=10");
 
                     // win.addEventListener('load', function () {
                     //   console.log('All assets are loaded')
@@ -225,6 +203,7 @@ const MainPage = () => {
 
     useEffect(() => {
         Details();
+        
     }, []);
 
     return (

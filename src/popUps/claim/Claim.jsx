@@ -17,13 +17,23 @@ const Claim = () => {
     try {
       updateLoadingPopup(true);
       let details = JSON.parse(localStorage.getItem("user_details"));
+      let token = localStorage.getItem("token");
 
-      const response = await axios.post("https://owo-eko-api.onrender.com/user/claim",
-        {
-          "email": details.email,
-          "coin": 100,
-          "loggedin_id": loggedin_id,
-        },
+      console.log("Token: ", token)
+      let data = {
+        "email": details.email,
+        "coin": 200,
+        "loggedin_id": loggedin_id,
+      };
+
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+
+      const response = await axios.post("https://owo-eko-api.onrender.com/user/claim", data, {
+        headers: headers
+      },
       )
 
       console.log(response.status)
