@@ -77,7 +77,8 @@ export function useUser() {
             }))
 
             
-            localStorage.setItem("transactions", JSON.stringify([...transactionDetails ]))
+
+            console.log("message")
 
 
             if ( account != null && account["acc_name"] != "") {
