@@ -5,16 +5,20 @@ import TotalCoins from './tabs/TotalCoins';
 import WithdrawalHistory from './tabs/WithdrawalHistory';
 import dummyCoin from "../../assets/svg/dummyCoin.svg"
 import { popupContextHook } from '../../PopupContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Button from '../../components/button/Button';
+import axios from 'axios';
 
 const Profile = () => {
+
+    const navigate = useNavigate()
     let [tabIndex, setTabIndex] = useState(0);
     let [userDetails, setUserDetails] = useState({});
 
-    const { updateProfile, profile, updateWithdrawalPopup} = popupContextHook();
+    const { updateProfile, profile, updateWithdrawalPopup, updateLoadingPopup, updateErrorPopup, updateErrorText  } = popupContextHook();
 
 
-    const add = ()=>{
+    const add = () => {
         updateProfile(false)
         updateWithdrawalPopup(true)
     }
@@ -26,11 +30,55 @@ const Profile = () => {
     }
 
     useEffect(() => {
-        let details = JSON.parse(localStorage.getItem("user_details"));
-
         setUserDetails(details)
 
     }, []);
+
+    let loggedin_id = localStorage.getItem("loggedin_id");
+    let details = JSON.parse(localStorage.getItem("user_details"));
+
+    const Logout = async () => {
+
+        updateLoadingPopup(true)
+        try {
+
+            console.log("Email", details.email);
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/logout', {
+                
+                 "email": details.email,
+                 "loggedin_id": loggedin_id})
+
+            updateLoadingPopup(false)
+            console.log(response);
+            if (response.status == 200) {
+
+              navigate("/login")
+
+            }
+            else {
+                updateErrorText(response.data)
+                updateErrorPopup(true)
+
+                setTimeout(() => {
+                    updateErrorPopup(false)
+                }, 2000)
+            }
+        } catch (error) {
+            updateLoadingPopup(false);
+            let userError = error
+
+            console.log("Error", userError);
+
+             updateErrorText(userError.message)
+
+            updateErrorPopup(true)
+        
+            setTimeout(() => {
+                updateErrorPopup(false)
+            }, 2000)
+
+         }
+    }
 
     return (
         <div id={Style.wrapper}>
@@ -49,9 +97,14 @@ const Profile = () => {
 
                         <p>{userDetails.balance}</p>
                     </div>
-                    
+
+                    <div id={Style.Profile_btnDiv}>
                         <button id={Style.withdraw_btn} onClick={add}>Withdrawal</button>
-                
+                        <Button 
+                        onClick ={()=>Logout()}
+                        text ={"Logout"}/>
+                    </div>
+
                 </div>
                 <div id={Style.tab_cont}>
 
