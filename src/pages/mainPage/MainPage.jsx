@@ -102,6 +102,7 @@ const MainPage = () => {
 
         let chosenDate = Number(details.time);
 
+
         let deadline = details.time == "" ? new Date().getTime : chosenDate;
 
         return deadline;
@@ -153,7 +154,7 @@ const MainPage = () => {
         let chosenDate = Number(userDetails.time)
 
         let connection = window.navigator.onLine;
-        
+
         if (connection) {
             if (userDetails.time == "" || dateNow > chosenDate) {
 

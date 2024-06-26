@@ -15,7 +15,7 @@ const Profile = () => {
     let [tabIndex, setTabIndex] = useState(0);
     let [userDetails, setUserDetails] = useState({});
 
-    const { updateProfile, profile, updateWithdrawalPopup, updateLoadingPopup, updateErrorPopup, updateErrorText  } = popupContextHook();
+    const { updateProfile, profile, updateWithdrawalPopup, updateLoadingPopup, updateErrorPopup, updateErrorText } = popupContextHook();
 
 
     const add = () => {
@@ -42,17 +42,29 @@ const Profile = () => {
         updateLoadingPopup(true)
         try {
 
-            console.log("Email", details.email);
-            const response = await axios.post('https://owo-eko-api.onrender.com/user/logout', {
-                
-                 "email": details.email,
-                 "loggedin_id": loggedin_id})
+            let token = localStorage.getItem("token")
+            
+        console.log(token);
+
+
+            const response = await axios.post('https://owo-eko-api.onrender.com/user/logout',
+                {
+                    "email": details.email,
+                    "loggedin_id": loggedin_id
+                },
+                {
+                    headers: { Authorization: ` Bearer ${token}` },
+                }
+            )
+
+
+
 
             updateLoadingPopup(false)
             console.log(response);
             if (response.status == 200) {
 
-              navigate("/login")
+                navigate("/login")
 
             }
             else {
@@ -69,15 +81,15 @@ const Profile = () => {
 
             console.log("Error", userError);
 
-             updateErrorText(userError.message)
+            updateErrorText(userError.message)
 
             updateErrorPopup(true)
-        
+
             setTimeout(() => {
                 updateErrorPopup(false)
             }, 2000)
 
-         }
+        }
     }
 
     return (
@@ -100,9 +112,9 @@ const Profile = () => {
 
                     <div id={Style.Profile_btnDiv}>
                         <button id={Style.withdraw_btn} onClick={add}>Withdrawal</button>
-                        <Button 
-                        onClick ={()=>Logout()}
-                        text ={"Logout"}/>
+                        <Button
+                            onClick={() => Logout()}
+                            text={"Logout"} />
                     </div>
 
                 </div>
