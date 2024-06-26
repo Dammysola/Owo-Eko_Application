@@ -10,8 +10,9 @@ export function useUser() {
 
         let storedDetails = JSON.parse(localStorage.getItem("user_details"));
         let storedAccountDetails = JSON.parse(localStorage.getItem("account_details"));
+        let token = localStorage.getItem("token");
 
-        const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${email}`)
+        const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${email}`, { headers: { Authorization: `Bearer ${token}` } })
 
         console.log("CC");
 

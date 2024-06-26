@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Style from '../mainPage/MainPage.module.css'
 import bus from '../../assets/svg/bus.svg'
 import dummyCoin from '../../assets/svg/dummyCoin.svg'
@@ -37,6 +37,93 @@ const MainPage = () => {
         owa_img
     ]
 
+    const Ref = useRef(null);
+
+    // The state for our timer
+    const [timer, setTimer] = useState("00:00:00");
+
+    const getTimeRemaining = (e) => {
+        const total = Date.parse(new Date()) - Date.parse(e);
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor(
+            (total / 1000 / 60) % 60
+        );
+        const hours = Math.floor(
+            (total / 1000 / 60 / 60) % 24
+        );
+        return {
+            total,
+            hours,
+            minutes,
+            seconds,
+        };
+    };
+
+    const startTimer = (e) => {
+        let { total, hours, minutes, seconds } =
+            getTimeRemaining(e);
+
+            console.log("Total",total);
+            console.log("Hours",hours);
+            console.log("Minur",minutes);
+            console.log("Sec",seconds);
+        if (total >= 0) {
+            // update the timer
+            // check if less than 10 then we need to
+            // add '0' at the beginning of the variable
+            setTimer(
+                (hours > 9 ? hours : "0" + hours) +
+                ":" +
+                (minutes > 9
+                    ? minutes
+                    : "0" + minutes) +
+                ":" +
+                (seconds > 9 ? seconds : "0" + seconds)
+            );
+        }
+    };
+
+    const clearTimer = (e) => {
+        // If you adjust it you should also need to
+        // adjust the Endtime formula we are about
+        // to code next
+        setTimer("00:00:00");
+
+        // If you try to remove this line the
+        // updating of timer Variable will be
+        // after 1000ms or 1sec
+        if (Ref.current) clearInterval(Ref.current);
+        const id = setInterval(() => {
+            startTimer(e);
+        }, 1000);
+        Ref.current = id;
+    };
+
+    const getDeadTime = () => {
+        let chosenDate = Date(Number(userDetails.time));
+
+        console.log("Chosen", chosenDate);
+        let deadline = userDetails.time == "" ? new Date() : chosenDate;
+
+
+        console.log("Deadline", deadline);
+        // This is where you need to adjust if
+        // you entend to add more time
+
+
+        console.log("Deadlines", deadline);
+        return deadline;
+    };
+
+    // We can use useEffect so that when the component
+    // mount the timer will start as soon as possible
+
+    // We put empty array to act as componentDid
+    // mount only
+    useEffect(() => {
+        clearTimer(getDeadTime());
+    }, []);
+
     const Details = async () => {
 
         let details = JSON.parse(localStorage.getItem("user_details"));
@@ -58,7 +145,7 @@ const MainPage = () => {
         } catch (error) {
 
             updateLoadingPopup(false);
-            let userError = err.response.data.message
+            let userError = error.response.data.message
 
             updateErrorText(userError)
 
@@ -77,12 +164,20 @@ const MainPage = () => {
         let dates = new Date();
         let dateNow = dates.getTime();
 
+        let chosenDate = Number(userDetails.time)
+
         console.log("Date :", dateNow);
-        console.log("Next Click :", userDetails.time);
+        console.log("Next Click :", chosenDate);
+
+        if (dateNow > chosenDate) {
+            console.log("Greater")
+        } else {
+            console.log("Lesser")
+        }
 
         let connection = window.navigator.onLine;
         if (connection) {
-            if (userDetails.time == "" || dateNow > userDetails.time) {
+            if (userDetails.time == "" || dateNow > chosenDate) {
 
                 if (userDetails.balance <= 1999) {
 
@@ -138,6 +233,10 @@ const MainPage = () => {
                 <div id={Style.MainPageDiv}>
                     <div id={Style.MainPage_screenTextDiv}>
 
+                        <div id={Style.MainPage_timeDiv}>
+                            <div id={Style.MainPage_timeText}>You can continue tapping in</div>
+                            {timer}
+                        </div>
                         <div id={Style.MainPage_coinDiv}>
                             <div id={Style.MainPage_biniCoin}>Account Balance</div>
                             <div id={Style.MainPage_dummyCoinText_Div}>

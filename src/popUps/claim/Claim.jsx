@@ -21,7 +21,7 @@ const Claim = () => {
       const response = await axios.post("https://owo-eko-api.onrender.com/user/claim",
         {
           "email": details.email,
-          "coin": 50,
+          "coin": 100,
           "loggedin_id": loggedin_id,
         },
       )

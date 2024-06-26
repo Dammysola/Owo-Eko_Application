@@ -21,9 +21,7 @@ const Login = () => {
     const [ip, setIP] = useState("");
     const [passwordVisible, setPasswordVisible] = useState(false);
     
-
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = popupContextHook()
-
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
@@ -94,6 +92,8 @@ const Login = () => {
                     bank_code: "",
                     bank_name: ""
                 }))
+                localStorage.setItem("token", response.data["token"])
+                console.log("Login Success :", response.data["token"])
                 const response2 = await getUserDetails(logIn.email);
 
                 console.log(response2);
