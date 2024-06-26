@@ -36,6 +36,7 @@ const Profile = () => {
 
     let loggedin_id = localStorage.getItem("loggedin_id");
     let details = JSON.parse(localStorage.getItem("user_details"));
+    let transaction = JSON.parse(localStorage.getItem("transactions"));
 
     const Logout = async () => {
 

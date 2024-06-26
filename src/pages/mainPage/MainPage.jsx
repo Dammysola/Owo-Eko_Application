@@ -25,7 +25,7 @@ const MainPage = () => {
 
     const { getUserDetails } = useUser();
 
-    const { userDetails, updateDetails, accountDetails, updateAccountDetails } = userContextHook()
+    const { userDetails, updateDetails, accountDetails, updateAccountDetails, transactions, updateTransactions } = userContextHook()
     const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateClaimPopup, updateProfile, profile, updateTapExceededPopup, updateBankReg } = popupContextHook()
 
     const links = Links
@@ -113,9 +113,11 @@ const MainPage = () => {
 
         let details = JSON.parse(localStorage.getItem("user_details"));
         let account = JSON.parse(localStorage.getItem("account_details"));
+        let transaction = JSON.parse(localStorage.getItem("transactions"));
 
         updateDetails(details)
         updateAccountDetails(account)
+        updateTransactions(transaction)
 
         if (account.acc_name != "") {
             updateBankReg(false)

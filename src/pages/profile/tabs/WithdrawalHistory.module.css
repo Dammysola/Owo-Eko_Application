@@ -50,6 +50,14 @@
     box-sizing: border-box;
 }
 
+
+#main_content #table_content button {
+    border: none;
+    background-color: transparent;
+    color: beige;
+    cursor: pointer;
+}
+
 #main_content #table_content::-webkit-scrollbar {
     width: 3.2px;
     background: transparent;

@@ -28,6 +28,14 @@ const UserContext = ({ children }) => {
     bank_code: "",
     bank_name: ""
   })
+  const [receiptDetails, setReceiptDetails] = useState({
+    amount: 0,
+    date: "",
+    refid: "",
+    sender: ""
+  })
+
+  const [transactions, setTransactions] = useState([])
 
   const [logged, setLogged] = useState(false);
 
@@ -45,8 +53,16 @@ const UserContext = ({ children }) => {
     setValidation(data)
   }
 
+  const updateTransactions = (data) => {
+    setTransactions(data)
+  }
+
+  const updateReceiptDetails = (data) => {
+    setReceiptDetails(data)
+  }
+
   return (
-    <myContext.Provider value={{ userDetails, updateDetails, logged, updateSetLogged, validation, updateValidation, accountDetails, updateAccountDetails }}>
+    <myContext.Provider value={{ userDetails, updateDetails, logged, updateSetLogged, validation, updateValidation, accountDetails, updateAccountDetails, transactions, updateTransactions, receiptDetails, updateReceiptDetails, }}>
       {children}
     </myContext.Provider>
   )

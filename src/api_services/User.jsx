@@ -3,13 +3,15 @@ import { popupContextHook } from '../PopupContext'
 import { userContextHook } from '../UserContext'
 
 export function useUser() {
-    const { userDetails, updateDetails, accountDetails, updateAccountDetails } = userContextHook()
+    const { userDetails, updateDetails, accountDetails, updateAccountDetails , transactionDetails, updateTransactions} = userContextHook()
     const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateBankReg } = popupContextHook()
 
     const getUserDetails = async (email) => {
 
         let storedDetails = JSON.parse(localStorage.getItem("user_details"));
         let storedAccountDetails = JSON.parse(localStorage.getItem("account_details"));
+        let storedTransactionDetails = JSON.parse(localStorage.getItem("transactions"));
+
         let token = localStorage.getItem("token");
 
         const response = await axios.get(`https://owo-eko-api.onrender.com/user/details/${email}`, { headers: { Authorization: `Bearer ${token}` } })
@@ -24,9 +26,11 @@ export function useUser() {
 
             let details = response.data["details"]
             let account = response.data["account"]
+            let transactions = response.data["transaction"]
 
             console.log("Datails", details)
             console.log("Account", account)
+            console.log("Transactions", transactions)
 
             updateDetails((prev) => ({
                 ...storedDetails,
@@ -46,6 +50,10 @@ export function useUser() {
                 bank_code: account != null ? account["bank_code"] : "",
                 bank_name: account != null ? account["bank_name"] : "",
             }))
+
+        
+
+            updateTransactions((prev) => ([...transactions]))
 
             console.log("Details Success ", response.data)
 
@@ -67,6 +75,9 @@ export function useUser() {
                 bank_code: account != null ? account["bank_code"] : "",
                 bank_name: account != null ? account["bank_name"] : "",
             }))
+
+            
+            localStorage.setItem("transactions", JSON.stringify([...transactionDetails ]))
 
 
             if ( account != null && account["acc_name"] != "") {

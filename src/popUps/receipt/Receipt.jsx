@@ -1,11 +1,14 @@
 import React from 'react'
 import Style from '../receipt/Receipt.module.css'
 import { popupContextHook } from '../../PopupContext';
+import { userContextHook } from '../../UserContext';
 
 
 const Receipt = () => {
 
     const { receiptPopup, updateReceipt } = popupContextHook();
+    const { receiptDetails } = userContextHook()
+
 
     return (
         <div id={Style.wrapper}>
@@ -21,18 +24,18 @@ const Receipt = () => {
 
                 <div id={Style.TotalAmountDiv}>
                     <p id={Style.TotalAmountText}>Total Payment</p>
-                    <p id={Style.TotalAmount}>2000</p>
+                    <p id={Style.TotalAmount}>{receiptDetails.amount}</p>
                 </div>
 
                 <div id={Style.Details}>
                     <div className={Style.row}>
                         <div className={Style.contentDiv}>
                             <p className={Style.contentTitle}>Ref Number</p>
-                            <p className={Style.contentContext}>000085752257</p>
+                            <p className={Style.contentContext}>{receiptDetails.refid}</p>
                         </div>
                         <div className={Style.contentDiv}>
                             <p className={Style.contentTitle}>Payment Time</p>
-                            <p className={Style.contentContext}>25 Jun 2024, 13:22</p>
+                            <p className={Style.contentContext}>{receiptDetails.date}</p>
                         </div>
                     </div>
 
@@ -43,7 +46,7 @@ const Receipt = () => {
                         </div>
                         <div className={Style.contentDiv}>
                             <p className={Style.contentTitle}>Sender Name</p>
-                            <p className={Style.contentContext}>OWOEKO</p>
+                            <p className={Style.contentContext}>{receiptDetails.sender}</p>
                         </div>
                     </div>
 

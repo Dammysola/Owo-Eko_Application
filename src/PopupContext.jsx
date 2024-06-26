@@ -17,7 +17,7 @@ const PopupContext = ({ children }) => {
     const [profile, setProfile] = useState(false)
     const [bankReg, setBankReg] = useState(false)
     const [withdrawal, setWithdrawal] = useState(false)
-    const [receiptPopup, setReceipt] = useState(true)
+    const [receiptPopup, setReceipt] = useState(false)
 
     const updateConfirmationPopup = (data) => {
         setConfirmationPopup(data)
