@@ -63,8 +63,10 @@ const Profile = () => {
             updateLoadingPopup(false)
             console.log(response);
             if (response.status == 200) {
+                console.log("successful Logout");
+                updateProfile(false)
 
-                navigate("/login")
+                navigate('/login')
 
             }
             else {
