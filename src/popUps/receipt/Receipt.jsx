@@ -1,22 +1,24 @@
 import React from 'react'
 import Style from '../receipt/Receipt.module.css'
+import ReceiptImg from '../../assets/svg/Receipt.svg'
 
 
 const Receipt = () => {
     return (
         <div>
             <div id={Style.Receipt_wrapperDiv}>
-                <div>
+                <img src={ReceiptImg} alt="" />
+                <div >
                     <p className={Style.Payment}>Payment Success!</p>
-                    <div>Your Payment has been successfully done</div>
+                    <div id={Style.Payment_successText}>Your Payment has been successfully done</div>
                 </div>
 
                 <div>
                     <p>Total Payment</p>
-                    <div>2000</div>
+                    <div className={Style.Payment}>2000</div>
                 </div>
 
-                <div>
+                <div id={Style.Payment_details}>
                     <div>
                         <p>Ref Number</p>
                         <div>000085752257</div>
