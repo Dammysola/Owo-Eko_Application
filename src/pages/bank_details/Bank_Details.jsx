@@ -131,7 +131,8 @@ const Bank_Details = () => {
         let loggedin_id = localStorage.getItem("loggedin_id");
 
 
-        console.log(details["email"], accountName, ",", bankDetails.accNumber, ",", AllBanks[bankDetails.bank]["bankCode"], ",", loggedin_id);
+        console.log(details["email"], accountName, ",", bankDetails.accNumber, ",", AllBanks[bankDetails.bank]["bankCode"], ",", loggedin_id 
+        );
 
         updateLoadingPopup(true);
         try {

@@ -10,7 +10,6 @@ const Tap_Exceeded = () => {
 
     useEffect(() => {
         let details = JSON.parse(localStorage.getItem("user_details"));
-
         setUserDetails(details)
 
     }, []);
@@ -27,11 +26,11 @@ const Tap_Exceeded = () => {
                         <img src={avatar} alt="" />
                         <div>{userDetails.username}</div>
                     </div>
-                    <div id={Style.Tap_Exceeded_text}>You have exceeded the number of taps today <br /> Let’s go again tomorrow!!</div>
+                    <div id={Style.Tap_Exceeded_text}>You have exceeded the number of taps<br /> Proceed to Withdraw!!</div>
                 </div>
                 <div id={Style.button_div}>
                     <button id={Style.Tap_Exceeded_btnTwo} onClick={()=>withdraw()}>Withdrawal</button>
-                    <button id={Style.Tap_Exceeded_btn} onClick={()=>updateTapExceededPopup(false)}>Continue In 12hrs</button>
+                    <button id={Style.Tap_Exceeded_btn} onClick={()=>updateTapExceededPopup(false)}>Continue</button>
                 </div>
             </div>
         </div>

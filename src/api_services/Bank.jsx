@@ -68,6 +68,8 @@ export function useBank() {
 
         
         let loggedin_id = localStorage.getItem("loggedin_id");
+        
+        let userToken = localStorage.getItem("token");
 
         // const headers = { 'Authorization': `Bearer ${userToken}` };
         console.log({
@@ -84,7 +86,7 @@ export function useBank() {
             "account_number": bankNumber,
             "bank_code": bankCode,
             "loggedin_id": loggedin_id,
-        });
+        }, {headers : {Authorization: `Bearer ${userToken}`}});
 
 
         updateLoadingPopup(false)
