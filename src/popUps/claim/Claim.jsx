@@ -22,7 +22,7 @@ const Claim = () => {
       console.log("Token: ", token)
       let data = {
         "email": details.email,
-        "coin": 200,
+        "coin": 50,
         "loggedin_id": loggedin_id,
       };
 
@@ -55,6 +55,7 @@ const Claim = () => {
       } else {
 
         updateLoadingPopup(false);
+        updateClaimPopup(false);
         updateErrorText(response.data)
 
         updateErrorPopup(true)
